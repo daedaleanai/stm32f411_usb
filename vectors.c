@@ -5,9 +5,9 @@ extern void _estack(void); // fake definition, will be filled in by linker scrip
 // Hang, let the watchdog reboot us.
 // TODO(lvd): reset usart0 and report unexpected irq
 void default_IRQ_Handler(void) {
-        for (;;) {
-                __WFE();
-        }
+    for (;;) {
+            __WFE();
+    }
 }
 
 // CM4 core fault handlers
@@ -27,6 +27,7 @@ void Reserved_13_Handler(void) __attribute__((weak, alias("default_IRQ_Handler")
 void PendSV_Handler(void) __attribute__((weak, alias("default_IRQ_Handler")));
 void SysTick_Handler(void) __attribute__((weak, alias("default_IRQ_Handler")));
 
+// STM32F411 IRQ Handlers
 void WWDG_Handler(void) __attribute__((weak, alias("default_IRQ_Handler")));
 void PVD_Handler(void) __attribute__((weak, alias("default_IRQ_Handler")));
 void TAMP_STAMP_Handler(void) __attribute__((weak, alias("default_IRQ_Handler")));
