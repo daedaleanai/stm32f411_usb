@@ -1,4 +1,5 @@
 #include "STM32F411.h"
+#include "stm32f411_irqn.h"
 
 extern void main(void);                            // in main.c
 extern void (*vector_table[])(void);               // in vector.c
@@ -89,7 +90,8 @@ static uint32_t getSystemCoreClock(void) {
 	 
 	uint8_t pre = rcc_cfgr_get_hpre(&RCC); // 0..16
 	if (pre & 0x8) {
-		sysclk >>= (0x98764321UL >> (4*(pre&0x7))) & 0xF;
+		pre &= 0x7;
+		sysclk >>= (0x98764321UL >> (4*pre)) & 0xF;
 	}
 
 	return sysclk;
@@ -109,9 +111,6 @@ void Reset_Handler(void) {
 	SCB.VTOR = (uintptr_t)&vector_table; /* Vector Table Relocation in Internal FLASH. */
 
 	systemInit();
-
-	// TODO: as fallback switch to HSI * pli
-	// just keep trying
 
 	while (!setSysClockTo96MHz()) {
 		__NOP();

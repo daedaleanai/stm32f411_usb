@@ -9,7 +9,7 @@ REVISION := $(shell git log -1 --format="%h")
 ARCH_FLAGS	 = -mthumb -mcpu=cortex-m4
 LTO_FLAGS	 = -O2 -flto -fuse-linker-plugin -ffunction-sections -fdata-sections -fverbose-asm -ffat-lto-objects
 WARN_FLAGS   = -Werror -Wfatal-errors -Wall -Wextra -Wunsafe-loop-optimizations -Wdouble-promotion -Wundef  -Wno-pedantic
-DEBUG_FLAGS	 = -ggdb3 -DDEBUG -D__REVISION__='"$(REVISION)"' 
+DEBUG_FLAGS	 = -ggdb3 -DNDEBUG -D__REVISION__='"$(REVISION)"' 
 CFLAGS 		 = -std=gnu99 $(ARCH_FLAGS) $(LTO_FLAGS) $(WARN_FLAGS) $(DEBUG_FLAGS)
 LDFLAGS		 = -nostartfiles -lnosys -static $(ARCH_FLAGS) $(LTO_FLAGS) $(WARN_FLAGS) $(DEBUG_FLAGS) -Wl,-gc-sections,-Map,main.map -Wl,--cref
 
@@ -28,6 +28,7 @@ OBJS = \
 	vectors.o \
 	boot.o \
 	gpio2.o \
+	serial.o \
 	main.o \
 
 $(OBJS): Makefile $(LD_SCRIPT) stm32f411_devs.ld
@@ -60,7 +61,8 @@ depend:
 
 # DO NOT DELETE
 
-boot.o: STM32F411.h cortex_m4.h
+boot.o: STM32F411.h cortex_m4.h stm32f411_irqn.h
 gpio2.o: gpio2.h STM32F411.h cortex_m4.h
-main.o: STM32F411.h cortex_m4.h
+main.o: STM32F411.h cortex_m4.h stm32f411_irqn.h gpio2.h serial.h
+serial.o: serial.h STM32F411.h cortex_m4.h stm32f411_irqn.h stb_sprintf.h
 vectors.o: STM32F411.h cortex_m4.h

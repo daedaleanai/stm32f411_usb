@@ -35,13 +35,6 @@ void gpioConfig(enum GPIO_Pin pins, enum GPIO_Conf conf) {
 	uint32_t pupd = (conf & 0x0030) >> 4;
 	uint32_t spd  = (conf & 0x0003);
 
-	if (mode == 2) { // AF OUTPUT
-		gpio->AFRL &= maskn(pins & 0xff, 4, 0xf);
-		gpio->AFRL |= maskn(pins & 0xff, 4, af);
-		gpio->AFRH &= maskn((pins>>8) & 0xff, 4, 0xf);
-		gpio->AFRH |= maskn((pins>>8) & 0xff, 4, af);
-	}
-
 	uint32_t msk2 = maskn(pins, 2, 0x3);
 	gpio->MODER   &= ~msk2;
 	gpio->PUPDR   &= ~msk2;
@@ -56,6 +49,13 @@ void gpioConfig(enum GPIO_Pin pins, enum GPIO_Conf conf) {
 	gpio->OSPEEDR |= maskn(pins, 2, spd);
 	gpio->PUPDR   |= maskn(pins, 2, pupd);
 	gpio->MODER   |= maskn(pins, 2, mode);
+
+	if (mode == 2) { // AF OUTPUT
+		gpio->AFRL &= ~maskn(pins & 0xff, 4, 0xf);
+		gpio->AFRL |= maskn(pins & 0xff, 4, af);
+		gpio->AFRH &= ~maskn((pins>>8) & 0xff, 4, 0xf);
+		gpio->AFRH |= maskn((pins>>8) & 0xff, 4, af);
+	}
 }
 
 uint32_t gpioLock(enum GPIO_Pin pins) {

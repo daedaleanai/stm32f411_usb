@@ -1,5 +1,7 @@
 #pragma once
 
+#include "STM32F411.h"
+
 enum IRQn_Type {
 	//  Cortex-M4 Processor Exceptions Numbers
 	IRQ_None             = -16, // 0 position of estack reset pointer
@@ -107,3 +109,7 @@ enum IRQn_Type {
 	IRQ_SPI4               = 84, // SPI4 global Interrupt
 	IRQ_SPI5               = 85, // SPI5 global Interrupt
 };
+
+inline void IRQ_Enable( enum IRQn_Type irqn) { (&NVIC.ISER0)[(((uint32_t)irqn) >> 5UL) & 0x3UL] = 1UL << ((uint32_t)irqn & 0x1FUL); }
+inline void IRQ_Disable(enum IRQn_Type irqn) { (&NVIC.ICER0)[(((uint32_t)irqn) >> 5UL) & 0x3UL] = 1UL << ((uint32_t)irqn & 0x1FUL); }
+

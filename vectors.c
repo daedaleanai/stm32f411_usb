@@ -133,6 +133,7 @@ __attribute__((section(".isr_vector"))) void (*vector_table[])(void) = {
     Reserved_13_Handler,
     PendSV_Handler,
     SysTick_Handler,
+    
 	WWDG_Handler,
 	PVD_Handler,
 	TAMP_STAMP_Handler,
