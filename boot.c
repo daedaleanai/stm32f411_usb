@@ -14,7 +14,6 @@ static inline void systemInit(void) {
 	RCC.PLLCFGR = 0x24003010;   // Documented reset value
 	RCC.CIR = 0;  // disable all rcc interrupts
 }
-#if 0
 
 enum { 
 	HSE_RDY_TIMEOUT = 5000,
@@ -64,6 +63,7 @@ static int setSysClockTo96MHz(void) {
 	return 1;
 }
 
+#if 0
 enum {
 	HSI_VALUE = 16000000,
 	HSE_VALUE = 25000000,
@@ -112,11 +112,11 @@ void Reset_Handler(void) {
 
 	// TODO: as fallback switch to HSI * pli
 	// just keep trying
-#if 0
+
 	while (!setSysClockTo96MHz()) {
 		__NOP();
 	}
-#endif
+
 	main();
 
 	for (;;)
