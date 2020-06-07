@@ -271,7 +271,7 @@ func main() {
 					}
 				}
 				if allsame {
-					w.Fields[0].BitWidth = w.Fields[0].BitOffset
+					w.Fields[0].BitWidth = w.Fields[0].BitOffset + 1
 					w.Fields[0].BitOffset = 0
 					w.Fields[0].Name = t
 					w.Fields[0].Description = "Merged " + w.Fields[0].Description

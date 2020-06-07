@@ -1046,35 +1046,35 @@ struct EXTI_Type {
 
 // EXTI->IMR Interrupt mask register (EXTI_IMR)
 enum {
-	EXTI_IMR_MRX = ((1UL << 22) - 1) << 0, // Merged Interrupt Mask on line 22
+	EXTI_IMR_MRX = ((1UL << 23) - 1) << 0, // Merged Interrupt Mask on line 22
 };
 inline void     exti_imr_set_mrx(struct EXTI_Type* p, uint32_t val) { p->IMR = (p->IMR & ~EXTI_IMR_MRX) | ((val << 0) & EXTI_IMR_MRX); }
 inline uint32_t exti_imr_get_mrx(struct EXTI_Type* p) { return (p->IMR & EXTI_IMR_MRX) >> 0; }
 
 // EXTI->EMR Event mask register (EXTI_EMR)
 enum {
-	EXTI_EMR_MRX = ((1UL << 22) - 1) << 0, // Merged Event Mask on line 22
+	EXTI_EMR_MRX = ((1UL << 23) - 1) << 0, // Merged Event Mask on line 22
 };
 inline void     exti_emr_set_mrx(struct EXTI_Type* p, uint32_t val) { p->EMR = (p->EMR & ~EXTI_EMR_MRX) | ((val << 0) & EXTI_EMR_MRX); }
 inline uint32_t exti_emr_get_mrx(struct EXTI_Type* p) { return (p->EMR & EXTI_EMR_MRX) >> 0; }
 
 // EXTI->RTSR Rising Trigger selection register (EXTI_RTSR)
 enum {
-	EXTI_RTSR_TRX = ((1UL << 22) - 1) << 0, // Merged Rising trigger event configuration of line 22
+	EXTI_RTSR_TRX = ((1UL << 23) - 1) << 0, // Merged Rising trigger event configuration of line 22
 };
 inline void exti_rtsr_set_trx(struct EXTI_Type* p, uint32_t val) { p->RTSR = (p->RTSR & ~EXTI_RTSR_TRX) | ((val << 0) & EXTI_RTSR_TRX); }
 inline uint32_t exti_rtsr_get_trx(struct EXTI_Type* p) { return (p->RTSR & EXTI_RTSR_TRX) >> 0; }
 
 // EXTI->FTSR Falling Trigger selection register (EXTI_FTSR)
 enum {
-	EXTI_FTSR_TRX = ((1UL << 22) - 1) << 0, // Merged Falling trigger event configuration of line 22
+	EXTI_FTSR_TRX = ((1UL << 23) - 1) << 0, // Merged Falling trigger event configuration of line 22
 };
 inline void exti_ftsr_set_trx(struct EXTI_Type* p, uint32_t val) { p->FTSR = (p->FTSR & ~EXTI_FTSR_TRX) | ((val << 0) & EXTI_FTSR_TRX); }
 inline uint32_t exti_ftsr_get_trx(struct EXTI_Type* p) { return (p->FTSR & EXTI_FTSR_TRX) >> 0; }
 
 // EXTI->SWIER Software interrupt event register (EXTI_SWIER)
 enum {
-	EXTI_SWIER_SWIERX = ((1UL << 22) - 1) << 0, // Merged Software Interrupt on line 22
+	EXTI_SWIER_SWIERX = ((1UL << 23) - 1) << 0, // Merged Software Interrupt on line 22
 };
 inline void exti_swier_set_swierx(struct EXTI_Type* p, uint32_t val) {
 	p->SWIER = (p->SWIER & ~EXTI_SWIER_SWIERX) | ((val << 0) & EXTI_SWIER_SWIERX);
@@ -1083,7 +1083,7 @@ inline uint32_t exti_swier_get_swierx(struct EXTI_Type* p) { return (p->SWIER & 
 
 // EXTI->PR Pending register (EXTI_PR)
 enum {
-	EXTI_PR_PRX = ((1UL << 22) - 1) << 0, // Merged Pending bit 22
+	EXTI_PR_PRX = ((1UL << 23) - 1) << 0, // Merged Pending bit 22
 };
 inline void     exti_pr_set_prx(struct EXTI_Type* p, uint32_t val) { p->PR = (p->PR & ~EXTI_PR_PRX) | ((val << 0) & EXTI_PR_PRX); }
 inline uint32_t exti_pr_get_prx(struct EXTI_Type* p) { return (p->PR & EXTI_PR_PRX) >> 0; }
@@ -1331,15 +1331,6 @@ inline uint32_t gpioa_moder_get_moder2(struct GPIOA_Type* p) { return (p->MODER 
 inline uint32_t gpioa_moder_get_moder1(struct GPIOA_Type* p) { return (p->MODER & GPIOA_MODER_MODER1) >> 2; }
 inline uint32_t gpioa_moder_get_moder0(struct GPIOA_Type* p) { return (p->MODER & GPIOA_MODER_MODER0) >> 0; }
 
-// GPIOA->OTYPER GPIO port output type register
-enum {
-	GPIOA_OTYPER_OTX = ((1UL << 15) - 1) << 0, // Merged Port x configuration bits (y = 0..15)
-};
-inline void gpioa_otyper_set_otx(struct GPIOA_Type* p, uint32_t val) {
-	p->OTYPER = (p->OTYPER & ~GPIOA_OTYPER_OTX) | ((val << 0) & GPIOA_OTYPER_OTX);
-}
-inline uint32_t gpioa_otyper_get_otx(struct GPIOA_Type* p) { return (p->OTYPER & GPIOA_OTYPER_OTX) >> 0; }
-
 // GPIOA->OSPEEDR GPIO port output speed register
 enum {
 	GPIOA_OSPEEDR_OSPEEDR15 = ((1UL << 2) - 1) << 30, // Port x configuration bits (y = 0..15)
@@ -1507,19 +1498,6 @@ inline uint32_t gpioa_pupdr_get_pupdr3(struct GPIOA_Type* p) { return (p->PUPDR 
 inline uint32_t gpioa_pupdr_get_pupdr2(struct GPIOA_Type* p) { return (p->PUPDR & GPIOA_PUPDR_PUPDR2) >> 4; }
 inline uint32_t gpioa_pupdr_get_pupdr1(struct GPIOA_Type* p) { return (p->PUPDR & GPIOA_PUPDR_PUPDR1) >> 2; }
 inline uint32_t gpioa_pupdr_get_pupdr0(struct GPIOA_Type* p) { return (p->PUPDR & GPIOA_PUPDR_PUPDR0) >> 0; }
-
-// GPIOA->IDR GPIO port input data register
-enum {
-	GPIOA_IDR_IDRX = ((1UL << 15) - 1) << 0, // Merged Port input data (y = 0..15)
-};
-inline uint32_t gpioa_idr_get_idrx(struct GPIOA_Type* p) { return (p->IDR & GPIOA_IDR_IDRX) >> 0; }
-
-// GPIOA->ODR GPIO port output data register
-enum {
-	GPIOA_ODR_ODRX = ((1UL << 15) - 1) << 0, // Merged Port output data (y = 0..15)
-};
-inline void gpioa_odr_set_odrx(struct GPIOA_Type* p, uint32_t val) { p->ODR = (p->ODR & ~GPIOA_ODR_ODRX) | ((val << 0) & GPIOA_ODR_ODRX); }
-inline uint32_t gpioa_odr_get_odrx(struct GPIOA_Type* p) { return (p->ODR & GPIOA_ODR_ODRX) >> 0; }
 
 // GPIOA->BSRR GPIO port bit set/reset register
 enum {
