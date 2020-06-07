@@ -27,6 +27,7 @@ stm32f411_devs.ld: tools/genstruct.go tools/genld.tmpl STM32F411.svd
 OBJS = \
 	vectors.o \
 	boot.o \
+	gpio2.o \
 	main.o \
 
 $(OBJS): Makefile $(LD_SCRIPT) stm32f411_devs.ld
@@ -60,5 +61,6 @@ depend:
 # DO NOT DELETE
 
 boot.o: STM32F411.h cortex_m4.h
+gpio2.o: gpio2.h STM32F411.h cortex_m4.h
 main.o: STM32F411.h cortex_m4.h
 vectors.o: STM32F411.h cortex_m4.h
