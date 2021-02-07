@@ -29,6 +29,11 @@ OBJS = \
 	boot.o \
 	gpio2.o \
 	serial.o \
+    usb/usb_f107.o \
+    usb/usb.o \
+    usb/usb_control.o \
+    usb/usb_standard.o \
+	cdcacm.o \
 	main.o \
 
 $(OBJS): Makefile $(LD_SCRIPT) stm32f411_devs.ld

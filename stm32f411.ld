@@ -10,6 +10,8 @@ INCLUDE stm32f411_devs.ld
 
 GPIO_ALL = GPIOA;
 UNIQUE_DEVICE_ID = 0x1FFF7A10;  /* ref manual 24.1 */
+OTG_FS_FIFO = OTG_FS_GLOBAL + 0x1000;
+
 
 
 /* Highest address of the user mode stack */

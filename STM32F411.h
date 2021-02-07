@@ -12,37 +12,37 @@
 
 /* Analog-to-digital converter */
 struct ADC1_Type {
-	__IO uint8_t SR;            // @0 status register
-	uint8_t      RESERVED0[3];  // @1
-	__IO uint32_t CR1;          // @4 control register 1
-	__IO uint32_t CR2;          // @8 control register 2
-	__IO uint32_t SMPR1;        // @12 sample time register 1
-	__IO uint32_t SMPR2;        // @16 sample time register 2
-	__IO uint16_t JOFR1;        // @20 injected channel data offset register x
-	uint8_t       RESERVED1[2]; // @22
-	__IO uint16_t JOFR2;        // @24 injected channel data offset register x
-	uint8_t       RESERVED2[2]; // @26
-	__IO uint16_t JOFR3;        // @28 injected channel data offset register x
-	uint8_t       RESERVED3[2]; // @30
-	__IO uint16_t JOFR4;        // @32 injected channel data offset register x
-	uint8_t       RESERVED4[2]; // @34
-	__IO uint16_t HTR;          // @36 watchdog higher threshold register
-	uint8_t       RESERVED5[2]; // @38
-	__IO uint16_t LTR;          // @40 watchdog lower threshold register
-	uint8_t       RESERVED6[2]; // @42
-	__IO uint32_t SQR1;         // @44 regular sequence register 1
-	__IO uint32_t SQR2;         // @48 regular sequence register 2
-	__IO uint32_t SQR3;         // @52 regular sequence register 3
-	__IO uint32_t JSQR;         // @56 injected sequence register
-	__I uint16_t JDR1;          // @60 injected data register x
-	uint8_t      RESERVED7[2];  // @62
-	__I uint16_t JDR2;          // @64 injected data register x
-	uint8_t      RESERVED8[2];  // @66
-	__I uint16_t JDR3;          // @68 injected data register x
-	uint8_t      RESERVED9[2];  // @70
-	__I uint16_t JDR4;          // @72 injected data register x
-	uint8_t      RESERVED10[2]; // @74
-	__I uint16_t DR;            // @76 regular data register
+	__IO uint8_t  SR;            // @0 status register
+	uint8_t       RESERVED0[3];  // @1
+	__IO uint32_t CR1;           // @4 control register 1
+	__IO uint32_t CR2;           // @8 control register 2
+	__IO uint32_t SMPR1;         // @12 sample time register 1
+	__IO uint32_t SMPR2;         // @16 sample time register 2
+	__IO uint16_t JOFR1;         // @20 injected channel data offset register x
+	uint8_t       RESERVED1[2];  // @22
+	__IO uint16_t JOFR2;         // @24 injected channel data offset register x
+	uint8_t       RESERVED2[2];  // @26
+	__IO uint16_t JOFR3;         // @28 injected channel data offset register x
+	uint8_t       RESERVED3[2];  // @30
+	__IO uint16_t JOFR4;         // @32 injected channel data offset register x
+	uint8_t       RESERVED4[2];  // @34
+	__IO uint16_t HTR;           // @36 watchdog higher threshold register
+	uint8_t       RESERVED5[2];  // @38
+	__IO uint16_t LTR;           // @40 watchdog lower threshold register
+	uint8_t       RESERVED6[2];  // @42
+	__IO uint32_t SQR1;          // @44 regular sequence register 1
+	__IO uint32_t SQR2;          // @48 regular sequence register 2
+	__IO uint32_t SQR3;          // @52 regular sequence register 3
+	__IO uint32_t JSQR;          // @56 injected sequence register
+	__I uint16_t  JDR1;          // @60 injected data register x
+	uint8_t       RESERVED7[2];  // @62
+	__I uint16_t  JDR2;          // @64 injected data register x
+	uint8_t       RESERVED8[2];  // @66
+	__I uint16_t  JDR3;          // @68 injected data register x
+	uint8_t       RESERVED9[2];  // @70
+	__I uint16_t  JDR4;          // @72 injected data register x
+	uint8_t       RESERVED10[2]; // @74
+	__I uint16_t  DR;            // @76 regular data register
 };
 
 // ADC1->SR status register
@@ -259,7 +259,7 @@ inline uint32_t adc1_jsqr_get_jsq1(struct ADC1_Type* p) { return (p->JSQR & ADC1
 
 /* ADC common registers */
 struct ADC_COMMON_Type {
-	__I uint32_t CSR;  // @0 ADC Common status register
+	__I uint32_t  CSR; // @0 ADC Common status register
 	__IO uint32_t CCR; // @4 ADC common control register
 };
 
@@ -309,10 +309,10 @@ inline uint32_t adc_common_ccr_get_delay(struct ADC_COMMON_Type* p) { return (p-
 
 /* Cryptographic processor */
 struct CRC_Type {
-	__IO uint32_t DR;          // @0 Data register
-	__IO uint8_t IDR;          // @4 Independent Data register
-	uint8_t      RESERVED0[3]; // @5
-	__O uint8_t CR;            // @8 Control register
+	__IO uint32_t DR;           // @0 Data register
+	__IO uint8_t  IDR;          // @4 Independent Data register
+	uint8_t       RESERVED0[3]; // @5
+	__O uint8_t   CR;           // @8 Control register
 };
 
 // CRC->CR Control register
@@ -322,9 +322,9 @@ enum {
 
 /* Debug support */
 struct DBG_Type {
-	__I uint32_t DBGMCU_IDCODE;   // @0 IDCODE
-	__IO uint8_t DBGMCU_CR;       // @4 Control Register
-	uint8_t      RESERVED0[3];    // @5
+	__I uint32_t  DBGMCU_IDCODE;  // @0 IDCODE
+	__IO uint8_t  DBGMCU_CR;      // @4 Control Register
+	uint8_t       RESERVED0[3];   // @5
 	__IO uint32_t DBGMCU_APB1_FZ; // @8 Debug MCU APB1 Freeze registe
 	__IO uint32_t DBGMCU_APB2_FZ; // @12 Debug MCU APB2 Freeze registe
 };
@@ -374,73 +374,73 @@ enum {
 
 /* DMA controller */
 struct DMA2_Type {
-	__I uint32_t LISR;           // @0 low interrupt status register
-	__I uint32_t HISR;           // @4 high interrupt status register
-	__O uint32_t LIFCR;          // @8 low interrupt flag clear register
-	__O uint32_t HIFCR;          // @12 high interrupt flag clear register
+	__I uint32_t  LISR;          // @0 low interrupt status register
+	__I uint32_t  HISR;          // @4 high interrupt status register
+	__O uint32_t  LIFCR;         // @8 low interrupt flag clear register
+	__O uint32_t  HIFCR;         // @12 high interrupt flag clear register
 	__IO uint32_t S0CR;          // @16 stream x configuration register
 	__IO uint16_t S0NDTR;        // @20 stream x number of data register
 	uint8_t       RESERVED0[2];  // @22
 	__IO uint32_t S0PAR;         // @24 stream x peripheral address register
 	__IO uint32_t S0M0AR;        // @28 stream x memory 0 address register
 	__IO uint32_t S0M1AR;        // @32 stream x memory 1 address register
-	__IO uint8_t S0FCR;          // @36 stream x FIFO control register
-	uint8_t      RESERVED1[3];   // @37
+	__IO uint8_t  S0FCR;         // @36 stream x FIFO control register
+	uint8_t       RESERVED1[3];  // @37
 	__IO uint32_t S1CR;          // @40 stream x configuration register
 	__IO uint16_t S1NDTR;        // @44 stream x number of data register
 	uint8_t       RESERVED2[2];  // @46
 	__IO uint32_t S1PAR;         // @48 stream x peripheral address register
 	__IO uint32_t S1M0AR;        // @52 stream x memory 0 address register
 	__IO uint32_t S1M1AR;        // @56 stream x memory 1 address register
-	__IO uint8_t S1FCR;          // @60 stream x FIFO control register
-	uint8_t      RESERVED3[3];   // @61
+	__IO uint8_t  S1FCR;         // @60 stream x FIFO control register
+	uint8_t       RESERVED3[3];  // @61
 	__IO uint32_t S2CR;          // @64 stream x configuration register
 	__IO uint16_t S2NDTR;        // @68 stream x number of data register
 	uint8_t       RESERVED4[2];  // @70
 	__IO uint32_t S2PAR;         // @72 stream x peripheral address register
 	__IO uint32_t S2M0AR;        // @76 stream x memory 0 address register
 	__IO uint32_t S2M1AR;        // @80 stream x memory 1 address register
-	__IO uint8_t S2FCR;          // @84 stream x FIFO control register
-	uint8_t      RESERVED5[3];   // @85
+	__IO uint8_t  S2FCR;         // @84 stream x FIFO control register
+	uint8_t       RESERVED5[3];  // @85
 	__IO uint32_t S3CR;          // @88 stream x configuration register
 	__IO uint16_t S3NDTR;        // @92 stream x number of data register
 	uint8_t       RESERVED6[2];  // @94
 	__IO uint32_t S3PAR;         // @96 stream x peripheral address register
 	__IO uint32_t S3M0AR;        // @100 stream x memory 0 address register
 	__IO uint32_t S3M1AR;        // @104 stream x memory 1 address register
-	__IO uint8_t S3FCR;          // @108 stream x FIFO control register
-	uint8_t      RESERVED7[3];   // @109
+	__IO uint8_t  S3FCR;         // @108 stream x FIFO control register
+	uint8_t       RESERVED7[3];  // @109
 	__IO uint32_t S4CR;          // @112 stream x configuration register
 	__IO uint16_t S4NDTR;        // @116 stream x number of data register
 	uint8_t       RESERVED8[2];  // @118
 	__IO uint32_t S4PAR;         // @120 stream x peripheral address register
 	__IO uint32_t S4M0AR;        // @124 stream x memory 0 address register
 	__IO uint32_t S4M1AR;        // @128 stream x memory 1 address register
-	__IO uint8_t S4FCR;          // @132 stream x FIFO control register
-	uint8_t      RESERVED9[3];   // @133
+	__IO uint8_t  S4FCR;         // @132 stream x FIFO control register
+	uint8_t       RESERVED9[3];  // @133
 	__IO uint32_t S5CR;          // @136 stream x configuration register
 	__IO uint16_t S5NDTR;        // @140 stream x number of data register
 	uint8_t       RESERVED10[2]; // @142
 	__IO uint32_t S5PAR;         // @144 stream x peripheral address register
 	__IO uint32_t S5M0AR;        // @148 stream x memory 0 address register
 	__IO uint32_t S5M1AR;        // @152 stream x memory 1 address register
-	__IO uint8_t S5FCR;          // @156 stream x FIFO control register
-	uint8_t      RESERVED11[3];  // @157
+	__IO uint8_t  S5FCR;         // @156 stream x FIFO control register
+	uint8_t       RESERVED11[3]; // @157
 	__IO uint32_t S6CR;          // @160 stream x configuration register
 	__IO uint16_t S6NDTR;        // @164 stream x number of data register
 	uint8_t       RESERVED12[2]; // @166
 	__IO uint32_t S6PAR;         // @168 stream x peripheral address register
 	__IO uint32_t S6M0AR;        // @172 stream x memory 0 address register
 	__IO uint32_t S6M1AR;        // @176 stream x memory 1 address register
-	__IO uint8_t S6FCR;          // @180 stream x FIFO control register
-	uint8_t      RESERVED13[3];  // @181
+	__IO uint8_t  S6FCR;         // @180 stream x FIFO control register
+	uint8_t       RESERVED13[3]; // @181
 	__IO uint32_t S7CR;          // @184 stream x configuration register
 	__IO uint16_t S7NDTR;        // @188 stream x number of data register
 	uint8_t       RESERVED14[2]; // @190
 	__IO uint32_t S7PAR;         // @192 stream x peripheral address register
 	__IO uint32_t S7M0AR;        // @196 stream x memory 0 address register
 	__IO uint32_t S7M1AR;        // @200 stream x memory 1 address register
-	__IO uint8_t S7FCR;          // @204 stream x FIFO control register
+	__IO uint8_t  S7FCR;         // @204 stream x FIFO control register
 };
 
 // DMA2->LISR low interrupt status register
@@ -1092,8 +1092,8 @@ inline uint32_t exti_pr_get_prx(struct EXTI_Type* p) { return (p->PR & EXTI_PR_P
 struct FLASH_Type {
 	__IO uint16_t ACR;          // @0 Flash access control register
 	uint8_t       RESERVED0[2]; // @2
-	__O uint32_t KEYR;          // @4 Flash key register
-	__O uint32_t OPTKEYR;       // @8 Flash option key register
+	__O uint32_t  KEYR;         // @4 Flash key register
+	__O uint32_t  OPTKEYR;      // @8 Flash option key register
 	__IO uint32_t SR;           // @12 Status register
 	__IO uint32_t CR;           // @16 Control register
 	__IO uint32_t OPTCR;        // @20 Flash option control register
@@ -1237,11 +1237,11 @@ struct GPIOA_Type {
 	uint8_t       RESERVED0[2]; // @6
 	__IO uint32_t OSPEEDR;      // @8 GPIO port output speed register
 	__IO uint32_t PUPDR;        // @12 GPIO port pull-up/pull-down register
-	__I uint16_t IDR;           // @16 GPIO port input data register
-	uint8_t      RESERVED1[2];  // @18
+	__I uint16_t  IDR;          // @16 GPIO port input data register
+	uint8_t       RESERVED1[2]; // @18
 	__IO uint16_t ODR;          // @20 GPIO port output data register
 	uint8_t       RESERVED2[2]; // @22
-	__O uint32_t BSRR;          // @24 GPIO port bit set/reset register
+	__O uint32_t  BSRR;         // @24 GPIO port bit set/reset register
 	__IO uint32_t LCKR;         // @28 GPIO port configuration lock register
 	__IO uint32_t AFRL;         // @32 GPIO alternate function low register
 	__IO uint32_t AFRH;         // @36 GPIO alternate function high register
@@ -1652,17 +1652,17 @@ struct I2C3_Type {
 	uint8_t       RESERVED1[2]; // @6
 	__IO uint16_t OAR1;         // @8 Own address register 1
 	uint8_t       RESERVED2[2]; // @10
-	__IO uint8_t OAR2;          // @12 Own address register 2
-	uint8_t      RESERVED3[3];  // @13
-	__IO uint8_t DR;            // @16 Data register
-	uint8_t      RESERVED4[3];  // @17
+	__IO uint8_t  OAR2;         // @12 Own address register 2
+	uint8_t       RESERVED3[3]; // @13
+	__IO uint8_t  DR;           // @16 Data register
+	uint8_t       RESERVED4[3]; // @17
 	__IO uint16_t SR1;          // @20 Status register 1
 	uint8_t       RESERVED5[2]; // @22
-	__I uint16_t SR2;           // @24 Status register 2
-	uint8_t      RESERVED6[2];  // @26
+	__I uint16_t  SR2;          // @24 Status register 2
+	uint8_t       RESERVED6[2]; // @26
 	__IO uint16_t CCR;          // @28 Clock control register
 	uint8_t       RESERVED7[2]; // @30
-	__IO uint8_t TRISE;         // @32 TRISE register
+	__IO uint8_t  TRISE;        // @32 TRISE register
 };
 
 // I2C3->CR1 Control register 1
@@ -1770,18 +1770,18 @@ inline uint32_t i2c3_trise_get_trise(struct I2C3_Type* p) { return (p->TRISE & I
 struct I2S2ext_Type {
 	__IO uint16_t CR1;          // @0 control register 1
 	uint8_t       RESERVED0[2]; // @2
-	__IO uint8_t CR2;           // @4 control register 2
-	uint8_t      RESERVED1[3];  // @5
+	__IO uint8_t  CR2;          // @4 control register 2
+	uint8_t       RESERVED1[3]; // @5
 	__IO uint16_t SR;           // @8 status register
 	uint8_t       RESERVED2[2]; // @10
 	__IO uint16_t DR;           // @12 data register
 	uint8_t       RESERVED3[2]; // @14
 	__IO uint16_t CRCPR;        // @16 CRC polynomial register
 	uint8_t       RESERVED4[2]; // @18
-	__I uint16_t RXCRCR;        // @20 RX CRC register
-	uint8_t      RESERVED5[2];  // @22
-	__I uint16_t TXCRCR;        // @24 TX CRC register
-	uint8_t      RESERVED6[2];  // @26
+	__I uint16_t  RXCRCR;       // @20 RX CRC register
+	uint8_t       RESERVED5[2]; // @22
+	__I uint16_t  TXCRCR;       // @24 TX CRC register
+	uint8_t       RESERVED6[2]; // @26
 	__IO uint16_t I2SCFGR;      // @28 I2S configuration register
 	uint8_t       RESERVED7[2]; // @30
 	__IO uint16_t I2SPR;        // @32 I2S prescaler register
@@ -1870,13 +1870,13 @@ inline uint32_t i2s2ext_i2spr_get_i2sdiv(struct I2S2ext_Type* p) { return (p->I2
 
 /* Independent watchdog */
 struct IWDG_Type {
-	__O uint16_t KR;            // @0 Key register
-	uint8_t      RESERVED0[2];  // @2
-	__IO uint8_t PR;            // @4 Prescaler register
-	uint8_t      RESERVED1[3];  // @5
+	__O uint16_t  KR;           // @0 Key register
+	uint8_t       RESERVED0[2]; // @2
+	__IO uint8_t  PR;           // @4 Prescaler register
+	uint8_t       RESERVED1[3]; // @5
 	__IO uint16_t RLR;          // @8 Reload register
 	uint8_t       RESERVED2[2]; // @10
-	__I uint8_t SR;             // @12 Status register
+	__I uint8_t   SR;           // @12 Status register
 };
 
 // IWDG->PR Prescaler register
@@ -1901,13 +1901,13 @@ enum {
 
 /* Memory protection unit */
 struct MPU_Type {
-	__I uint32_t MPU_TYPER;    // @0 MPU type register
-	__I uint8_t MPU_CTRL;      // @4 MPU control register
-	uint8_t     RESERVED0[3];  // @5
-	__IO uint8_t MPU_RNR;      // @8 MPU region number register
-	uint8_t      RESERVED1[3]; // @9
-	__IO uint32_t MPU_RBAR;    // @12 MPU region base address register
-	__IO uint32_t MPU_RASR;    // @16 MPU region attribute and size register
+	__I uint32_t  MPU_TYPER;    // @0 MPU type register
+	__I uint8_t   MPU_CTRL;     // @4 MPU control register
+	uint8_t       RESERVED0[3]; // @5
+	__IO uint8_t  MPU_RNR;      // @8 MPU region number register
+	uint8_t       RESERVED1[3]; // @9
+	__IO uint32_t MPU_RBAR;     // @12 MPU region base address register
+	__IO uint32_t MPU_RASR;     // @16 MPU region attribute and size register
 };
 
 // MPU->MPU_TYPER MPU type register
@@ -1988,10 +1988,10 @@ struct NVIC_Type {
 	__IO uint32_t ICPR1;          // @388 Interrupt Clear-Pending Register
 	__IO uint32_t ICPR2;          // @392 Interrupt Clear-Pending Register
 	uint8_t       RESERVED3[116]; // @396
-	__I uint32_t IABR0;           // @512 Interrupt Active Bit Register
-	__I uint32_t IABR1;           // @516 Interrupt Active Bit Register
-	__I uint32_t IABR2;           // @520 Interrupt Active Bit Register
-	uint8_t      RESERVED4[244];  // @524
+	__I uint32_t  IABR0;          // @512 Interrupt Active Bit Register
+	__I uint32_t  IABR1;          // @516 Interrupt Active Bit Register
+	__I uint32_t  IABR2;          // @520 Interrupt Active Bit Register
+	uint8_t       RESERVED4[244]; // @524
 	__IO uint32_t IPR0;           // @768 Interrupt Priority Register
 	__IO uint32_t IPR1;           // @772 Interrupt Priority Register
 	__IO uint32_t IPR2;           // @776 Interrupt Priority Register
@@ -2510,179 +2510,171 @@ inline uint32_t nvic_stir_stir_get_intid(struct NVIC_STIR_Type* p) { return (p->
 
 /* USB on the go full speed */
 struct OTG_FS_DEVICE_Type {
-	__IO uint16_t FS_DCFG;        // @0 OTG_FS device configuration register (OTG_FS_DCFG)
-	uint8_t       RESERVED0[2];   // @2
-	__IO uint16_t FS_DCTL;        // @4 OTG_FS device control register (OTG_FS_DCTL)
-	uint8_t       RESERVED1[2];   // @6
-	__I uint32_t FS_DSTS;         // @8 OTG_FS device status register (OTG_FS_DSTS)
-	uint8_t      RESERVED2[4];    // @12
-	__IO uint8_t FS_DIEPMSK;      // @16 OTG_FS device IN endpoint common interrupt mask register (OTG_FS_DIEPMSK)
-	uint8_t      RESERVED3[3];    // @17
-	__IO uint8_t FS_DOEPMSK;      // @20 OTG_FS device OUT endpoint common interrupt mask register (OTG_FS_DOEPMSK)
-	uint8_t      RESERVED4[3];    // @21
-	__I uint32_t FS_DAINT;        // @24 OTG_FS device all endpoints interrupt register (OTG_FS_DAINT)
-	__IO uint32_t FS_DAINTMSK;    // @28 OTG_FS all endpoints interrupt mask register (OTG_FS_DAINTMSK)
-	uint8_t       RESERVED5[8];   // @32
-	__IO uint16_t DVBUSDIS;       // @40 OTG_FS device VBUS discharge time register
-	uint8_t       RESERVED6[2];   // @42
-	__IO uint16_t DVBUSPULSE;     // @44 OTG_FS device VBUS pulsing time register
-	uint8_t       RESERVED7[6];   // @46
-	__IO uint16_t DIEPEMPMSK;     // @52 OTG_FS device IN endpoint FIFO empty interrupt mask register
-	uint8_t       RESERVED8[202]; // @54
-	__IO uint32_t FS_DIEPCTL0;    // @256 OTG_FS device control IN endpoint 0 control register (OTG_FS_DIEPCTL0)
-	uint8_t       RESERVED9[4];   // @260
-	__IO uint8_t DIEPINT0;        // @264 device endpoint-x interrupt register
-	uint8_t      RESERVED10[7];   // @265
-	__IO uint32_t DIEPTSIZ0;      // @272 device endpoint-0 transfer size register
-	uint8_t       RESERVED11[4];  // @276
-	__I uint16_t DTXFSTS0;        // @280 OTG_FS device IN endpoint transmit FIFO status register
-	uint8_t      RESERVED12[6];   // @282
-	__IO uint32_t DIEPCTL1;       // @288 OTG device endpoint-1 control register
-	uint8_t       RESERVED13[4];  // @292
-	__IO uint8_t DIEPINT1;        // @296 device endpoint-1 interrupt register
-	uint8_t      RESERVED14[7];   // @297
-	__IO uint32_t DIEPTSIZ1;      // @304 device endpoint-1 transfer size register
-	uint8_t       RESERVED15[4];  // @308
-	__I uint16_t DTXFSTS1;        // @312 OTG_FS device IN endpoint transmit FIFO status register
-	uint8_t      RESERVED16[6];   // @314
-	__IO uint32_t DIEPCTL2;       // @320 OTG device endpoint-2 control register
-	uint8_t       RESERVED17[4];  // @324
-	__IO uint8_t DIEPINT2;        // @328 device endpoint-2 interrupt register
-	uint8_t      RESERVED18[7];   // @329
-	__IO uint32_t DIEPTSIZ2;      // @336 device endpoint-2 transfer size register
-	uint8_t       RESERVED19[4];  // @340
-	__I uint16_t DTXFSTS2;        // @344 OTG_FS device IN endpoint transmit FIFO status register
-	uint8_t      RESERVED20[6];   // @346
-	__IO uint32_t DIEPCTL3;       // @352 OTG device endpoint-3 control register
-	uint8_t       RESERVED21[4];  // @356
-	__IO uint8_t DIEPINT3;        // @360 device endpoint-3 interrupt register
-	uint8_t      RESERVED22[7];   // @361
-	__IO uint32_t DIEPTSIZ3;      // @368 device endpoint-3 transfer size register
-	uint8_t       RESERVED23[4];  // @372
-	__I uint16_t DTXFSTS3;        // @376 OTG_FS device IN endpoint transmit FIFO status register
-	uint8_t      RESERVED24[390]; // @378
-	__IO uint32_t DOEPCTL0;       // @768 device endpoint-0 control register
-	uint8_t       RESERVED25[4];  // @772
-	__IO uint8_t DOEPINT0;        // @776 device endpoint-0 interrupt register
-	uint8_t      RESERVED26[7];   // @777
-	__IO uint32_t DOEPTSIZ0;      // @784 device OUT endpoint-0 transfer size register
-	uint8_t       RESERVED27[12]; // @788
-	__IO uint32_t DOEPCTL1;       // @800 device endpoint-1 control register
-	uint8_t       RESERVED28[4];  // @804
-	__IO uint8_t DOEPINT1;        // @808 device endpoint-1 interrupt register
-	uint8_t      RESERVED29[7];   // @809
-	__IO uint32_t DOEPTSIZ1;      // @816 device OUT endpoint-1 transfer size register
-	uint8_t       RESERVED30[12]; // @820
-	__IO uint32_t DOEPCTL2;       // @832 device endpoint-2 control register
-	uint8_t       RESERVED31[4];  // @836
-	__IO uint8_t DOEPINT2;        // @840 device endpoint-2 interrupt register
-	uint8_t      RESERVED32[7];   // @841
-	__IO uint32_t DOEPTSIZ2;      // @848 device OUT endpoint-2 transfer size register
-	uint8_t       RESERVED33[12]; // @852
-	__IO uint32_t DOEPCTL3;       // @864 device endpoint-3 control register
-	uint8_t       RESERVED34[4];  // @868
-	__IO uint8_t DOEPINT3;        // @872 device endpoint-3 interrupt register
-	uint8_t      RESERVED35[7];   // @873
-	__IO uint32_t DOEPTSIZ3;      // @880 device OUT endpoint-3 transfer size register
+	__IO uint16_t DCFG;            // @0 OTG_FS device configuration register (OTG_FS_DCFG)
+	uint8_t       RESERVED0[2];    // @2
+	__IO uint16_t DCTL;            // @4 OTG_FS device control register (OTG_FS_DCTL)
+	uint8_t       RESERVED1[2];    // @6
+	__I uint32_t  DSTS;            // @8 OTG_FS device status register (OTG_FS_DSTS)
+	uint8_t       RESERVED2[4];    // @12
+	__IO uint8_t  DIEPMSK;         // @16 OTG_FS device IN endpoint common interrupt mask register (OTG_FS_DIEPMSK)
+	uint8_t       RESERVED3[3];    // @17
+	__IO uint8_t  DOEPMSK;         // @20 OTG_FS device OUT endpoint common interrupt mask register (OTG_FS_DOEPMSK)
+	uint8_t       RESERVED4[3];    // @21
+	__I uint32_t  DAINT;           // @24 OTG_FS device all endpoints interrupt register (OTG_FS_DAINT)
+	__IO uint32_t DAINTMSK;        // @28 OTG_FS all endpoints interrupt mask register (OTG_FS_DAINTMSK)
+	uint8_t       RESERVED5[8];    // @32
+	__IO uint16_t DVBUSDIS;        // @40 OTG_FS device VBUS discharge time register
+	uint8_t       RESERVED6[2];    // @42
+	__IO uint16_t DVBUSPULSE;      // @44 OTG_FS device VBUS pulsing time register
+	uint8_t       RESERVED7[6];    // @46
+	__IO uint16_t DIEPEMPMSK;      // @52 OTG_FS device IN endpoint FIFO empty interrupt mask register
+	uint8_t       RESERVED8[202];  // @54
+	__IO uint32_t DIEPCTL0;        // @256 OTG_FS device control IN endpoint 0 control register (OTG_FS_DIEPCTL0)
+	uint8_t       RESERVED9[4];    // @260
+	__IO uint8_t  DIEPINT0;        // @264 device endpoint-x interrupt register
+	uint8_t       RESERVED10[7];   // @265
+	__IO uint32_t DIEPTSIZ0;       // @272 device endpoint-0 transfer size register
+	uint8_t       RESERVED11[4];   // @276
+	__I uint16_t  DTXFSTS0;        // @280 OTG_FS device IN endpoint transmit FIFO status register
+	uint8_t       RESERVED12[6];   // @282
+	__IO uint32_t DIEPCTL1;        // @288 OTG device endpoint-1 control register
+	uint8_t       RESERVED13[4];   // @292
+	__IO uint8_t  DIEPINT1;        // @296 device endpoint-1 interrupt register
+	uint8_t       RESERVED14[7];   // @297
+	__IO uint32_t DIEPTSIZ1;       // @304 device endpoint-1 transfer size register
+	uint8_t       RESERVED15[4];   // @308
+	__I uint16_t  DTXFSTS1;        // @312 OTG_FS device IN endpoint transmit FIFO status register
+	uint8_t       RESERVED16[6];   // @314
+	__IO uint32_t DIEPCTL2;        // @320 OTG device endpoint-2 control register
+	uint8_t       RESERVED17[4];   // @324
+	__IO uint8_t  DIEPINT2;        // @328 device endpoint-2 interrupt register
+	uint8_t       RESERVED18[7];   // @329
+	__IO uint32_t DIEPTSIZ2;       // @336 device endpoint-2 transfer size register
+	uint8_t       RESERVED19[4];   // @340
+	__I uint16_t  DTXFSTS2;        // @344 OTG_FS device IN endpoint transmit FIFO status register
+	uint8_t       RESERVED20[6];   // @346
+	__IO uint32_t DIEPCTL3;        // @352 OTG device endpoint-3 control register
+	uint8_t       RESERVED21[4];   // @356
+	__IO uint8_t  DIEPINT3;        // @360 device endpoint-3 interrupt register
+	uint8_t       RESERVED22[7];   // @361
+	__IO uint32_t DIEPTSIZ3;       // @368 device endpoint-3 transfer size register
+	uint8_t       RESERVED23[4];   // @372
+	__I uint16_t  DTXFSTS3;        // @376 OTG_FS device IN endpoint transmit FIFO status register
+	uint8_t       RESERVED24[390]; // @378
+	__IO uint32_t DOEPCTL0;        // @768 device endpoint-0 control register
+	uint8_t       RESERVED25[4];   // @772
+	__IO uint8_t  DOEPINT0;        // @776 device endpoint-0 interrupt register
+	uint8_t       RESERVED26[7];   // @777
+	__IO uint32_t DOEPTSIZ0;       // @784 device OUT endpoint-0 transfer size register
+	uint8_t       RESERVED27[12];  // @788
+	__IO uint32_t DOEPCTL1;        // @800 device endpoint-1 control register
+	uint8_t       RESERVED28[4];   // @804
+	__IO uint8_t  DOEPINT1;        // @808 device endpoint-1 interrupt register
+	uint8_t       RESERVED29[7];   // @809
+	__IO uint32_t DOEPTSIZ1;       // @816 device OUT endpoint-1 transfer size register
+	uint8_t       RESERVED30[12];  // @820
+	__IO uint32_t DOEPCTL2;        // @832 device endpoint-2 control register
+	uint8_t       RESERVED31[4];   // @836
+	__IO uint8_t  DOEPINT2;        // @840 device endpoint-2 interrupt register
+	uint8_t       RESERVED32[7];   // @841
+	__IO uint32_t DOEPTSIZ2;       // @848 device OUT endpoint-2 transfer size register
+	uint8_t       RESERVED33[12];  // @852
+	__IO uint32_t DOEPCTL3;        // @864 device endpoint-3 control register
+	uint8_t       RESERVED34[4];   // @868
+	__IO uint8_t  DOEPINT3;        // @872 device endpoint-3 interrupt register
+	uint8_t       RESERVED35[7];   // @873
+	__IO uint32_t DOEPTSIZ3;       // @880 device OUT endpoint-3 transfer size register
 };
 
-// OTG_FS_DEVICE->FS_DCFG OTG_FS device configuration register (OTG_FS_DCFG)
+// OTG_FS_DEVICE->DCFG OTG_FS device configuration register (OTG_FS_DCFG)
 enum {
-	OTG_FS_DEVICE_FS_DCFG_PFIVL    = ((1UL << 2) - 1) << 11, // Periodic frame interval
-	OTG_FS_DEVICE_FS_DCFG_DAD      = ((1UL << 7) - 1) << 4,  // Device address
-	OTG_FS_DEVICE_FS_DCFG_NZLSOHSK = 1UL << 2,               // Non-zero-length status OUT handshake
-	OTG_FS_DEVICE_FS_DCFG_DSPD     = ((1UL << 2) - 1) << 0,  // Device speed
+	OTG_FS_DEVICE_DCFG_PFIVL    = ((1UL << 2) - 1) << 11, // Periodic frame interval
+	OTG_FS_DEVICE_DCFG_DAD      = ((1UL << 7) - 1) << 4,  // Device address
+	OTG_FS_DEVICE_DCFG_NZLSOHSK = 1UL << 2,               // Non-zero-length status OUT handshake
+	OTG_FS_DEVICE_DCFG_DSPD     = ((1UL << 2) - 1) << 0,  // Device speed
 };
-inline void otg_fs_device_fs_dcfg_set_pfivl(struct OTG_FS_DEVICE_Type* p, uint32_t val) {
-	p->FS_DCFG = (p->FS_DCFG & ~OTG_FS_DEVICE_FS_DCFG_PFIVL) | ((val << 11) & OTG_FS_DEVICE_FS_DCFG_PFIVL);
+inline void otg_fs_device_dcfg_set_pfivl(struct OTG_FS_DEVICE_Type* p, uint32_t val) {
+	p->DCFG = (p->DCFG & ~OTG_FS_DEVICE_DCFG_PFIVL) | ((val << 11) & OTG_FS_DEVICE_DCFG_PFIVL);
 }
-inline void otg_fs_device_fs_dcfg_set_dad(struct OTG_FS_DEVICE_Type* p, uint32_t val) {
-	p->FS_DCFG = (p->FS_DCFG & ~OTG_FS_DEVICE_FS_DCFG_DAD) | ((val << 4) & OTG_FS_DEVICE_FS_DCFG_DAD);
+inline void otg_fs_device_dcfg_set_dad(struct OTG_FS_DEVICE_Type* p, uint32_t val) {
+	p->DCFG = (p->DCFG & ~OTG_FS_DEVICE_DCFG_DAD) | ((val << 4) & OTG_FS_DEVICE_DCFG_DAD);
 }
-inline void otg_fs_device_fs_dcfg_set_dspd(struct OTG_FS_DEVICE_Type* p, uint32_t val) {
-	p->FS_DCFG = (p->FS_DCFG & ~OTG_FS_DEVICE_FS_DCFG_DSPD) | ((val << 0) & OTG_FS_DEVICE_FS_DCFG_DSPD);
+inline void otg_fs_device_dcfg_set_dspd(struct OTG_FS_DEVICE_Type* p, uint32_t val) {
+	p->DCFG = (p->DCFG & ~OTG_FS_DEVICE_DCFG_DSPD) | ((val << 0) & OTG_FS_DEVICE_DCFG_DSPD);
 }
-inline uint32_t otg_fs_device_fs_dcfg_get_pfivl(struct OTG_FS_DEVICE_Type* p) { return (p->FS_DCFG & OTG_FS_DEVICE_FS_DCFG_PFIVL) >> 11; }
-inline uint32_t otg_fs_device_fs_dcfg_get_dad(struct OTG_FS_DEVICE_Type* p) { return (p->FS_DCFG & OTG_FS_DEVICE_FS_DCFG_DAD) >> 4; }
-inline uint32_t otg_fs_device_fs_dcfg_get_dspd(struct OTG_FS_DEVICE_Type* p) { return (p->FS_DCFG & OTG_FS_DEVICE_FS_DCFG_DSPD) >> 0; }
+inline uint32_t otg_fs_device_dcfg_get_pfivl(struct OTG_FS_DEVICE_Type* p) { return (p->DCFG & OTG_FS_DEVICE_DCFG_PFIVL) >> 11; }
+inline uint32_t otg_fs_device_dcfg_get_dad(struct OTG_FS_DEVICE_Type* p) { return (p->DCFG & OTG_FS_DEVICE_DCFG_DAD) >> 4; }
+inline uint32_t otg_fs_device_dcfg_get_dspd(struct OTG_FS_DEVICE_Type* p) { return (p->DCFG & OTG_FS_DEVICE_DCFG_DSPD) >> 0; }
 
-// OTG_FS_DEVICE->FS_DCTL OTG_FS device control register (OTG_FS_DCTL)
+// OTG_FS_DEVICE->DCTL OTG_FS device control register (OTG_FS_DCTL)
 enum {
-	OTG_FS_DEVICE_FS_DCTL_POPRGDNE = 1UL << 11,             // Power-on programming done
-	OTG_FS_DEVICE_FS_DCTL_CGONAK   = 1UL << 10,             // Clear global OUT NAK
-	OTG_FS_DEVICE_FS_DCTL_SGONAK   = 1UL << 9,              // Set global OUT NAK
-	OTG_FS_DEVICE_FS_DCTL_CGINAK   = 1UL << 8,              // Clear global IN NAK
-	OTG_FS_DEVICE_FS_DCTL_SGINAK   = 1UL << 7,              // Set global IN NAK
-	OTG_FS_DEVICE_FS_DCTL_TCTL     = ((1UL << 3) - 1) << 4, // Test control
-	OTG_FS_DEVICE_FS_DCTL_GONSTS   = 1UL << 3,              // Global OUT NAK status
-	OTG_FS_DEVICE_FS_DCTL_GINSTS   = 1UL << 2,              // Global IN NAK status
-	OTG_FS_DEVICE_FS_DCTL_SDIS     = 1UL << 1,              // Soft disconnect
-	OTG_FS_DEVICE_FS_DCTL_RWUSIG   = 1UL << 0,              // Remote wakeup signaling
+	OTG_FS_DEVICE_DCTL_POPRGDNE = 1UL << 11,             // Power-on programming done
+	OTG_FS_DEVICE_DCTL_CGONAK   = 1UL << 10,             // Clear global OUT NAK
+	OTG_FS_DEVICE_DCTL_SGONAK   = 1UL << 9,              // Set global OUT NAK
+	OTG_FS_DEVICE_DCTL_CGINAK   = 1UL << 8,              // Clear global IN NAK
+	OTG_FS_DEVICE_DCTL_SGINAK   = 1UL << 7,              // Set global IN NAK
+	OTG_FS_DEVICE_DCTL_TCTL     = ((1UL << 3) - 1) << 4, // Test control
+	OTG_FS_DEVICE_DCTL_GONSTS   = 1UL << 3,              // Global OUT NAK status
+	OTG_FS_DEVICE_DCTL_GINSTS   = 1UL << 2,              // Global IN NAK status
+	OTG_FS_DEVICE_DCTL_SDIS     = 1UL << 1,              // Soft disconnect
+	OTG_FS_DEVICE_DCTL_RWUSIG   = 1UL << 0,              // Remote wakeup signaling
 };
-inline void otg_fs_device_fs_dctl_set_tctl(struct OTG_FS_DEVICE_Type* p, uint32_t val) {
-	p->FS_DCTL = (p->FS_DCTL & ~OTG_FS_DEVICE_FS_DCTL_TCTL) | ((val << 4) & OTG_FS_DEVICE_FS_DCTL_TCTL);
+inline void otg_fs_device_dctl_set_tctl(struct OTG_FS_DEVICE_Type* p, uint32_t val) {
+	p->DCTL = (p->DCTL & ~OTG_FS_DEVICE_DCTL_TCTL) | ((val << 4) & OTG_FS_DEVICE_DCTL_TCTL);
 }
-inline uint32_t otg_fs_device_fs_dctl_get_tctl(struct OTG_FS_DEVICE_Type* p) { return (p->FS_DCTL & OTG_FS_DEVICE_FS_DCTL_TCTL) >> 4; }
+inline uint32_t otg_fs_device_dctl_get_tctl(struct OTG_FS_DEVICE_Type* p) { return (p->DCTL & OTG_FS_DEVICE_DCTL_TCTL) >> 4; }
 
-// OTG_FS_DEVICE->FS_DSTS OTG_FS device status register (OTG_FS_DSTS)
+// OTG_FS_DEVICE->DSTS OTG_FS device status register (OTG_FS_DSTS)
 enum {
-	OTG_FS_DEVICE_FS_DSTS_FNSOF   = ((1UL << 14) - 1) << 8, // Frame number of the received SOF
-	OTG_FS_DEVICE_FS_DSTS_EERR    = 1UL << 3,               // Erratic error
-	OTG_FS_DEVICE_FS_DSTS_ENUMSPD = ((1UL << 2) - 1) << 1,  // Enumerated speed
-	OTG_FS_DEVICE_FS_DSTS_SUSPSTS = 1UL << 0,               // Suspend status
+	OTG_FS_DEVICE_DSTS_FNSOF   = ((1UL << 14) - 1) << 8, // Frame number of the received SOF
+	OTG_FS_DEVICE_DSTS_EERR    = 1UL << 3,               // Erratic error
+	OTG_FS_DEVICE_DSTS_ENUMSPD = ((1UL << 2) - 1) << 1,  // Enumerated speed
+	OTG_FS_DEVICE_DSTS_SUSPSTS = 1UL << 0,               // Suspend status
 };
-inline uint32_t otg_fs_device_fs_dsts_get_fnsof(struct OTG_FS_DEVICE_Type* p) { return (p->FS_DSTS & OTG_FS_DEVICE_FS_DSTS_FNSOF) >> 8; }
-inline uint32_t otg_fs_device_fs_dsts_get_enumspd(struct OTG_FS_DEVICE_Type* p) {
-	return (p->FS_DSTS & OTG_FS_DEVICE_FS_DSTS_ENUMSPD) >> 1;
-}
+inline uint32_t otg_fs_device_dsts_get_fnsof(struct OTG_FS_DEVICE_Type* p) { return (p->DSTS & OTG_FS_DEVICE_DSTS_FNSOF) >> 8; }
+inline uint32_t otg_fs_device_dsts_get_enumspd(struct OTG_FS_DEVICE_Type* p) { return (p->DSTS & OTG_FS_DEVICE_DSTS_ENUMSPD) >> 1; }
 
-// OTG_FS_DEVICE->FS_DIEPMSK OTG_FS device IN endpoint common interrupt mask register (OTG_FS_DIEPMSK)
+// OTG_FS_DEVICE->DIEPMSK OTG_FS device IN endpoint common interrupt mask register (OTG_FS_DIEPMSK)
 enum {
-	OTG_FS_DEVICE_FS_DIEPMSK_INEPNEM   = 1UL << 6, // IN endpoint NAK effective mask
-	OTG_FS_DEVICE_FS_DIEPMSK_INEPNMM   = 1UL << 5, // IN token received with EP mismatch mask
-	OTG_FS_DEVICE_FS_DIEPMSK_ITTXFEMSK = 1UL << 4, // IN token received when TxFIFO empty mask
-	OTG_FS_DEVICE_FS_DIEPMSK_TOM       = 1UL << 3, // Timeout condition mask (Non-isochronous endpoints)
-	OTG_FS_DEVICE_FS_DIEPMSK_EPDM      = 1UL << 1, // Endpoint disabled interrupt mask
-	OTG_FS_DEVICE_FS_DIEPMSK_XFRCM     = 1UL << 0, // Transfer completed interrupt mask
+	OTG_FS_DEVICE_DIEPMSK_INEPNEM   = 1UL << 6, // IN endpoint NAK effective mask
+	OTG_FS_DEVICE_DIEPMSK_INEPNMM   = 1UL << 5, // IN token received with EP mismatch mask
+	OTG_FS_DEVICE_DIEPMSK_ITTXFEMSK = 1UL << 4, // IN token received when TxFIFO empty mask
+	OTG_FS_DEVICE_DIEPMSK_TOM       = 1UL << 3, // Timeout condition mask (Non-isochronous endpoints)
+	OTG_FS_DEVICE_DIEPMSK_EPDM      = 1UL << 1, // Endpoint disabled interrupt mask
+	OTG_FS_DEVICE_DIEPMSK_XFRCM     = 1UL << 0, // Transfer completed interrupt mask
 };
 
-// OTG_FS_DEVICE->FS_DOEPMSK OTG_FS device OUT endpoint common interrupt mask register (OTG_FS_DOEPMSK)
+// OTG_FS_DEVICE->DOEPMSK OTG_FS device OUT endpoint common interrupt mask register (OTG_FS_DOEPMSK)
 enum {
-	OTG_FS_DEVICE_FS_DOEPMSK_OTEPDM = 1UL << 4, // OUT token received when endpoint disabled mask
-	OTG_FS_DEVICE_FS_DOEPMSK_STUPM  = 1UL << 3, // SETUP phase done mask
-	OTG_FS_DEVICE_FS_DOEPMSK_EPDM   = 1UL << 1, // Endpoint disabled interrupt mask
-	OTG_FS_DEVICE_FS_DOEPMSK_XFRCM  = 1UL << 0, // Transfer completed interrupt mask
+	OTG_FS_DEVICE_DOEPMSK_OTEPDM = 1UL << 4, // OUT token received when endpoint disabled mask
+	OTG_FS_DEVICE_DOEPMSK_STUPM  = 1UL << 3, // SETUP phase done mask
+	OTG_FS_DEVICE_DOEPMSK_EPDM   = 1UL << 1, // Endpoint disabled interrupt mask
+	OTG_FS_DEVICE_DOEPMSK_XFRCM  = 1UL << 0, // Transfer completed interrupt mask
 };
 
-// OTG_FS_DEVICE->FS_DAINT OTG_FS device all endpoints interrupt register (OTG_FS_DAINT)
+// OTG_FS_DEVICE->DAINT OTG_FS device all endpoints interrupt register (OTG_FS_DAINT)
 enum {
-	OTG_FS_DEVICE_FS_DAINT_OEPINT = ((1UL << 16) - 1) << 16, // OUT endpoint interrupt bits
-	OTG_FS_DEVICE_FS_DAINT_IEPINT = ((1UL << 16) - 1) << 0,  // IN endpoint interrupt bits
+	OTG_FS_DEVICE_DAINT_OEPINT = ((1UL << 16) - 1) << 16, // OUT endpoint interrupt bits
+	OTG_FS_DEVICE_DAINT_IEPINT = ((1UL << 16) - 1) << 0,  // IN endpoint interrupt bits
 };
-inline uint32_t otg_fs_device_fs_daint_get_oepint(struct OTG_FS_DEVICE_Type* p) {
-	return (p->FS_DAINT & OTG_FS_DEVICE_FS_DAINT_OEPINT) >> 16;
-}
-inline uint32_t otg_fs_device_fs_daint_get_iepint(struct OTG_FS_DEVICE_Type* p) {
-	return (p->FS_DAINT & OTG_FS_DEVICE_FS_DAINT_IEPINT) >> 0;
-}
+inline uint32_t otg_fs_device_daint_get_oepint(struct OTG_FS_DEVICE_Type* p) { return (p->DAINT & OTG_FS_DEVICE_DAINT_OEPINT) >> 16; }
+inline uint32_t otg_fs_device_daint_get_iepint(struct OTG_FS_DEVICE_Type* p) { return (p->DAINT & OTG_FS_DEVICE_DAINT_IEPINT) >> 0; }
 
-// OTG_FS_DEVICE->FS_DAINTMSK OTG_FS all endpoints interrupt mask register (OTG_FS_DAINTMSK)
+// OTG_FS_DEVICE->DAINTMSK OTG_FS all endpoints interrupt mask register (OTG_FS_DAINTMSK)
 enum {
-	OTG_FS_DEVICE_FS_DAINTMSK_OEPINT = ((1UL << 16) - 1) << 16, // OUT endpoint interrupt bits
-	OTG_FS_DEVICE_FS_DAINTMSK_IEPM   = ((1UL << 16) - 1) << 0,  // IN EP interrupt mask bits
+	OTG_FS_DEVICE_DAINTMSK_OEPINT = ((1UL << 16) - 1) << 16, // OUT endpoint interrupt bits
+	OTG_FS_DEVICE_DAINTMSK_IEPM   = ((1UL << 16) - 1) << 0,  // IN EP interrupt mask bits
 };
-inline void otg_fs_device_fs_daintmsk_set_oepint(struct OTG_FS_DEVICE_Type* p, uint32_t val) {
-	p->FS_DAINTMSK = (p->FS_DAINTMSK & ~OTG_FS_DEVICE_FS_DAINTMSK_OEPINT) | ((val << 16) & OTG_FS_DEVICE_FS_DAINTMSK_OEPINT);
+inline void otg_fs_device_daintmsk_set_oepint(struct OTG_FS_DEVICE_Type* p, uint32_t val) {
+	p->DAINTMSK = (p->DAINTMSK & ~OTG_FS_DEVICE_DAINTMSK_OEPINT) | ((val << 16) & OTG_FS_DEVICE_DAINTMSK_OEPINT);
 }
-inline void otg_fs_device_fs_daintmsk_set_iepm(struct OTG_FS_DEVICE_Type* p, uint32_t val) {
-	p->FS_DAINTMSK = (p->FS_DAINTMSK & ~OTG_FS_DEVICE_FS_DAINTMSK_IEPM) | ((val << 0) & OTG_FS_DEVICE_FS_DAINTMSK_IEPM);
+inline void otg_fs_device_daintmsk_set_iepm(struct OTG_FS_DEVICE_Type* p, uint32_t val) {
+	p->DAINTMSK = (p->DAINTMSK & ~OTG_FS_DEVICE_DAINTMSK_IEPM) | ((val << 0) & OTG_FS_DEVICE_DAINTMSK_IEPM);
 }
-inline uint32_t otg_fs_device_fs_daintmsk_get_oepint(struct OTG_FS_DEVICE_Type* p) {
-	return (p->FS_DAINTMSK & OTG_FS_DEVICE_FS_DAINTMSK_OEPINT) >> 16;
+inline uint32_t otg_fs_device_daintmsk_get_oepint(struct OTG_FS_DEVICE_Type* p) {
+	return (p->DAINTMSK & OTG_FS_DEVICE_DAINTMSK_OEPINT) >> 16;
 }
-inline uint32_t otg_fs_device_fs_daintmsk_get_iepm(struct OTG_FS_DEVICE_Type* p) {
-	return (p->FS_DAINTMSK & OTG_FS_DEVICE_FS_DAINTMSK_IEPM) >> 0;
-}
+inline uint32_t otg_fs_device_daintmsk_get_iepm(struct OTG_FS_DEVICE_Type* p) { return (p->DAINTMSK & OTG_FS_DEVICE_DAINTMSK_IEPM) >> 0; }
 
 // OTG_FS_DEVICE->DVBUSPULSE OTG_FS device VBUS pulsing time register
 enum {
@@ -2695,37 +2687,35 @@ inline uint32_t otg_fs_device_dvbuspulse_get_dvbusp(struct OTG_FS_DEVICE_Type* p
 	return (p->DVBUSPULSE & OTG_FS_DEVICE_DVBUSPULSE_DVBUSP) >> 0;
 }
 
-// OTG_FS_DEVICE->FS_DIEPCTL0 OTG_FS device control IN endpoint 0 control register (OTG_FS_DIEPCTL0)
+// OTG_FS_DEVICE->DIEPCTL0 OTG_FS device control IN endpoint 0 control register (OTG_FS_DIEPCTL0)
 enum {
-	OTG_FS_DEVICE_FS_DIEPCTL0_EPENA  = 1UL << 31,              // Endpoint enable
-	OTG_FS_DEVICE_FS_DIEPCTL0_EPDIS  = 1UL << 30,              // Endpoint disable
-	OTG_FS_DEVICE_FS_DIEPCTL0_SNAK   = 1UL << 27,              // Set NAK
-	OTG_FS_DEVICE_FS_DIEPCTL0_CNAK   = 1UL << 26,              // Clear NAK
-	OTG_FS_DEVICE_FS_DIEPCTL0_TXFNUM = ((1UL << 4) - 1) << 22, // TxFIFO number
-	OTG_FS_DEVICE_FS_DIEPCTL0_STALL  = 1UL << 21,              // STALL handshake
-	OTG_FS_DEVICE_FS_DIEPCTL0_EPTYP  = ((1UL << 2) - 1) << 18, // Endpoint type
-	OTG_FS_DEVICE_FS_DIEPCTL0_NAKSTS = 1UL << 17,              // NAK status
-	OTG_FS_DEVICE_FS_DIEPCTL0_USBAEP = 1UL << 15,              // USB active endpoint
-	OTG_FS_DEVICE_FS_DIEPCTL0_MPSIZ  = ((1UL << 2) - 1) << 0,  // Maximum packet size
+	OTG_FS_DEVICE_DIEPCTL0_EPENA  = 1UL << 31,              // Endpoint enable
+	OTG_FS_DEVICE_DIEPCTL0_EPDIS  = 1UL << 30,              // Endpoint disable
+	OTG_FS_DEVICE_DIEPCTL0_SNAK   = 1UL << 27,              // Set NAK
+	OTG_FS_DEVICE_DIEPCTL0_CNAK   = 1UL << 26,              // Clear NAK
+	OTG_FS_DEVICE_DIEPCTL0_TXFNUM = ((1UL << 4) - 1) << 22, // TxFIFO number
+	OTG_FS_DEVICE_DIEPCTL0_STALL  = 1UL << 21,              // STALL handshake
+	OTG_FS_DEVICE_DIEPCTL0_EPTYP  = ((1UL << 2) - 1) << 18, // Endpoint type
+	OTG_FS_DEVICE_DIEPCTL0_NAKSTS = 1UL << 17,              // NAK status
+	OTG_FS_DEVICE_DIEPCTL0_USBAEP = 1UL << 15,              // USB active endpoint
+	OTG_FS_DEVICE_DIEPCTL0_MPSIZ  = ((1UL << 2) - 1) << 0,  // Maximum packet size
 };
-inline void otg_fs_device_fs_diepctl0_set_txfnum(struct OTG_FS_DEVICE_Type* p, uint32_t val) {
-	p->FS_DIEPCTL0 = (p->FS_DIEPCTL0 & ~OTG_FS_DEVICE_FS_DIEPCTL0_TXFNUM) | ((val << 22) & OTG_FS_DEVICE_FS_DIEPCTL0_TXFNUM);
+inline void otg_fs_device_diepctl0_set_txfnum(struct OTG_FS_DEVICE_Type* p, uint32_t val) {
+	p->DIEPCTL0 = (p->DIEPCTL0 & ~OTG_FS_DEVICE_DIEPCTL0_TXFNUM) | ((val << 22) & OTG_FS_DEVICE_DIEPCTL0_TXFNUM);
 }
-inline void otg_fs_device_fs_diepctl0_set_eptyp(struct OTG_FS_DEVICE_Type* p, uint32_t val) {
-	p->FS_DIEPCTL0 = (p->FS_DIEPCTL0 & ~OTG_FS_DEVICE_FS_DIEPCTL0_EPTYP) | ((val << 18) & OTG_FS_DEVICE_FS_DIEPCTL0_EPTYP);
+inline void otg_fs_device_diepctl0_set_eptyp(struct OTG_FS_DEVICE_Type* p, uint32_t val) {
+	p->DIEPCTL0 = (p->DIEPCTL0 & ~OTG_FS_DEVICE_DIEPCTL0_EPTYP) | ((val << 18) & OTG_FS_DEVICE_DIEPCTL0_EPTYP);
 }
-inline void otg_fs_device_fs_diepctl0_set_mpsiz(struct OTG_FS_DEVICE_Type* p, uint32_t val) {
-	p->FS_DIEPCTL0 = (p->FS_DIEPCTL0 & ~OTG_FS_DEVICE_FS_DIEPCTL0_MPSIZ) | ((val << 0) & OTG_FS_DEVICE_FS_DIEPCTL0_MPSIZ);
+inline void otg_fs_device_diepctl0_set_mpsiz(struct OTG_FS_DEVICE_Type* p, uint32_t val) {
+	p->DIEPCTL0 = (p->DIEPCTL0 & ~OTG_FS_DEVICE_DIEPCTL0_MPSIZ) | ((val << 0) & OTG_FS_DEVICE_DIEPCTL0_MPSIZ);
 }
-inline uint32_t otg_fs_device_fs_diepctl0_get_txfnum(struct OTG_FS_DEVICE_Type* p) {
-	return (p->FS_DIEPCTL0 & OTG_FS_DEVICE_FS_DIEPCTL0_TXFNUM) >> 22;
+inline uint32_t otg_fs_device_diepctl0_get_txfnum(struct OTG_FS_DEVICE_Type* p) {
+	return (p->DIEPCTL0 & OTG_FS_DEVICE_DIEPCTL0_TXFNUM) >> 22;
 }
-inline uint32_t otg_fs_device_fs_diepctl0_get_eptyp(struct OTG_FS_DEVICE_Type* p) {
-	return (p->FS_DIEPCTL0 & OTG_FS_DEVICE_FS_DIEPCTL0_EPTYP) >> 18;
+inline uint32_t otg_fs_device_diepctl0_get_eptyp(struct OTG_FS_DEVICE_Type* p) {
+	return (p->DIEPCTL0 & OTG_FS_DEVICE_DIEPCTL0_EPTYP) >> 18;
 }
-inline uint32_t otg_fs_device_fs_diepctl0_get_mpsiz(struct OTG_FS_DEVICE_Type* p) {
-	return (p->FS_DIEPCTL0 & OTG_FS_DEVICE_FS_DIEPCTL0_MPSIZ) >> 0;
-}
+inline uint32_t otg_fs_device_diepctl0_get_mpsiz(struct OTG_FS_DEVICE_Type* p) { return (p->DIEPCTL0 & OTG_FS_DEVICE_DIEPCTL0_MPSIZ) >> 0; }
 
 // OTG_FS_DEVICE->DIEPINT0 device endpoint-x interrupt register
 enum {
@@ -3196,1174 +3186,1124 @@ inline uint32_t otg_fs_device_doeptsiz3_get_xfrsiz(struct OTG_FS_DEVICE_Type* p)
 
 /* USB on the go full speed */
 struct OTG_FS_GLOBAL_Type {
-	__IO uint32_t FS_GOTGCTL;           // @0 OTG_FS control and status register (OTG_FS_GOTGCTL)
-	__IO uint32_t FS_GOTGINT;           // @4 OTG_FS interrupt register (OTG_FS_GOTGINT)
-	__IO uint16_t FS_GAHBCFG;           // @8 OTG_FS AHB configuration register (OTG_FS_GAHBCFG)
-	uint8_t       RESERVED0[2];         // @10
-	__IO uint32_t FS_GUSBCFG;           // @12 OTG_FS USB configuration register (OTG_FS_GUSBCFG)
-	__IO uint32_t FS_GRSTCTL;           // @16 OTG_FS reset register (OTG_FS_GRSTCTL)
-	__IO uint32_t FS_GINTSTS;           // @20 OTG_FS core interrupt register (OTG_FS_GINTSTS)
-	__IO uint32_t FS_GINTMSK;           // @24 OTG_FS interrupt mask register (OTG_FS_GINTMSK)
-	union {                             // @28
-		__I uint32_t FS_GRXSTSR_Device; // OTG_FS Receive status debug read(Device mode)
-		__I uint32_t FS_GRXSTSR_Host;   // OTG_FS Receive status debug read(Host mode)
+	__IO uint32_t GOTGCTL;           // @0 OTG_FS control and status register (OTG_FS_GOTGCTL)
+	__IO uint32_t GOTGINT;           // @4 OTG_FS interrupt register (OTG_FS_GOTGINT)
+	__IO uint16_t GAHBCFG;           // @8 OTG_FS AHB configuration register (OTG_FS_GAHBCFG)
+	uint8_t       RESERVED0[2];      // @10
+	__IO uint32_t GUSBCFG;           // @12 OTG_FS USB configuration register (OTG_FS_GUSBCFG)
+	__IO uint32_t GRSTCTL;           // @16 OTG_FS reset register (OTG_FS_GRSTCTL)
+	__IO uint32_t GINTSTS;           // @20 OTG_FS core interrupt register (OTG_FS_GINTSTS)
+	__IO uint32_t GINTMSK;           // @24 OTG_FS interrupt mask register (OTG_FS_GINTMSK)
+	union {                          // @28
+		__I uint32_t GRXSTSR_Device; // OTG_FS Receive status debug read(Device mode)
+		__I uint32_t GRXSTSR_Host;   // OTG_FS Receive status debug read(Host mode)
 	};
-	uint8_t RESERVED1[4];                  // @32
-	__IO uint16_t FS_GRXFSIZ;              // @36 OTG_FS Receive FIFO size register (OTG_FS_GRXFSIZ)
-	uint8_t       RESERVED2[2];            // @38
-	union {                                // @40
-		__IO uint32_t FS_GNPTXFSIZ_Device; // OTG_FS non-periodic transmit FIFO size register (Device mode)
-		__IO uint32_t FS_GNPTXFSIZ_Host;   // OTG_FS non-periodic transmit FIFO size register (Host mode)
+	union {                          // @32
+		__I uint32_t GRXSTSP_Device; // OTG_FS Receive status pop(Device mode)
+		__I uint32_t GRXSTSP_Host;   // OTG_FS Receive status pop (Host mode)
 	};
-	__I uint32_t FS_GNPTXSTS;     // @44 OTG_FS non-periodic transmit FIFO/queue status register (OTG_FS_GNPTXSTS)
-	uint8_t      RESERVED3[8];    // @48
-	__IO uint32_t FS_GCCFG;       // @56 OTG_FS general core configuration register (OTG_FS_GCCFG)
-	__IO uint32_t FS_CID;         // @60 core ID register
-	uint8_t       RESERVED4[192]; // @64
-	__IO uint32_t FS_HPTXFSIZ;    // @256 OTG_FS Host periodic transmit FIFO size register (OTG_FS_HPTXFSIZ)
-	__IO uint32_t FS_DIEPTXF1;    // @260 OTG_FS device IN endpoint transmit FIFO size register (OTG_FS_DIEPTXF2)
-	__IO uint32_t FS_DIEPTXF2;    // @264 OTG_FS device IN endpoint transmit FIFO size register (OTG_FS_DIEPTXF3)
-	__IO uint32_t FS_DIEPTXF3;    // @268 OTG_FS device IN endpoint transmit FIFO size register (OTG_FS_DIEPTXF4)
+	__IO uint16_t GRXFSIZ;              // @36 OTG_FS Receive FIFO size register (OTG_FS_GRXFSIZ)
+	uint8_t       RESERVED1[2];         // @38
+	union {                             // @40
+		__IO uint32_t GNPTXFSIZ_Device; // OTG_FS non-periodic transmit FIFO size register (Device mode)
+		__IO uint32_t GNPTXFSIZ_Host;   // OTG_FS non-periodic transmit FIFO size register (Host mode)
+	};
+	__I uint32_t  GNPTXSTS;       // @44 OTG_FS non-periodic transmit FIFO/queue status register (OTG_FS_GNPTXSTS)
+	uint8_t       RESERVED2[8];   // @48
+	__IO uint32_t GCCFG;          // @56 OTG_FS general core configuration register (OTG_FS_GCCFG)
+	__IO uint32_t CID;            // @60 core ID register
+	uint8_t       RESERVED3[192]; // @64
+	__IO uint32_t HPTXFSIZ;       // @256 OTG_FS Host periodic transmit FIFO size register (OTG_FS_HPTXFSIZ)
+	__IO uint32_t DIEPTXF1;       // @260 OTG_FS device IN endpoint transmit FIFO size register (OTG_FS_DIEPTXF2)
+	__IO uint32_t DIEPTXF2;       // @264 OTG_FS device IN endpoint transmit FIFO size register (OTG_FS_DIEPTXF3)
+	__IO uint32_t DIEPTXF3;       // @268 OTG_FS device IN endpoint transmit FIFO size register (OTG_FS_DIEPTXF4)
 };
 
-// OTG_FS_GLOBAL->FS_GOTGCTL OTG_FS control and status register (OTG_FS_GOTGCTL)
+// OTG_FS_GLOBAL->GOTGCTL OTG_FS control and status register (OTG_FS_GOTGCTL)
 enum {
-	OTG_FS_GLOBAL_FS_GOTGCTL_BSVLD   = 1UL << 19, // B-session valid
-	OTG_FS_GLOBAL_FS_GOTGCTL_ASVLD   = 1UL << 18, // A-session valid
-	OTG_FS_GLOBAL_FS_GOTGCTL_DBCT    = 1UL << 17, // Long/short debounce time
-	OTG_FS_GLOBAL_FS_GOTGCTL_CIDSTS  = 1UL << 16, // Connector ID status
-	OTG_FS_GLOBAL_FS_GOTGCTL_DHNPEN  = 1UL << 11, // Device HNP enabled
-	OTG_FS_GLOBAL_FS_GOTGCTL_HSHNPEN = 1UL << 10, // Host set HNP enable
-	OTG_FS_GLOBAL_FS_GOTGCTL_HNPRQ   = 1UL << 9,  // HNP request
-	OTG_FS_GLOBAL_FS_GOTGCTL_HNGSCS  = 1UL << 8,  // Host negotiation success
-	OTG_FS_GLOBAL_FS_GOTGCTL_SRQ     = 1UL << 1,  // Session request
-	OTG_FS_GLOBAL_FS_GOTGCTL_SRQSCS  = 1UL << 0,  // Session request success
+	OTG_FS_GLOBAL_GOTGCTL_BSVLD   = 1UL << 19, // B-session valid
+	OTG_FS_GLOBAL_GOTGCTL_ASVLD   = 1UL << 18, // A-session valid
+	OTG_FS_GLOBAL_GOTGCTL_DBCT    = 1UL << 17, // Long/short debounce time
+	OTG_FS_GLOBAL_GOTGCTL_CIDSTS  = 1UL << 16, // Connector ID status
+	OTG_FS_GLOBAL_GOTGCTL_DHNPEN  = 1UL << 11, // Device HNP enabled
+	OTG_FS_GLOBAL_GOTGCTL_HSHNPEN = 1UL << 10, // Host set HNP enable
+	OTG_FS_GLOBAL_GOTGCTL_HNPRQ   = 1UL << 9,  // HNP request
+	OTG_FS_GLOBAL_GOTGCTL_HNGSCS  = 1UL << 8,  // Host negotiation success
+	OTG_FS_GLOBAL_GOTGCTL_SRQ     = 1UL << 1,  // Session request
+	OTG_FS_GLOBAL_GOTGCTL_SRQSCS  = 1UL << 0,  // Session request success
 };
 
-// OTG_FS_GLOBAL->FS_GOTGINT OTG_FS interrupt register (OTG_FS_GOTGINT)
+// OTG_FS_GLOBAL->GOTGINT OTG_FS interrupt register (OTG_FS_GOTGINT)
 enum {
-	OTG_FS_GLOBAL_FS_GOTGINT_DBCDNE  = 1UL << 19, // Debounce done
-	OTG_FS_GLOBAL_FS_GOTGINT_ADTOCHG = 1UL << 18, // A-device timeout change
-	OTG_FS_GLOBAL_FS_GOTGINT_HNGDET  = 1UL << 17, // Host negotiation detected
-	OTG_FS_GLOBAL_FS_GOTGINT_HNSSCHG = 1UL << 9,  // Host negotiation success status change
-	OTG_FS_GLOBAL_FS_GOTGINT_SRSSCHG = 1UL << 8,  // Session request success status change
-	OTG_FS_GLOBAL_FS_GOTGINT_SEDET   = 1UL << 2,  // Session end detected
+	OTG_FS_GLOBAL_GOTGINT_DBCDNE  = 1UL << 19, // Debounce done
+	OTG_FS_GLOBAL_GOTGINT_ADTOCHG = 1UL << 18, // A-device timeout change
+	OTG_FS_GLOBAL_GOTGINT_HNGDET  = 1UL << 17, // Host negotiation detected
+	OTG_FS_GLOBAL_GOTGINT_HNSSCHG = 1UL << 9,  // Host negotiation success status change
+	OTG_FS_GLOBAL_GOTGINT_SRSSCHG = 1UL << 8,  // Session request success status change
+	OTG_FS_GLOBAL_GOTGINT_SEDET   = 1UL << 2,  // Session end detected
 };
 
-// OTG_FS_GLOBAL->FS_GAHBCFG OTG_FS AHB configuration register (OTG_FS_GAHBCFG)
+// OTG_FS_GLOBAL->GAHBCFG OTG_FS AHB configuration register (OTG_FS_GAHBCFG)
 enum {
-	OTG_FS_GLOBAL_FS_GAHBCFG_PTXFELVL = 1UL << 8, // Periodic TxFIFO empty level
-	OTG_FS_GLOBAL_FS_GAHBCFG_TXFELVL  = 1UL << 7, // TxFIFO empty level
-	OTG_FS_GLOBAL_FS_GAHBCFG_GINT     = 1UL << 0, // Global interrupt mask
+	OTG_FS_GLOBAL_GAHBCFG_PTXFELVL = 1UL << 8, // Periodic TxFIFO empty level
+	OTG_FS_GLOBAL_GAHBCFG_TXFELVL  = 1UL << 7, // TxFIFO empty level
+	OTG_FS_GLOBAL_GAHBCFG_GINT     = 1UL << 0, // Global interrupt mask
 };
 
-// OTG_FS_GLOBAL->FS_GUSBCFG OTG_FS USB configuration register (OTG_FS_GUSBCFG)
+// OTG_FS_GLOBAL->GUSBCFG OTG_FS USB configuration register (OTG_FS_GUSBCFG)
 enum {
-	OTG_FS_GLOBAL_FS_GUSBCFG_CTXPKT = 1UL << 31,              // Corrupt Tx packet
-	OTG_FS_GLOBAL_FS_GUSBCFG_FDMOD  = 1UL << 30,              // Force device mode
-	OTG_FS_GLOBAL_FS_GUSBCFG_FHMOD  = 1UL << 29,              // Force host mode
-	OTG_FS_GLOBAL_FS_GUSBCFG_TRDT   = ((1UL << 4) - 1) << 10, // USB turnaround time
-	OTG_FS_GLOBAL_FS_GUSBCFG_HNPCAP = 1UL << 9,               // HNP-capable
-	OTG_FS_GLOBAL_FS_GUSBCFG_SRPCAP = 1UL << 8,               // SRP-capable
-	OTG_FS_GLOBAL_FS_GUSBCFG_PHYSEL = 1UL << 6,               // Full Speed serial transceiver select
-	OTG_FS_GLOBAL_FS_GUSBCFG_TOCAL  = ((1UL << 3) - 1) << 0,  // FS timeout calibration
+	OTG_FS_GLOBAL_GUSBCFG_CTXPKT = 1UL << 31,              // Corrupt Tx packet
+	OTG_FS_GLOBAL_GUSBCFG_FDMOD  = 1UL << 30,              // Force device mode
+	OTG_FS_GLOBAL_GUSBCFG_FHMOD  = 1UL << 29,              // Force host mode
+	OTG_FS_GLOBAL_GUSBCFG_TRDT   = ((1UL << 4) - 1) << 10, // USB turnaround time
+	OTG_FS_GLOBAL_GUSBCFG_HNPCAP = 1UL << 9,               // HNP-capable
+	OTG_FS_GLOBAL_GUSBCFG_SRPCAP = 1UL << 8,               // SRP-capable
+	OTG_FS_GLOBAL_GUSBCFG_PHYSEL = 1UL << 6,               // Full Speed serial transceiver select
+	OTG_FS_GLOBAL_GUSBCFG_TOCAL  = ((1UL << 3) - 1) << 0,  // FS timeout calibration
 };
-inline void otg_fs_global_fs_gusbcfg_set_trdt(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
-	p->FS_GUSBCFG = (p->FS_GUSBCFG & ~OTG_FS_GLOBAL_FS_GUSBCFG_TRDT) | ((val << 10) & OTG_FS_GLOBAL_FS_GUSBCFG_TRDT);
+inline void otg_fs_global_gusbcfg_set_trdt(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
+	p->GUSBCFG = (p->GUSBCFG & ~OTG_FS_GLOBAL_GUSBCFG_TRDT) | ((val << 10) & OTG_FS_GLOBAL_GUSBCFG_TRDT);
 }
-inline void otg_fs_global_fs_gusbcfg_set_tocal(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
-	p->FS_GUSBCFG = (p->FS_GUSBCFG & ~OTG_FS_GLOBAL_FS_GUSBCFG_TOCAL) | ((val << 0) & OTG_FS_GLOBAL_FS_GUSBCFG_TOCAL);
+inline void otg_fs_global_gusbcfg_set_tocal(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
+	p->GUSBCFG = (p->GUSBCFG & ~OTG_FS_GLOBAL_GUSBCFG_TOCAL) | ((val << 0) & OTG_FS_GLOBAL_GUSBCFG_TOCAL);
 }
-inline uint32_t otg_fs_global_fs_gusbcfg_get_trdt(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_GUSBCFG & OTG_FS_GLOBAL_FS_GUSBCFG_TRDT) >> 10;
-}
-inline uint32_t otg_fs_global_fs_gusbcfg_get_tocal(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_GUSBCFG & OTG_FS_GLOBAL_FS_GUSBCFG_TOCAL) >> 0;
-}
+inline uint32_t otg_fs_global_gusbcfg_get_trdt(struct OTG_FS_GLOBAL_Type* p) { return (p->GUSBCFG & OTG_FS_GLOBAL_GUSBCFG_TRDT) >> 10; }
+inline uint32_t otg_fs_global_gusbcfg_get_tocal(struct OTG_FS_GLOBAL_Type* p) { return (p->GUSBCFG & OTG_FS_GLOBAL_GUSBCFG_TOCAL) >> 0; }
 
-// OTG_FS_GLOBAL->FS_GRSTCTL OTG_FS reset register (OTG_FS_GRSTCTL)
+// OTG_FS_GLOBAL->GRSTCTL OTG_FS reset register (OTG_FS_GRSTCTL)
 enum {
-	OTG_FS_GLOBAL_FS_GRSTCTL_AHBIDL  = 1UL << 31,             // AHB master idle
-	OTG_FS_GLOBAL_FS_GRSTCTL_TXFNUM  = ((1UL << 5) - 1) << 6, // TxFIFO number
-	OTG_FS_GLOBAL_FS_GRSTCTL_TXFFLSH = 1UL << 5,              // TxFIFO flush
-	OTG_FS_GLOBAL_FS_GRSTCTL_RXFFLSH = 1UL << 4,              // RxFIFO flush
-	OTG_FS_GLOBAL_FS_GRSTCTL_FCRST   = 1UL << 2,              // Host frame counter reset
-	OTG_FS_GLOBAL_FS_GRSTCTL_HSRST   = 1UL << 1,              // HCLK soft reset
-	OTG_FS_GLOBAL_FS_GRSTCTL_CSRST   = 1UL << 0,              // Core soft reset
+	OTG_FS_GLOBAL_GRSTCTL_AHBIDL  = 1UL << 31,             // AHB master idle
+	OTG_FS_GLOBAL_GRSTCTL_TXFNUM  = ((1UL << 5) - 1) << 6, // TxFIFO number
+	OTG_FS_GLOBAL_GRSTCTL_TXFFLSH = 1UL << 5,              // TxFIFO flush
+	OTG_FS_GLOBAL_GRSTCTL_RXFFLSH = 1UL << 4,              // RxFIFO flush
+	OTG_FS_GLOBAL_GRSTCTL_FCRST   = 1UL << 2,              // Host frame counter reset
+	OTG_FS_GLOBAL_GRSTCTL_HSRST   = 1UL << 1,              // HCLK soft reset
+	OTG_FS_GLOBAL_GRSTCTL_CSRST   = 1UL << 0,              // Core soft reset
 };
-inline void otg_fs_global_fs_grstctl_set_txfnum(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
-	p->FS_GRSTCTL = (p->FS_GRSTCTL & ~OTG_FS_GLOBAL_FS_GRSTCTL_TXFNUM) | ((val << 6) & OTG_FS_GLOBAL_FS_GRSTCTL_TXFNUM);
+inline void otg_fs_global_grstctl_set_txfnum(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
+	p->GRSTCTL = (p->GRSTCTL & ~OTG_FS_GLOBAL_GRSTCTL_TXFNUM) | ((val << 6) & OTG_FS_GLOBAL_GRSTCTL_TXFNUM);
 }
-inline uint32_t otg_fs_global_fs_grstctl_get_txfnum(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_GRSTCTL & OTG_FS_GLOBAL_FS_GRSTCTL_TXFNUM) >> 6;
-}
+inline uint32_t otg_fs_global_grstctl_get_txfnum(struct OTG_FS_GLOBAL_Type* p) { return (p->GRSTCTL & OTG_FS_GLOBAL_GRSTCTL_TXFNUM) >> 6; }
 
-// OTG_FS_GLOBAL->FS_GINTSTS OTG_FS core interrupt register (OTG_FS_GINTSTS)
+// OTG_FS_GLOBAL->GINTSTS OTG_FS core interrupt register (OTG_FS_GINTSTS)
 enum {
-	OTG_FS_GLOBAL_FS_GINTSTS_WKUPINT = 1UL << 31, // Resume/remote wakeup detected interrupt
-	OTG_FS_GLOBAL_FS_GINTSTS_SRQINT  = 1UL << 30, // Session request/new session detected interrupt
-	OTG_FS_GLOBAL_FS_GINTSTS_DISCINT = 1UL << 29, // Disconnect detected interrupt
-	OTG_FS_GLOBAL_FS_GINTSTS_CIDSCHG = 1UL << 28, // Connector ID status change
-	OTG_FS_GLOBAL_FS_GINTSTS_PTXFE   = 1UL << 26, // Periodic TxFIFO empty
-	OTG_FS_GLOBAL_FS_GINTSTS_HCINT   = 1UL << 25, // Host channels interrupt
-	OTG_FS_GLOBAL_FS_GINTSTS_HPRTINT = 1UL << 24, // Host port interrupt
-	OTG_FS_GLOBAL_FS_GINTSTS_IPXFR_INCOMPISOOUT =
+	OTG_FS_GLOBAL_GINTSTS_WKUPINT = 1UL << 31, // Resume/remote wakeup detected interrupt
+	OTG_FS_GLOBAL_GINTSTS_SRQINT  = 1UL << 30, // Session request/new session detected interrupt
+	OTG_FS_GLOBAL_GINTSTS_DISCINT = 1UL << 29, // Disconnect detected interrupt
+	OTG_FS_GLOBAL_GINTSTS_CIDSCHG = 1UL << 28, // Connector ID status change
+	OTG_FS_GLOBAL_GINTSTS_PTXFE   = 1UL << 26, // Periodic TxFIFO empty
+	OTG_FS_GLOBAL_GINTSTS_HCINT   = 1UL << 25, // Host channels interrupt
+	OTG_FS_GLOBAL_GINTSTS_HPRTINT = 1UL << 24, // Host port interrupt
+	OTG_FS_GLOBAL_GINTSTS_IPXFR_INCOMPISOOUT =
 	    1UL << 21, // Incomplete periodic transfer(Host mode)/Incomplete isochronous OUT transfer(Device mode)
-	OTG_FS_GLOBAL_FS_GINTSTS_IISOIXFR   = 1UL << 20, // Incomplete isochronous IN transfer
-	OTG_FS_GLOBAL_FS_GINTSTS_OEPINT     = 1UL << 19, // OUT endpoint interrupt
-	OTG_FS_GLOBAL_FS_GINTSTS_IEPINT     = 1UL << 18, // IN endpoint interrupt
-	OTG_FS_GLOBAL_FS_GINTSTS_EOPF       = 1UL << 15, // End of periodic frame interrupt
-	OTG_FS_GLOBAL_FS_GINTSTS_ISOODRP    = 1UL << 14, // Isochronous OUT packet dropped interrupt
-	OTG_FS_GLOBAL_FS_GINTSTS_ENUMDNE    = 1UL << 13, // Enumeration done
-	OTG_FS_GLOBAL_FS_GINTSTS_USBRST     = 1UL << 12, // USB reset
-	OTG_FS_GLOBAL_FS_GINTSTS_USBSUSP    = 1UL << 11, // USB suspend
-	OTG_FS_GLOBAL_FS_GINTSTS_ESUSP      = 1UL << 10, // Early suspend
-	OTG_FS_GLOBAL_FS_GINTSTS_GOUTNAKEFF = 1UL << 7,  // Global OUT NAK effective
-	OTG_FS_GLOBAL_FS_GINTSTS_GINAKEFF   = 1UL << 6,  // Global IN non-periodic NAK effective
-	OTG_FS_GLOBAL_FS_GINTSTS_NPTXFE     = 1UL << 5,  // Non-periodic TxFIFO empty
-	OTG_FS_GLOBAL_FS_GINTSTS_RXFLVL     = 1UL << 4,  // RxFIFO non-empty
-	OTG_FS_GLOBAL_FS_GINTSTS_SOF        = 1UL << 3,  // Start of frame
-	OTG_FS_GLOBAL_FS_GINTSTS_OTGINT     = 1UL << 2,  // OTG interrupt
-	OTG_FS_GLOBAL_FS_GINTSTS_MMIS       = 1UL << 1,  // Mode mismatch interrupt
-	OTG_FS_GLOBAL_FS_GINTSTS_CMOD       = 1UL << 0,  // Current mode of operation
+	OTG_FS_GLOBAL_GINTSTS_IISOIXFR   = 1UL << 20, // Incomplete isochronous IN transfer
+	OTG_FS_GLOBAL_GINTSTS_OEPINT     = 1UL << 19, // OUT endpoint interrupt
+	OTG_FS_GLOBAL_GINTSTS_IEPINT     = 1UL << 18, // IN endpoint interrupt
+	OTG_FS_GLOBAL_GINTSTS_EOPF       = 1UL << 15, // End of periodic frame interrupt
+	OTG_FS_GLOBAL_GINTSTS_ISOODRP    = 1UL << 14, // Isochronous OUT packet dropped interrupt
+	OTG_FS_GLOBAL_GINTSTS_ENUMDNE    = 1UL << 13, // Enumeration done
+	OTG_FS_GLOBAL_GINTSTS_USBRST     = 1UL << 12, // USB reset
+	OTG_FS_GLOBAL_GINTSTS_USBSUSP    = 1UL << 11, // USB suspend
+	OTG_FS_GLOBAL_GINTSTS_ESUSP      = 1UL << 10, // Early suspend
+	OTG_FS_GLOBAL_GINTSTS_GOUTNAKEFF = 1UL << 7,  // Global OUT NAK effective
+	OTG_FS_GLOBAL_GINTSTS_GINAKEFF   = 1UL << 6,  // Global IN non-periodic NAK effective
+	OTG_FS_GLOBAL_GINTSTS_NPTXFE     = 1UL << 5,  // Non-periodic TxFIFO empty
+	OTG_FS_GLOBAL_GINTSTS_RXFLVL     = 1UL << 4,  // RxFIFO non-empty
+	OTG_FS_GLOBAL_GINTSTS_SOF        = 1UL << 3,  // Start of frame
+	OTG_FS_GLOBAL_GINTSTS_OTGINT     = 1UL << 2,  // OTG interrupt
+	OTG_FS_GLOBAL_GINTSTS_MMIS       = 1UL << 1,  // Mode mismatch interrupt
+	OTG_FS_GLOBAL_GINTSTS_CMOD       = 1UL << 0,  // Current mode of operation
 };
 
-// OTG_FS_GLOBAL->FS_GINTMSK OTG_FS interrupt mask register (OTG_FS_GINTMSK)
+// OTG_FS_GLOBAL->GINTMSK OTG_FS interrupt mask register (OTG_FS_GINTMSK)
 enum {
-	OTG_FS_GLOBAL_FS_GINTMSK_WUIM     = 1UL << 31, // Resume/remote wakeup detected interrupt mask
-	OTG_FS_GLOBAL_FS_GINTMSK_SRQIM    = 1UL << 30, // Session request/new session detected interrupt mask
-	OTG_FS_GLOBAL_FS_GINTMSK_DISCINT  = 1UL << 29, // Disconnect detected interrupt mask
-	OTG_FS_GLOBAL_FS_GINTMSK_CIDSCHGM = 1UL << 28, // Connector ID status change mask
-	OTG_FS_GLOBAL_FS_GINTMSK_PTXFEM   = 1UL << 26, // Periodic TxFIFO empty mask
-	OTG_FS_GLOBAL_FS_GINTMSK_HCIM     = 1UL << 25, // Host channels interrupt mask
-	OTG_FS_GLOBAL_FS_GINTMSK_PRTIM    = 1UL << 24, // Host port interrupt mask
-	OTG_FS_GLOBAL_FS_GINTMSK_IPXFRM_IISOOXFRM =
+	OTG_FS_GLOBAL_GINTMSK_WUIM     = 1UL << 31, // Resume/remote wakeup detected interrupt mask
+	OTG_FS_GLOBAL_GINTMSK_SRQIM    = 1UL << 30, // Session request/new session detected interrupt mask
+	OTG_FS_GLOBAL_GINTMSK_DISCINT  = 1UL << 29, // Disconnect detected interrupt mask
+	OTG_FS_GLOBAL_GINTMSK_CIDSCHGM = 1UL << 28, // Connector ID status change mask
+	OTG_FS_GLOBAL_GINTMSK_PTXFEM   = 1UL << 26, // Periodic TxFIFO empty mask
+	OTG_FS_GLOBAL_GINTMSK_HCIM     = 1UL << 25, // Host channels interrupt mask
+	OTG_FS_GLOBAL_GINTMSK_PRTIM    = 1UL << 24, // Host port interrupt mask
+	OTG_FS_GLOBAL_GINTMSK_IPXFRM_IISOOXFRM =
 	    1UL << 21, // Incomplete periodic transfer mask(Host mode)/Incomplete isochronous OUT transfer mask(Device mode)
-	OTG_FS_GLOBAL_FS_GINTMSK_IISOIXFRM = 1UL << 20, // Incomplete isochronous IN transfer mask
-	OTG_FS_GLOBAL_FS_GINTMSK_OEPINT    = 1UL << 19, // OUT endpoints interrupt mask
-	OTG_FS_GLOBAL_FS_GINTMSK_IEPINT    = 1UL << 18, // IN endpoints interrupt mask
-	OTG_FS_GLOBAL_FS_GINTMSK_EPMISM    = 1UL << 17, // Endpoint mismatch interrupt mask
-	OTG_FS_GLOBAL_FS_GINTMSK_EOPFM     = 1UL << 15, // End of periodic frame interrupt mask
-	OTG_FS_GLOBAL_FS_GINTMSK_ISOODRPM  = 1UL << 14, // Isochronous OUT packet dropped interrupt mask
-	OTG_FS_GLOBAL_FS_GINTMSK_ENUMDNEM  = 1UL << 13, // Enumeration done mask
-	OTG_FS_GLOBAL_FS_GINTMSK_USBRST    = 1UL << 12, // USB reset mask
-	OTG_FS_GLOBAL_FS_GINTMSK_USBSUSPM  = 1UL << 11, // USB suspend mask
-	OTG_FS_GLOBAL_FS_GINTMSK_ESUSPM    = 1UL << 10, // Early suspend mask
-	OTG_FS_GLOBAL_FS_GINTMSK_GONAKEFFM = 1UL << 7,  // Global OUT NAK effective mask
-	OTG_FS_GLOBAL_FS_GINTMSK_GINAKEFFM = 1UL << 6,  // Global non-periodic IN NAK effective mask
-	OTG_FS_GLOBAL_FS_GINTMSK_NPTXFEM   = 1UL << 5,  // Non-periodic TxFIFO empty mask
-	OTG_FS_GLOBAL_FS_GINTMSK_RXFLVLM   = 1UL << 4,  // Receive FIFO non-empty mask
-	OTG_FS_GLOBAL_FS_GINTMSK_SOFM      = 1UL << 3,  // Start of frame mask
-	OTG_FS_GLOBAL_FS_GINTMSK_OTGINT    = 1UL << 2,  // OTG interrupt mask
-	OTG_FS_GLOBAL_FS_GINTMSK_MMISM     = 1UL << 1,  // Mode mismatch interrupt mask
+	OTG_FS_GLOBAL_GINTMSK_IISOIXFRM = 1UL << 20, // Incomplete isochronous IN transfer mask
+	OTG_FS_GLOBAL_GINTMSK_OEPINT    = 1UL << 19, // OUT endpoints interrupt mask
+	OTG_FS_GLOBAL_GINTMSK_IEPINT    = 1UL << 18, // IN endpoints interrupt mask
+	OTG_FS_GLOBAL_GINTMSK_EPMISM    = 1UL << 17, // Endpoint mismatch interrupt mask
+	OTG_FS_GLOBAL_GINTMSK_EOPFM     = 1UL << 15, // End of periodic frame interrupt mask
+	OTG_FS_GLOBAL_GINTMSK_ISOODRPM  = 1UL << 14, // Isochronous OUT packet dropped interrupt mask
+	OTG_FS_GLOBAL_GINTMSK_ENUMDNEM  = 1UL << 13, // Enumeration done mask
+	OTG_FS_GLOBAL_GINTMSK_USBRST    = 1UL << 12, // USB reset mask
+	OTG_FS_GLOBAL_GINTMSK_USBSUSPM  = 1UL << 11, // USB suspend mask
+	OTG_FS_GLOBAL_GINTMSK_ESUSPM    = 1UL << 10, // Early suspend mask
+	OTG_FS_GLOBAL_GINTMSK_GONAKEFFM = 1UL << 7,  // Global OUT NAK effective mask
+	OTG_FS_GLOBAL_GINTMSK_GINAKEFFM = 1UL << 6,  // Global non-periodic IN NAK effective mask
+	OTG_FS_GLOBAL_GINTMSK_NPTXFEM   = 1UL << 5,  // Non-periodic TxFIFO empty mask
+	OTG_FS_GLOBAL_GINTMSK_RXFLVLM   = 1UL << 4,  // Receive FIFO non-empty mask
+	OTG_FS_GLOBAL_GINTMSK_SOFM      = 1UL << 3,  // Start of frame mask
+	OTG_FS_GLOBAL_GINTMSK_OTGINT    = 1UL << 2,  // OTG interrupt mask
+	OTG_FS_GLOBAL_GINTMSK_MMISM     = 1UL << 1,  // Mode mismatch interrupt mask
 };
 
-// OTG_FS_GLOBAL->FS_GRXSTSR_Device OTG_FS Receive status debug read(Device mode)
+// OTG_FS_GLOBAL->GRXSTSR_Device OTG_FS Receive status debug read(Device mode)
 enum {
-	OTG_FS_GLOBAL_FS_GRXSTSR_DEVICE_FRMNUM = ((1UL << 4) - 1) << 21, // Frame number
-	OTG_FS_GLOBAL_FS_GRXSTSR_DEVICE_PKTSTS = ((1UL << 4) - 1) << 17, // Packet status
-	OTG_FS_GLOBAL_FS_GRXSTSR_DEVICE_DPID   = ((1UL << 2) - 1) << 15, // Data PID
-	OTG_FS_GLOBAL_FS_GRXSTSR_DEVICE_BCNT   = ((1UL << 11) - 1) << 4, // Byte count
-	OTG_FS_GLOBAL_FS_GRXSTSR_DEVICE_EPNUM  = ((1UL << 4) - 1) << 0,  // Endpoint number
+	OTG_FS_GLOBAL_GRXSTSR_DEVICE_FRMNUM = ((1UL << 4) - 1) << 21, // Frame number
+	OTG_FS_GLOBAL_GRXSTSR_DEVICE_PKTSTS = ((1UL << 4) - 1) << 17, // Packet status
+	OTG_FS_GLOBAL_GRXSTSR_DEVICE_DPID   = ((1UL << 2) - 1) << 15, // Data PID
+	OTG_FS_GLOBAL_GRXSTSR_DEVICE_BCNT   = ((1UL << 11) - 1) << 4, // Byte count
+	OTG_FS_GLOBAL_GRXSTSR_DEVICE_EPNUM  = ((1UL << 4) - 1) << 0,  // Endpoint number
 };
-inline uint32_t otg_fs_global_fs_grxstsr_device_get_frmnum(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_GRXSTSR_Device & OTG_FS_GLOBAL_FS_GRXSTSR_DEVICE_FRMNUM) >> 21;
+inline uint32_t otg_fs_global_grxstsr_device_get_frmnum(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->GRXSTSR_Device & OTG_FS_GLOBAL_GRXSTSR_DEVICE_FRMNUM) >> 21;
 }
-inline uint32_t otg_fs_global_fs_grxstsr_device_get_pktsts(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_GRXSTSR_Device & OTG_FS_GLOBAL_FS_GRXSTSR_DEVICE_PKTSTS) >> 17;
+inline uint32_t otg_fs_global_grxstsr_device_get_pktsts(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->GRXSTSR_Device & OTG_FS_GLOBAL_GRXSTSR_DEVICE_PKTSTS) >> 17;
 }
-inline uint32_t otg_fs_global_fs_grxstsr_device_get_dpid(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_GRXSTSR_Device & OTG_FS_GLOBAL_FS_GRXSTSR_DEVICE_DPID) >> 15;
+inline uint32_t otg_fs_global_grxstsr_device_get_dpid(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->GRXSTSR_Device & OTG_FS_GLOBAL_GRXSTSR_DEVICE_DPID) >> 15;
 }
-inline uint32_t otg_fs_global_fs_grxstsr_device_get_bcnt(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_GRXSTSR_Device & OTG_FS_GLOBAL_FS_GRXSTSR_DEVICE_BCNT) >> 4;
+inline uint32_t otg_fs_global_grxstsr_device_get_bcnt(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->GRXSTSR_Device & OTG_FS_GLOBAL_GRXSTSR_DEVICE_BCNT) >> 4;
 }
-inline uint32_t otg_fs_global_fs_grxstsr_device_get_epnum(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_GRXSTSR_Device & OTG_FS_GLOBAL_FS_GRXSTSR_DEVICE_EPNUM) >> 0;
+inline uint32_t otg_fs_global_grxstsr_device_get_epnum(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->GRXSTSR_Device & OTG_FS_GLOBAL_GRXSTSR_DEVICE_EPNUM) >> 0;
 }
 
-// OTG_FS_GLOBAL->FS_GNPTXFSIZ_Device OTG_FS non-periodic transmit FIFO size register (Device mode)
+// OTG_FS_GLOBAL->GRXSTSP_Device OTG_FS Receive status pop(Device mode)
 enum {
-	OTG_FS_GLOBAL_FS_GNPTXFSIZ_DEVICE_TX0FD  = ((1UL << 16) - 1) << 16, // Endpoint 0 TxFIFO depth
-	OTG_FS_GLOBAL_FS_GNPTXFSIZ_DEVICE_TX0FSA = ((1UL << 16) - 1) << 0,  // Endpoint 0 transmit RAM start address
+	OTG_FS_GLOBAL_GRXSTSP_DEVICE_FRMNUM = ((1UL << 4) - 1) << 21, // Frame number
+	OTG_FS_GLOBAL_GRXSTSP_DEVICE_PKTSTS = ((1UL << 4) - 1) << 17, // Packet status
+	OTG_FS_GLOBAL_GRXSTSP_DEVICE_DPID   = ((1UL << 2) - 1) << 15, // Data PID
+	OTG_FS_GLOBAL_GRXSTSP_DEVICE_BCNT   = ((1UL << 11) - 1) << 4, // Byte count
+	OTG_FS_GLOBAL_GRXSTSP_DEVICE_EPNUM  = ((1UL << 4) - 1) << 0,  // Endpoint number
 };
-inline void otg_fs_global_fs_gnptxfsiz_device_set_tx0fd(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
-	p->FS_GNPTXFSIZ_Device =
-	    (p->FS_GNPTXFSIZ_Device & ~OTG_FS_GLOBAL_FS_GNPTXFSIZ_DEVICE_TX0FD) | ((val << 16) & OTG_FS_GLOBAL_FS_GNPTXFSIZ_DEVICE_TX0FD);
+inline uint32_t otg_fs_global_grxstsp_device_get_frmnum(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->GRXSTSP_Device & OTG_FS_GLOBAL_GRXSTSP_DEVICE_FRMNUM) >> 21;
 }
-inline void otg_fs_global_fs_gnptxfsiz_device_set_tx0fsa(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
-	p->FS_GNPTXFSIZ_Device =
-	    (p->FS_GNPTXFSIZ_Device & ~OTG_FS_GLOBAL_FS_GNPTXFSIZ_DEVICE_TX0FSA) | ((val << 0) & OTG_FS_GLOBAL_FS_GNPTXFSIZ_DEVICE_TX0FSA);
+inline uint32_t otg_fs_global_grxstsp_device_get_pktsts(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->GRXSTSP_Device & OTG_FS_GLOBAL_GRXSTSP_DEVICE_PKTSTS) >> 17;
 }
-inline uint32_t otg_fs_global_fs_gnptxfsiz_device_get_tx0fd(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_GNPTXFSIZ_Device & OTG_FS_GLOBAL_FS_GNPTXFSIZ_DEVICE_TX0FD) >> 16;
+inline uint32_t otg_fs_global_grxstsp_device_get_dpid(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->GRXSTSP_Device & OTG_FS_GLOBAL_GRXSTSP_DEVICE_DPID) >> 15;
 }
-inline uint32_t otg_fs_global_fs_gnptxfsiz_device_get_tx0fsa(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_GNPTXFSIZ_Device & OTG_FS_GLOBAL_FS_GNPTXFSIZ_DEVICE_TX0FSA) >> 0;
+inline uint32_t otg_fs_global_grxstsp_device_get_bcnt(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->GRXSTSP_Device & OTG_FS_GLOBAL_GRXSTSP_DEVICE_BCNT) >> 4;
+}
+inline uint32_t otg_fs_global_grxstsp_device_get_epnum(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->GRXSTSP_Device & OTG_FS_GLOBAL_GRXSTSP_DEVICE_EPNUM) >> 0;
 }
 
-// OTG_FS_GLOBAL->FS_GNPTXSTS OTG_FS non-periodic transmit FIFO/queue status register (OTG_FS_GNPTXSTS)
+// OTG_FS_GLOBAL->GNPTXFSIZ_Device OTG_FS non-periodic transmit FIFO size register (Device mode)
 enum {
-	OTG_FS_GLOBAL_FS_GNPTXSTS_NPTXQTOP = ((1UL << 7) - 1) << 24, // Top of the non-periodic transmit request queue
-	OTG_FS_GLOBAL_FS_GNPTXSTS_NPTQXSAV = ((1UL << 8) - 1) << 16, // Non-periodic transmit request queue space available
-	OTG_FS_GLOBAL_FS_GNPTXSTS_NPTXFSAV = ((1UL << 16) - 1) << 0, // Non-periodic TxFIFO space available
+	OTG_FS_GLOBAL_GNPTXFSIZ_DEVICE_TX0FD  = ((1UL << 16) - 1) << 16, // Endpoint 0 TxFIFO depth
+	OTG_FS_GLOBAL_GNPTXFSIZ_DEVICE_TX0FSA = ((1UL << 16) - 1) << 0,  // Endpoint 0 transmit RAM start address
 };
-inline uint32_t otg_fs_global_fs_gnptxsts_get_nptxqtop(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_GNPTXSTS & OTG_FS_GLOBAL_FS_GNPTXSTS_NPTXQTOP) >> 24;
+inline void otg_fs_global_gnptxfsiz_device_set_tx0fd(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
+	p->GNPTXFSIZ_Device =
+	    (p->GNPTXFSIZ_Device & ~OTG_FS_GLOBAL_GNPTXFSIZ_DEVICE_TX0FD) | ((val << 16) & OTG_FS_GLOBAL_GNPTXFSIZ_DEVICE_TX0FD);
 }
-inline uint32_t otg_fs_global_fs_gnptxsts_get_nptqxsav(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_GNPTXSTS & OTG_FS_GLOBAL_FS_GNPTXSTS_NPTQXSAV) >> 16;
+inline void otg_fs_global_gnptxfsiz_device_set_tx0fsa(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
+	p->GNPTXFSIZ_Device =
+	    (p->GNPTXFSIZ_Device & ~OTG_FS_GLOBAL_GNPTXFSIZ_DEVICE_TX0FSA) | ((val << 0) & OTG_FS_GLOBAL_GNPTXFSIZ_DEVICE_TX0FSA);
 }
-inline uint32_t otg_fs_global_fs_gnptxsts_get_nptxfsav(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_GNPTXSTS & OTG_FS_GLOBAL_FS_GNPTXSTS_NPTXFSAV) >> 0;
+inline uint32_t otg_fs_global_gnptxfsiz_device_get_tx0fd(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->GNPTXFSIZ_Device & OTG_FS_GLOBAL_GNPTXFSIZ_DEVICE_TX0FD) >> 16;
+}
+inline uint32_t otg_fs_global_gnptxfsiz_device_get_tx0fsa(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->GNPTXFSIZ_Device & OTG_FS_GLOBAL_GNPTXFSIZ_DEVICE_TX0FSA) >> 0;
 }
 
-// OTG_FS_GLOBAL->FS_GCCFG OTG_FS general core configuration register (OTG_FS_GCCFG)
+// OTG_FS_GLOBAL->GNPTXSTS OTG_FS non-periodic transmit FIFO/queue status register (OTG_FS_GNPTXSTS)
 enum {
-	OTG_FS_GLOBAL_FS_GCCFG_SOFOUTEN = 1UL << 20, // SOF output enable
-	OTG_FS_GLOBAL_FS_GCCFG_VBUSBSEN = 1UL << 19, // Enable the VBUS sensing device
-	OTG_FS_GLOBAL_FS_GCCFG_VBUSASEN = 1UL << 18, // Enable the VBUS sensing device
-	OTG_FS_GLOBAL_FS_GCCFG_PWRDWN   = 1UL << 16, // Power down
+	OTG_FS_GLOBAL_GNPTXSTS_NPTXQTOP = ((1UL << 7) - 1) << 24, // Top of the non-periodic transmit request queue
+	OTG_FS_GLOBAL_GNPTXSTS_NPTQXSAV = ((1UL << 8) - 1) << 16, // Non-periodic transmit request queue space available
+	OTG_FS_GLOBAL_GNPTXSTS_NPTXFSAV = ((1UL << 16) - 1) << 0, // Non-periodic TxFIFO space available
 };
-
-// OTG_FS_GLOBAL->FS_HPTXFSIZ OTG_FS Host periodic transmit FIFO size register (OTG_FS_HPTXFSIZ)
-enum {
-	OTG_FS_GLOBAL_FS_HPTXFSIZ_PTXFSIZ = ((1UL << 16) - 1) << 16, // Host periodic TxFIFO depth
-	OTG_FS_GLOBAL_FS_HPTXFSIZ_PTXSA   = ((1UL << 16) - 1) << 0,  // Host periodic TxFIFO start address
-};
-inline void otg_fs_global_fs_hptxfsiz_set_ptxfsiz(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
-	p->FS_HPTXFSIZ = (p->FS_HPTXFSIZ & ~OTG_FS_GLOBAL_FS_HPTXFSIZ_PTXFSIZ) | ((val << 16) & OTG_FS_GLOBAL_FS_HPTXFSIZ_PTXFSIZ);
+inline uint32_t otg_fs_global_gnptxsts_get_nptxqtop(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->GNPTXSTS & OTG_FS_GLOBAL_GNPTXSTS_NPTXQTOP) >> 24;
 }
-inline void otg_fs_global_fs_hptxfsiz_set_ptxsa(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
-	p->FS_HPTXFSIZ = (p->FS_HPTXFSIZ & ~OTG_FS_GLOBAL_FS_HPTXFSIZ_PTXSA) | ((val << 0) & OTG_FS_GLOBAL_FS_HPTXFSIZ_PTXSA);
+inline uint32_t otg_fs_global_gnptxsts_get_nptqxsav(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->GNPTXSTS & OTG_FS_GLOBAL_GNPTXSTS_NPTQXSAV) >> 16;
 }
-inline uint32_t otg_fs_global_fs_hptxfsiz_get_ptxfsiz(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_HPTXFSIZ & OTG_FS_GLOBAL_FS_HPTXFSIZ_PTXFSIZ) >> 16;
-}
-inline uint32_t otg_fs_global_fs_hptxfsiz_get_ptxsa(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_HPTXFSIZ & OTG_FS_GLOBAL_FS_HPTXFSIZ_PTXSA) >> 0;
+inline uint32_t otg_fs_global_gnptxsts_get_nptxfsav(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->GNPTXSTS & OTG_FS_GLOBAL_GNPTXSTS_NPTXFSAV) >> 0;
 }
 
-// OTG_FS_GLOBAL->FS_DIEPTXF1 OTG_FS device IN endpoint transmit FIFO size register (OTG_FS_DIEPTXF2)
+// OTG_FS_GLOBAL->GCCFG OTG_FS general core configuration register (OTG_FS_GCCFG)
 enum {
-	OTG_FS_GLOBAL_FS_DIEPTXF1_INEPTXFD = ((1UL << 16) - 1) << 16, // IN endpoint TxFIFO depth
-	OTG_FS_GLOBAL_FS_DIEPTXF1_INEPTXSA = ((1UL << 16) - 1) << 0,  // IN endpoint FIFO2 transmit RAM start address
+	OTG_FS_GLOBAL_GCCFG_NOVBUSSENS = 1UL << 21, // VBUS sending disable
+	OTG_FS_GLOBAL_GCCFG_SOFOUTEN   = 1UL << 20, // SOF output enable
+	OTG_FS_GLOBAL_GCCFG_VBUSBSEN   = 1UL << 19, // Enable the VBUS sensing B device
+	OTG_FS_GLOBAL_GCCFG_VBUSASEN   = 1UL << 18, // Enable the VBUS sensing A device
+	OTG_FS_GLOBAL_GCCFG_PWRDWN     = 1UL << 16, // Power down (up really)
 };
-inline void otg_fs_global_fs_dieptxf1_set_ineptxfd(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
-	p->FS_DIEPTXF1 = (p->FS_DIEPTXF1 & ~OTG_FS_GLOBAL_FS_DIEPTXF1_INEPTXFD) | ((val << 16) & OTG_FS_GLOBAL_FS_DIEPTXF1_INEPTXFD);
+
+// OTG_FS_GLOBAL->HPTXFSIZ OTG_FS Host periodic transmit FIFO size register (OTG_FS_HPTXFSIZ)
+enum {
+	OTG_FS_GLOBAL_HPTXFSIZ_PTXFSIZ = ((1UL << 16) - 1) << 16, // Host periodic TxFIFO depth
+	OTG_FS_GLOBAL_HPTXFSIZ_PTXSA   = ((1UL << 16) - 1) << 0,  // Host periodic TxFIFO start address
+};
+inline void otg_fs_global_hptxfsiz_set_ptxfsiz(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
+	p->HPTXFSIZ = (p->HPTXFSIZ & ~OTG_FS_GLOBAL_HPTXFSIZ_PTXFSIZ) | ((val << 16) & OTG_FS_GLOBAL_HPTXFSIZ_PTXFSIZ);
 }
-inline void otg_fs_global_fs_dieptxf1_set_ineptxsa(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
-	p->FS_DIEPTXF1 = (p->FS_DIEPTXF1 & ~OTG_FS_GLOBAL_FS_DIEPTXF1_INEPTXSA) | ((val << 0) & OTG_FS_GLOBAL_FS_DIEPTXF1_INEPTXSA);
+inline void otg_fs_global_hptxfsiz_set_ptxsa(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
+	p->HPTXFSIZ = (p->HPTXFSIZ & ~OTG_FS_GLOBAL_HPTXFSIZ_PTXSA) | ((val << 0) & OTG_FS_GLOBAL_HPTXFSIZ_PTXSA);
 }
-inline uint32_t otg_fs_global_fs_dieptxf1_get_ineptxfd(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_DIEPTXF1 & OTG_FS_GLOBAL_FS_DIEPTXF1_INEPTXFD) >> 16;
+inline uint32_t otg_fs_global_hptxfsiz_get_ptxfsiz(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->HPTXFSIZ & OTG_FS_GLOBAL_HPTXFSIZ_PTXFSIZ) >> 16;
 }
-inline uint32_t otg_fs_global_fs_dieptxf1_get_ineptxsa(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_DIEPTXF1 & OTG_FS_GLOBAL_FS_DIEPTXF1_INEPTXSA) >> 0;
+inline uint32_t otg_fs_global_hptxfsiz_get_ptxsa(struct OTG_FS_GLOBAL_Type* p) { return (p->HPTXFSIZ & OTG_FS_GLOBAL_HPTXFSIZ_PTXSA) >> 0; }
+
+// OTG_FS_GLOBAL->DIEPTXF1 OTG_FS device IN endpoint transmit FIFO size register (OTG_FS_DIEPTXF2)
+enum {
+	OTG_FS_GLOBAL_DIEPTXF1_INEPTXFD = ((1UL << 16) - 1) << 16, // IN endpoint TxFIFO depth
+	OTG_FS_GLOBAL_DIEPTXF1_INEPTXSA = ((1UL << 16) - 1) << 0,  // IN endpoint FIFO2 transmit RAM start address
+};
+inline void otg_fs_global_dieptxf1_set_ineptxfd(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
+	p->DIEPTXF1 = (p->DIEPTXF1 & ~OTG_FS_GLOBAL_DIEPTXF1_INEPTXFD) | ((val << 16) & OTG_FS_GLOBAL_DIEPTXF1_INEPTXFD);
+}
+inline void otg_fs_global_dieptxf1_set_ineptxsa(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
+	p->DIEPTXF1 = (p->DIEPTXF1 & ~OTG_FS_GLOBAL_DIEPTXF1_INEPTXSA) | ((val << 0) & OTG_FS_GLOBAL_DIEPTXF1_INEPTXSA);
+}
+inline uint32_t otg_fs_global_dieptxf1_get_ineptxfd(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->DIEPTXF1 & OTG_FS_GLOBAL_DIEPTXF1_INEPTXFD) >> 16;
+}
+inline uint32_t otg_fs_global_dieptxf1_get_ineptxsa(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->DIEPTXF1 & OTG_FS_GLOBAL_DIEPTXF1_INEPTXSA) >> 0;
 }
 
-// OTG_FS_GLOBAL->FS_DIEPTXF2 OTG_FS device IN endpoint transmit FIFO size register (OTG_FS_DIEPTXF3)
+// OTG_FS_GLOBAL->DIEPTXF2 OTG_FS device IN endpoint transmit FIFO size register (OTG_FS_DIEPTXF3)
 enum {
-	OTG_FS_GLOBAL_FS_DIEPTXF2_INEPTXFD = ((1UL << 16) - 1) << 16, // IN endpoint TxFIFO depth
-	OTG_FS_GLOBAL_FS_DIEPTXF2_INEPTXSA = ((1UL << 16) - 1) << 0,  // IN endpoint FIFO3 transmit RAM start address
+	OTG_FS_GLOBAL_DIEPTXF2_INEPTXFD = ((1UL << 16) - 1) << 16, // IN endpoint TxFIFO depth
+	OTG_FS_GLOBAL_DIEPTXF2_INEPTXSA = ((1UL << 16) - 1) << 0,  // IN endpoint FIFO3 transmit RAM start address
 };
-inline void otg_fs_global_fs_dieptxf2_set_ineptxfd(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
-	p->FS_DIEPTXF2 = (p->FS_DIEPTXF2 & ~OTG_FS_GLOBAL_FS_DIEPTXF2_INEPTXFD) | ((val << 16) & OTG_FS_GLOBAL_FS_DIEPTXF2_INEPTXFD);
+inline void otg_fs_global_dieptxf2_set_ineptxfd(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
+	p->DIEPTXF2 = (p->DIEPTXF2 & ~OTG_FS_GLOBAL_DIEPTXF2_INEPTXFD) | ((val << 16) & OTG_FS_GLOBAL_DIEPTXF2_INEPTXFD);
 }
-inline void otg_fs_global_fs_dieptxf2_set_ineptxsa(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
-	p->FS_DIEPTXF2 = (p->FS_DIEPTXF2 & ~OTG_FS_GLOBAL_FS_DIEPTXF2_INEPTXSA) | ((val << 0) & OTG_FS_GLOBAL_FS_DIEPTXF2_INEPTXSA);
+inline void otg_fs_global_dieptxf2_set_ineptxsa(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
+	p->DIEPTXF2 = (p->DIEPTXF2 & ~OTG_FS_GLOBAL_DIEPTXF2_INEPTXSA) | ((val << 0) & OTG_FS_GLOBAL_DIEPTXF2_INEPTXSA);
 }
-inline uint32_t otg_fs_global_fs_dieptxf2_get_ineptxfd(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_DIEPTXF2 & OTG_FS_GLOBAL_FS_DIEPTXF2_INEPTXFD) >> 16;
+inline uint32_t otg_fs_global_dieptxf2_get_ineptxfd(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->DIEPTXF2 & OTG_FS_GLOBAL_DIEPTXF2_INEPTXFD) >> 16;
 }
-inline uint32_t otg_fs_global_fs_dieptxf2_get_ineptxsa(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_DIEPTXF2 & OTG_FS_GLOBAL_FS_DIEPTXF2_INEPTXSA) >> 0;
+inline uint32_t otg_fs_global_dieptxf2_get_ineptxsa(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->DIEPTXF2 & OTG_FS_GLOBAL_DIEPTXF2_INEPTXSA) >> 0;
 }
 
-// OTG_FS_GLOBAL->FS_DIEPTXF3 OTG_FS device IN endpoint transmit FIFO size register (OTG_FS_DIEPTXF4)
+// OTG_FS_GLOBAL->DIEPTXF3 OTG_FS device IN endpoint transmit FIFO size register (OTG_FS_DIEPTXF4)
 enum {
-	OTG_FS_GLOBAL_FS_DIEPTXF3_INEPTXFD = ((1UL << 16) - 1) << 16, // IN endpoint TxFIFO depth
-	OTG_FS_GLOBAL_FS_DIEPTXF3_INEPTXSA = ((1UL << 16) - 1) << 0,  // IN endpoint FIFO4 transmit RAM start address
+	OTG_FS_GLOBAL_DIEPTXF3_INEPTXFD = ((1UL << 16) - 1) << 16, // IN endpoint TxFIFO depth
+	OTG_FS_GLOBAL_DIEPTXF3_INEPTXSA = ((1UL << 16) - 1) << 0,  // IN endpoint FIFO4 transmit RAM start address
 };
-inline void otg_fs_global_fs_dieptxf3_set_ineptxfd(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
-	p->FS_DIEPTXF3 = (p->FS_DIEPTXF3 & ~OTG_FS_GLOBAL_FS_DIEPTXF3_INEPTXFD) | ((val << 16) & OTG_FS_GLOBAL_FS_DIEPTXF3_INEPTXFD);
+inline void otg_fs_global_dieptxf3_set_ineptxfd(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
+	p->DIEPTXF3 = (p->DIEPTXF3 & ~OTG_FS_GLOBAL_DIEPTXF3_INEPTXFD) | ((val << 16) & OTG_FS_GLOBAL_DIEPTXF3_INEPTXFD);
 }
-inline void otg_fs_global_fs_dieptxf3_set_ineptxsa(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
-	p->FS_DIEPTXF3 = (p->FS_DIEPTXF3 & ~OTG_FS_GLOBAL_FS_DIEPTXF3_INEPTXSA) | ((val << 0) & OTG_FS_GLOBAL_FS_DIEPTXF3_INEPTXSA);
+inline void otg_fs_global_dieptxf3_set_ineptxsa(struct OTG_FS_GLOBAL_Type* p, uint32_t val) {
+	p->DIEPTXF3 = (p->DIEPTXF3 & ~OTG_FS_GLOBAL_DIEPTXF3_INEPTXSA) | ((val << 0) & OTG_FS_GLOBAL_DIEPTXF3_INEPTXSA);
 }
-inline uint32_t otg_fs_global_fs_dieptxf3_get_ineptxfd(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_DIEPTXF3 & OTG_FS_GLOBAL_FS_DIEPTXF3_INEPTXFD) >> 16;
+inline uint32_t otg_fs_global_dieptxf3_get_ineptxfd(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->DIEPTXF3 & OTG_FS_GLOBAL_DIEPTXF3_INEPTXFD) >> 16;
 }
-inline uint32_t otg_fs_global_fs_dieptxf3_get_ineptxsa(struct OTG_FS_GLOBAL_Type* p) {
-	return (p->FS_DIEPTXF3 & OTG_FS_GLOBAL_FS_DIEPTXF3_INEPTXSA) >> 0;
+inline uint32_t otg_fs_global_dieptxf3_get_ineptxsa(struct OTG_FS_GLOBAL_Type* p) {
+	return (p->DIEPTXF3 & OTG_FS_GLOBAL_DIEPTXF3_INEPTXSA) >> 0;
 }
 
 /* USB on the go full speed */
 struct OTG_FS_HOST_Type {
-	__IO uint8_t FS_HCFG;         // @0 OTG_FS host configuration register (OTG_FS_HCFG)
-	uint8_t      RESERVED0[3];    // @1
+	__IO uint8_t  HCFG;           // @0 OTG_FS host configuration register (OTG_FS_HCFG)
+	uint8_t       RESERVED0[3];   // @1
 	__IO uint16_t HFIR;           // @4 OTG_FS Host frame interval register
 	uint8_t       RESERVED1[2];   // @6
-	__I uint32_t FS_HFNUM;        // @8 OTG_FS host frame number/frame time remaining register (OTG_FS_HFNUM)
-	uint8_t      RESERVED2[4];    // @12
-	__IO uint32_t FS_HPTXSTS;     // @16 OTG_FS_Host periodic transmit FIFO/queue status register (OTG_FS_HPTXSTS)
-	__I uint16_t HAINT;           // @20 OTG_FS Host all channels interrupt register
-	uint8_t      RESERVED3[2];    // @22
+	__I uint32_t  HFNUM;          // @8 OTG_FS host frame number/frame time remaining register (OTG_FS_HFNUM)
+	uint8_t       RESERVED2[4];   // @12
+	__IO uint32_t HPTXSTS;        // @16 OTG_FS_Host periodic transmit FIFO/queue status register (OTG_FS_HPTXSTS)
+	__I uint16_t  HAINT;          // @20 OTG_FS Host all channels interrupt register
+	uint8_t       RESERVED3[2];   // @22
 	__IO uint16_t HAINTMSK;       // @24 OTG_FS host all channels interrupt mask register
 	uint8_t       RESERVED4[38];  // @26
-	__IO uint32_t FS_HPRT;        // @64 OTG_FS host port control and status register (OTG_FS_HPRT)
+	__IO uint32_t HPRT;           // @64 OTG_FS host port control and status register (OTG_FS_HPRT)
 	uint8_t       RESERVED5[188]; // @68
-	__IO uint32_t FS_HCCHAR0;     // @256 OTG_FS host channel-0 characteristics register (OTG_FS_HCCHAR0)
+	__IO uint32_t HCCHAR0;        // @256 OTG_FS host channel-0 characteristics register (OTG_FS_HCCHAR0)
 	uint8_t       RESERVED6[4];   // @260
-	__IO uint16_t FS_HCINT0;      // @264 OTG_FS host channel-0 interrupt register (OTG_FS_HCINT0)
+	__IO uint16_t HCINT0;         // @264 OTG_FS host channel-0 interrupt register (OTG_FS_HCINT0)
 	uint8_t       RESERVED7[2];   // @266
-	__IO uint16_t FS_HCINTMSK0;   // @268 OTG_FS host channel-0 mask register (OTG_FS_HCINTMSK0)
+	__IO uint16_t HCINTMSK0;      // @268 OTG_FS host channel-0 mask register (OTG_FS_HCINTMSK0)
 	uint8_t       RESERVED8[2];   // @270
-	__IO uint32_t FS_HCTSIZ0;     // @272 OTG_FS host channel-0 transfer size register
+	__IO uint32_t HCTSIZ0;        // @272 OTG_FS host channel-0 transfer size register
 	uint8_t       RESERVED9[12];  // @276
-	__IO uint32_t FS_HCCHAR1;     // @288 OTG_FS host channel-1 characteristics register (OTG_FS_HCCHAR1)
+	__IO uint32_t HCCHAR1;        // @288 OTG_FS host channel-1 characteristics register (OTG_FS_HCCHAR1)
 	uint8_t       RESERVED10[4];  // @292
-	__IO uint16_t FS_HCINT1;      // @296 OTG_FS host channel-1 interrupt register (OTG_FS_HCINT1)
+	__IO uint16_t HCINT1;         // @296 OTG_FS host channel-1 interrupt register (OTG_FS_HCINT1)
 	uint8_t       RESERVED11[2];  // @298
-	__IO uint16_t FS_HCINTMSK1;   // @300 OTG_FS host channel-1 mask register (OTG_FS_HCINTMSK1)
+	__IO uint16_t HCINTMSK1;      // @300 OTG_FS host channel-1 mask register (OTG_FS_HCINTMSK1)
 	uint8_t       RESERVED12[2];  // @302
-	__IO uint32_t FS_HCTSIZ1;     // @304 OTG_FS host channel-1 transfer size register
+	__IO uint32_t HCTSIZ1;        // @304 OTG_FS host channel-1 transfer size register
 	uint8_t       RESERVED13[12]; // @308
-	__IO uint32_t FS_HCCHAR2;     // @320 OTG_FS host channel-2 characteristics register (OTG_FS_HCCHAR2)
+	__IO uint32_t HCCHAR2;        // @320 OTG_FS host channel-2 characteristics register (OTG_FS_HCCHAR2)
 	uint8_t       RESERVED14[4];  // @324
-	__IO uint16_t FS_HCINT2;      // @328 OTG_FS host channel-2 interrupt register (OTG_FS_HCINT2)
+	__IO uint16_t HCINT2;         // @328 OTG_FS host channel-2 interrupt register (OTG_FS_HCINT2)
 	uint8_t       RESERVED15[2];  // @330
-	__IO uint16_t FS_HCINTMSK2;   // @332 OTG_FS host channel-2 mask register (OTG_FS_HCINTMSK2)
+	__IO uint16_t HCINTMSK2;      // @332 OTG_FS host channel-2 mask register (OTG_FS_HCINTMSK2)
 	uint8_t       RESERVED16[2];  // @334
-	__IO uint32_t FS_HCTSIZ2;     // @336 OTG_FS host channel-2 transfer size register
+	__IO uint32_t HCTSIZ2;        // @336 OTG_FS host channel-2 transfer size register
 	uint8_t       RESERVED17[12]; // @340
-	__IO uint32_t FS_HCCHAR3;     // @352 OTG_FS host channel-3 characteristics register (OTG_FS_HCCHAR3)
+	__IO uint32_t HCCHAR3;        // @352 OTG_FS host channel-3 characteristics register (OTG_FS_HCCHAR3)
 	uint8_t       RESERVED18[4];  // @356
-	__IO uint16_t FS_HCINT3;      // @360 OTG_FS host channel-3 interrupt register (OTG_FS_HCINT3)
+	__IO uint16_t HCINT3;         // @360 OTG_FS host channel-3 interrupt register (OTG_FS_HCINT3)
 	uint8_t       RESERVED19[2];  // @362
-	__IO uint16_t FS_HCINTMSK3;   // @364 OTG_FS host channel-3 mask register (OTG_FS_HCINTMSK3)
+	__IO uint16_t HCINTMSK3;      // @364 OTG_FS host channel-3 mask register (OTG_FS_HCINTMSK3)
 	uint8_t       RESERVED20[2];  // @366
-	__IO uint32_t FS_HCTSIZ3;     // @368 OTG_FS host channel-3 transfer size register
+	__IO uint32_t HCTSIZ3;        // @368 OTG_FS host channel-3 transfer size register
 	uint8_t       RESERVED21[12]; // @372
-	__IO uint32_t FS_HCCHAR4;     // @384 OTG_FS host channel-4 characteristics register (OTG_FS_HCCHAR4)
+	__IO uint32_t HCCHAR4;        // @384 OTG_FS host channel-4 characteristics register (OTG_FS_HCCHAR4)
 	uint8_t       RESERVED22[4];  // @388
-	__IO uint16_t FS_HCINT4;      // @392 OTG_FS host channel-4 interrupt register (OTG_FS_HCINT4)
+	__IO uint16_t HCINT4;         // @392 OTG_FS host channel-4 interrupt register (OTG_FS_HCINT4)
 	uint8_t       RESERVED23[2];  // @394
-	__IO uint16_t FS_HCINTMSK4;   // @396 OTG_FS host channel-4 mask register (OTG_FS_HCINTMSK4)
+	__IO uint16_t HCINTMSK4;      // @396 OTG_FS host channel-4 mask register (OTG_FS_HCINTMSK4)
 	uint8_t       RESERVED24[2];  // @398
-	__IO uint32_t FS_HCTSIZ4;     // @400 OTG_FS host channel-x transfer size register
+	__IO uint32_t HCTSIZ4;        // @400 OTG_FS host channel-x transfer size register
 	uint8_t       RESERVED25[12]; // @404
-	__IO uint32_t FS_HCCHAR5;     // @416 OTG_FS host channel-5 characteristics register (OTG_FS_HCCHAR5)
+	__IO uint32_t HCCHAR5;        // @416 OTG_FS host channel-5 characteristics register (OTG_FS_HCCHAR5)
 	uint8_t       RESERVED26[4];  // @420
-	__IO uint16_t FS_HCINT5;      // @424 OTG_FS host channel-5 interrupt register (OTG_FS_HCINT5)
+	__IO uint16_t HCINT5;         // @424 OTG_FS host channel-5 interrupt register (OTG_FS_HCINT5)
 	uint8_t       RESERVED27[2];  // @426
-	__IO uint16_t FS_HCINTMSK5;   // @428 OTG_FS host channel-5 mask register (OTG_FS_HCINTMSK5)
+	__IO uint16_t HCINTMSK5;      // @428 OTG_FS host channel-5 mask register (OTG_FS_HCINTMSK5)
 	uint8_t       RESERVED28[2];  // @430
-	__IO uint32_t FS_HCTSIZ5;     // @432 OTG_FS host channel-5 transfer size register
+	__IO uint32_t HCTSIZ5;        // @432 OTG_FS host channel-5 transfer size register
 	uint8_t       RESERVED29[12]; // @436
-	__IO uint32_t FS_HCCHAR6;     // @448 OTG_FS host channel-6 characteristics register (OTG_FS_HCCHAR6)
+	__IO uint32_t HCCHAR6;        // @448 OTG_FS host channel-6 characteristics register (OTG_FS_HCCHAR6)
 	uint8_t       RESERVED30[4];  // @452
-	__IO uint16_t FS_HCINT6;      // @456 OTG_FS host channel-6 interrupt register (OTG_FS_HCINT6)
+	__IO uint16_t HCINT6;         // @456 OTG_FS host channel-6 interrupt register (OTG_FS_HCINT6)
 	uint8_t       RESERVED31[2];  // @458
-	__IO uint16_t FS_HCINTMSK6;   // @460 OTG_FS host channel-6 mask register (OTG_FS_HCINTMSK6)
+	__IO uint16_t HCINTMSK6;      // @460 OTG_FS host channel-6 mask register (OTG_FS_HCINTMSK6)
 	uint8_t       RESERVED32[2];  // @462
-	__IO uint32_t FS_HCTSIZ6;     // @464 OTG_FS host channel-6 transfer size register
+	__IO uint32_t HCTSIZ6;        // @464 OTG_FS host channel-6 transfer size register
 	uint8_t       RESERVED33[12]; // @468
-	__IO uint32_t FS_HCCHAR7;     // @480 OTG_FS host channel-7 characteristics register (OTG_FS_HCCHAR7)
+	__IO uint32_t HCCHAR7;        // @480 OTG_FS host channel-7 characteristics register (OTG_FS_HCCHAR7)
 	uint8_t       RESERVED34[4];  // @484
-	__IO uint16_t FS_HCINT7;      // @488 OTG_FS host channel-7 interrupt register (OTG_FS_HCINT7)
+	__IO uint16_t HCINT7;         // @488 OTG_FS host channel-7 interrupt register (OTG_FS_HCINT7)
 	uint8_t       RESERVED35[2];  // @490
-	__IO uint16_t FS_HCINTMSK7;   // @492 OTG_FS host channel-7 mask register (OTG_FS_HCINTMSK7)
+	__IO uint16_t HCINTMSK7;      // @492 OTG_FS host channel-7 mask register (OTG_FS_HCINTMSK7)
 	uint8_t       RESERVED36[2];  // @494
-	__IO uint32_t FS_HCTSIZ7;     // @496 OTG_FS host channel-7 transfer size register
+	__IO uint32_t HCTSIZ7;        // @496 OTG_FS host channel-7 transfer size register
 };
 
-// OTG_FS_HOST->FS_HCFG OTG_FS host configuration register (OTG_FS_HCFG)
+// OTG_FS_HOST->HCFG OTG_FS host configuration register (OTG_FS_HCFG)
 enum {
-	OTG_FS_HOST_FS_HCFG_FSLSS   = 1UL << 2,              // FS- and LS-only support
-	OTG_FS_HOST_FS_HCFG_FSLSPCS = ((1UL << 2) - 1) << 0, // FS/LS PHY clock select
+	OTG_FS_HOST_HCFG_FSLSS   = 1UL << 2,              // FS- and LS-only support
+	OTG_FS_HOST_HCFG_FSLSPCS = ((1UL << 2) - 1) << 0, // FS/LS PHY clock select
 };
-inline void otg_fs_host_fs_hcfg_set_fslspcs(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCFG = (p->FS_HCFG & ~OTG_FS_HOST_FS_HCFG_FSLSPCS) | ((val << 0) & OTG_FS_HOST_FS_HCFG_FSLSPCS);
+inline void otg_fs_host_hcfg_set_fslspcs(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCFG = (p->HCFG & ~OTG_FS_HOST_HCFG_FSLSPCS) | ((val << 0) & OTG_FS_HOST_HCFG_FSLSPCS);
 }
-inline uint32_t otg_fs_host_fs_hcfg_get_fslspcs(struct OTG_FS_HOST_Type* p) { return (p->FS_HCFG & OTG_FS_HOST_FS_HCFG_FSLSPCS) >> 0; }
+inline uint32_t otg_fs_host_hcfg_get_fslspcs(struct OTG_FS_HOST_Type* p) { return (p->HCFG & OTG_FS_HOST_HCFG_FSLSPCS) >> 0; }
 
-// OTG_FS_HOST->FS_HFNUM OTG_FS host frame number/frame time remaining register (OTG_FS_HFNUM)
+// OTG_FS_HOST->HFNUM OTG_FS host frame number/frame time remaining register (OTG_FS_HFNUM)
 enum {
-	OTG_FS_HOST_FS_HFNUM_FTREM = ((1UL << 16) - 1) << 16, // Frame time remaining
-	OTG_FS_HOST_FS_HFNUM_FRNUM = ((1UL << 16) - 1) << 0,  // Frame number
+	OTG_FS_HOST_HFNUM_FTREM = ((1UL << 16) - 1) << 16, // Frame time remaining
+	OTG_FS_HOST_HFNUM_FRNUM = ((1UL << 16) - 1) << 0,  // Frame number
 };
-inline uint32_t otg_fs_host_fs_hfnum_get_ftrem(struct OTG_FS_HOST_Type* p) { return (p->FS_HFNUM & OTG_FS_HOST_FS_HFNUM_FTREM) >> 16; }
-inline uint32_t otg_fs_host_fs_hfnum_get_frnum(struct OTG_FS_HOST_Type* p) { return (p->FS_HFNUM & OTG_FS_HOST_FS_HFNUM_FRNUM) >> 0; }
+inline uint32_t otg_fs_host_hfnum_get_ftrem(struct OTG_FS_HOST_Type* p) { return (p->HFNUM & OTG_FS_HOST_HFNUM_FTREM) >> 16; }
+inline uint32_t otg_fs_host_hfnum_get_frnum(struct OTG_FS_HOST_Type* p) { return (p->HFNUM & OTG_FS_HOST_HFNUM_FRNUM) >> 0; }
 
-// OTG_FS_HOST->FS_HPTXSTS OTG_FS_Host periodic transmit FIFO/queue status register (OTG_FS_HPTXSTS)
+// OTG_FS_HOST->HPTXSTS OTG_FS_Host periodic transmit FIFO/queue status register (OTG_FS_HPTXSTS)
 enum {
-	OTG_FS_HOST_FS_HPTXSTS_PTXQTOP  = ((1UL << 8) - 1) << 24, // Top of the periodic transmit request queue
-	OTG_FS_HOST_FS_HPTXSTS_PTXQSAV  = ((1UL << 8) - 1) << 16, // Periodic transmit request queue space available
-	OTG_FS_HOST_FS_HPTXSTS_PTXFSAVL = ((1UL << 16) - 1) << 0, // Periodic transmit data FIFO space available
+	OTG_FS_HOST_HPTXSTS_PTXQTOP  = ((1UL << 8) - 1) << 24, // Top of the periodic transmit request queue
+	OTG_FS_HOST_HPTXSTS_PTXQSAV  = ((1UL << 8) - 1) << 16, // Periodic transmit request queue space available
+	OTG_FS_HOST_HPTXSTS_PTXFSAVL = ((1UL << 16) - 1) << 0, // Periodic transmit data FIFO space available
 };
-inline void otg_fs_host_fs_hptxsts_set_ptxqtop(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HPTXSTS = (p->FS_HPTXSTS & ~OTG_FS_HOST_FS_HPTXSTS_PTXQTOP) | ((val << 24) & OTG_FS_HOST_FS_HPTXSTS_PTXQTOP);
+inline void otg_fs_host_hptxsts_set_ptxqtop(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HPTXSTS = (p->HPTXSTS & ~OTG_FS_HOST_HPTXSTS_PTXQTOP) | ((val << 24) & OTG_FS_HOST_HPTXSTS_PTXQTOP);
 }
-inline void otg_fs_host_fs_hptxsts_set_ptxqsav(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HPTXSTS = (p->FS_HPTXSTS & ~OTG_FS_HOST_FS_HPTXSTS_PTXQSAV) | ((val << 16) & OTG_FS_HOST_FS_HPTXSTS_PTXQSAV);
+inline void otg_fs_host_hptxsts_set_ptxqsav(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HPTXSTS = (p->HPTXSTS & ~OTG_FS_HOST_HPTXSTS_PTXQSAV) | ((val << 16) & OTG_FS_HOST_HPTXSTS_PTXQSAV);
 }
-inline void otg_fs_host_fs_hptxsts_set_ptxfsavl(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HPTXSTS = (p->FS_HPTXSTS & ~OTG_FS_HOST_FS_HPTXSTS_PTXFSAVL) | ((val << 0) & OTG_FS_HOST_FS_HPTXSTS_PTXFSAVL);
+inline void otg_fs_host_hptxsts_set_ptxfsavl(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HPTXSTS = (p->HPTXSTS & ~OTG_FS_HOST_HPTXSTS_PTXFSAVL) | ((val << 0) & OTG_FS_HOST_HPTXSTS_PTXFSAVL);
 }
-inline uint32_t otg_fs_host_fs_hptxsts_get_ptxqtop(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HPTXSTS & OTG_FS_HOST_FS_HPTXSTS_PTXQTOP) >> 24;
-}
-inline uint32_t otg_fs_host_fs_hptxsts_get_ptxqsav(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HPTXSTS & OTG_FS_HOST_FS_HPTXSTS_PTXQSAV) >> 16;
-}
-inline uint32_t otg_fs_host_fs_hptxsts_get_ptxfsavl(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HPTXSTS & OTG_FS_HOST_FS_HPTXSTS_PTXFSAVL) >> 0;
-}
+inline uint32_t otg_fs_host_hptxsts_get_ptxqtop(struct OTG_FS_HOST_Type* p) { return (p->HPTXSTS & OTG_FS_HOST_HPTXSTS_PTXQTOP) >> 24; }
+inline uint32_t otg_fs_host_hptxsts_get_ptxqsav(struct OTG_FS_HOST_Type* p) { return (p->HPTXSTS & OTG_FS_HOST_HPTXSTS_PTXQSAV) >> 16; }
+inline uint32_t otg_fs_host_hptxsts_get_ptxfsavl(struct OTG_FS_HOST_Type* p) { return (p->HPTXSTS & OTG_FS_HOST_HPTXSTS_PTXFSAVL) >> 0; }
 
-// OTG_FS_HOST->FS_HPRT OTG_FS host port control and status register (OTG_FS_HPRT)
+// OTG_FS_HOST->HPRT OTG_FS host port control and status register (OTG_FS_HPRT)
 enum {
-	OTG_FS_HOST_FS_HPRT_PSPD    = ((1UL << 2) - 1) << 17, // Port speed
-	OTG_FS_HOST_FS_HPRT_PTCTL   = ((1UL << 4) - 1) << 13, // Port test control
-	OTG_FS_HOST_FS_HPRT_PPWR    = 1UL << 12,              // Port power
-	OTG_FS_HOST_FS_HPRT_PLSTS   = ((1UL << 2) - 1) << 10, // Port line status
-	OTG_FS_HOST_FS_HPRT_PRST    = 1UL << 8,               // Port reset
-	OTG_FS_HOST_FS_HPRT_PSUSP   = 1UL << 7,               // Port suspend
-	OTG_FS_HOST_FS_HPRT_PRES    = 1UL << 6,               // Port resume
-	OTG_FS_HOST_FS_HPRT_POCCHNG = 1UL << 5,               // Port overcurrent change
-	OTG_FS_HOST_FS_HPRT_POCA    = 1UL << 4,               // Port overcurrent active
-	OTG_FS_HOST_FS_HPRT_PENCHNG = 1UL << 3,               // Port enable/disable change
-	OTG_FS_HOST_FS_HPRT_PENA    = 1UL << 2,               // Port enable
-	OTG_FS_HOST_FS_HPRT_PCDET   = 1UL << 1,               // Port connect detected
-	OTG_FS_HOST_FS_HPRT_PCSTS   = 1UL << 0,               // Port connect status
+	OTG_FS_HOST_HPRT_PSPD    = ((1UL << 2) - 1) << 17, // Port speed
+	OTG_FS_HOST_HPRT_PTCTL   = ((1UL << 4) - 1) << 13, // Port test control
+	OTG_FS_HOST_HPRT_PPWR    = 1UL << 12,              // Port power
+	OTG_FS_HOST_HPRT_PLSTS   = ((1UL << 2) - 1) << 10, // Port line status
+	OTG_FS_HOST_HPRT_PRST    = 1UL << 8,               // Port reset
+	OTG_FS_HOST_HPRT_PSUSP   = 1UL << 7,               // Port suspend
+	OTG_FS_HOST_HPRT_PRES    = 1UL << 6,               // Port resume
+	OTG_FS_HOST_HPRT_POCCHNG = 1UL << 5,               // Port overcurrent change
+	OTG_FS_HOST_HPRT_POCA    = 1UL << 4,               // Port overcurrent active
+	OTG_FS_HOST_HPRT_PENCHNG = 1UL << 3,               // Port enable/disable change
+	OTG_FS_HOST_HPRT_PENA    = 1UL << 2,               // Port enable
+	OTG_FS_HOST_HPRT_PCDET   = 1UL << 1,               // Port connect detected
+	OTG_FS_HOST_HPRT_PCSTS   = 1UL << 0,               // Port connect status
 };
-inline void otg_fs_host_fs_hprt_set_pspd(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HPRT = (p->FS_HPRT & ~OTG_FS_HOST_FS_HPRT_PSPD) | ((val << 17) & OTG_FS_HOST_FS_HPRT_PSPD);
+inline void otg_fs_host_hprt_set_pspd(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HPRT = (p->HPRT & ~OTG_FS_HOST_HPRT_PSPD) | ((val << 17) & OTG_FS_HOST_HPRT_PSPD);
 }
-inline void otg_fs_host_fs_hprt_set_ptctl(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HPRT = (p->FS_HPRT & ~OTG_FS_HOST_FS_HPRT_PTCTL) | ((val << 13) & OTG_FS_HOST_FS_HPRT_PTCTL);
+inline void otg_fs_host_hprt_set_ptctl(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HPRT = (p->HPRT & ~OTG_FS_HOST_HPRT_PTCTL) | ((val << 13) & OTG_FS_HOST_HPRT_PTCTL);
 }
-inline void otg_fs_host_fs_hprt_set_plsts(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HPRT = (p->FS_HPRT & ~OTG_FS_HOST_FS_HPRT_PLSTS) | ((val << 10) & OTG_FS_HOST_FS_HPRT_PLSTS);
+inline void otg_fs_host_hprt_set_plsts(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HPRT = (p->HPRT & ~OTG_FS_HOST_HPRT_PLSTS) | ((val << 10) & OTG_FS_HOST_HPRT_PLSTS);
 }
-inline uint32_t otg_fs_host_fs_hprt_get_pspd(struct OTG_FS_HOST_Type* p) { return (p->FS_HPRT & OTG_FS_HOST_FS_HPRT_PSPD) >> 17; }
-inline uint32_t otg_fs_host_fs_hprt_get_ptctl(struct OTG_FS_HOST_Type* p) { return (p->FS_HPRT & OTG_FS_HOST_FS_HPRT_PTCTL) >> 13; }
-inline uint32_t otg_fs_host_fs_hprt_get_plsts(struct OTG_FS_HOST_Type* p) { return (p->FS_HPRT & OTG_FS_HOST_FS_HPRT_PLSTS) >> 10; }
+inline uint32_t otg_fs_host_hprt_get_pspd(struct OTG_FS_HOST_Type* p) { return (p->HPRT & OTG_FS_HOST_HPRT_PSPD) >> 17; }
+inline uint32_t otg_fs_host_hprt_get_ptctl(struct OTG_FS_HOST_Type* p) { return (p->HPRT & OTG_FS_HOST_HPRT_PTCTL) >> 13; }
+inline uint32_t otg_fs_host_hprt_get_plsts(struct OTG_FS_HOST_Type* p) { return (p->HPRT & OTG_FS_HOST_HPRT_PLSTS) >> 10; }
 
-// OTG_FS_HOST->FS_HCCHAR0 OTG_FS host channel-0 characteristics register (OTG_FS_HCCHAR0)
+// OTG_FS_HOST->HCCHAR0 OTG_FS host channel-0 characteristics register (OTG_FS_HCCHAR0)
 enum {
-	OTG_FS_HOST_FS_HCCHAR0_CHENA  = 1UL << 31,              // Channel enable
-	OTG_FS_HOST_FS_HCCHAR0_CHDIS  = 1UL << 30,              // Channel disable
-	OTG_FS_HOST_FS_HCCHAR0_ODDFRM = 1UL << 29,              // Odd frame
-	OTG_FS_HOST_FS_HCCHAR0_DAD    = ((1UL << 7) - 1) << 22, // Device address
-	OTG_FS_HOST_FS_HCCHAR0_MCNT   = ((1UL << 2) - 1) << 20, // Multicount
-	OTG_FS_HOST_FS_HCCHAR0_EPTYP  = ((1UL << 2) - 1) << 18, // Endpoint type
-	OTG_FS_HOST_FS_HCCHAR0_LSDEV  = 1UL << 17,              // Low-speed device
-	OTG_FS_HOST_FS_HCCHAR0_EPDIR  = 1UL << 15,              // Endpoint direction
-	OTG_FS_HOST_FS_HCCHAR0_EPNUM  = ((1UL << 4) - 1) << 11, // Endpoint number
-	OTG_FS_HOST_FS_HCCHAR0_MPSIZ  = ((1UL << 11) - 1) << 0, // Maximum packet size
+	OTG_FS_HOST_HCCHAR0_CHENA  = 1UL << 31,              // Channel enable
+	OTG_FS_HOST_HCCHAR0_CHDIS  = 1UL << 30,              // Channel disable
+	OTG_FS_HOST_HCCHAR0_ODDFRM = 1UL << 29,              // Odd frame
+	OTG_FS_HOST_HCCHAR0_DAD    = ((1UL << 7) - 1) << 22, // Device address
+	OTG_FS_HOST_HCCHAR0_MCNT   = ((1UL << 2) - 1) << 20, // Multicount
+	OTG_FS_HOST_HCCHAR0_EPTYP  = ((1UL << 2) - 1) << 18, // Endpoint type
+	OTG_FS_HOST_HCCHAR0_LSDEV  = 1UL << 17,              // Low-speed device
+	OTG_FS_HOST_HCCHAR0_EPDIR  = 1UL << 15,              // Endpoint direction
+	OTG_FS_HOST_HCCHAR0_EPNUM  = ((1UL << 4) - 1) << 11, // Endpoint number
+	OTG_FS_HOST_HCCHAR0_MPSIZ  = ((1UL << 11) - 1) << 0, // Maximum packet size
 };
-inline void otg_fs_host_fs_hcchar0_set_dad(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR0 = (p->FS_HCCHAR0 & ~OTG_FS_HOST_FS_HCCHAR0_DAD) | ((val << 22) & OTG_FS_HOST_FS_HCCHAR0_DAD);
+inline void otg_fs_host_hcchar0_set_dad(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR0 = (p->HCCHAR0 & ~OTG_FS_HOST_HCCHAR0_DAD) | ((val << 22) & OTG_FS_HOST_HCCHAR0_DAD);
 }
-inline void otg_fs_host_fs_hcchar0_set_mcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR0 = (p->FS_HCCHAR0 & ~OTG_FS_HOST_FS_HCCHAR0_MCNT) | ((val << 20) & OTG_FS_HOST_FS_HCCHAR0_MCNT);
+inline void otg_fs_host_hcchar0_set_mcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR0 = (p->HCCHAR0 & ~OTG_FS_HOST_HCCHAR0_MCNT) | ((val << 20) & OTG_FS_HOST_HCCHAR0_MCNT);
 }
-inline void otg_fs_host_fs_hcchar0_set_eptyp(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR0 = (p->FS_HCCHAR0 & ~OTG_FS_HOST_FS_HCCHAR0_EPTYP) | ((val << 18) & OTG_FS_HOST_FS_HCCHAR0_EPTYP);
+inline void otg_fs_host_hcchar0_set_eptyp(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR0 = (p->HCCHAR0 & ~OTG_FS_HOST_HCCHAR0_EPTYP) | ((val << 18) & OTG_FS_HOST_HCCHAR0_EPTYP);
 }
-inline void otg_fs_host_fs_hcchar0_set_epnum(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR0 = (p->FS_HCCHAR0 & ~OTG_FS_HOST_FS_HCCHAR0_EPNUM) | ((val << 11) & OTG_FS_HOST_FS_HCCHAR0_EPNUM);
+inline void otg_fs_host_hcchar0_set_epnum(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR0 = (p->HCCHAR0 & ~OTG_FS_HOST_HCCHAR0_EPNUM) | ((val << 11) & OTG_FS_HOST_HCCHAR0_EPNUM);
 }
-inline void otg_fs_host_fs_hcchar0_set_mpsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR0 = (p->FS_HCCHAR0 & ~OTG_FS_HOST_FS_HCCHAR0_MPSIZ) | ((val << 0) & OTG_FS_HOST_FS_HCCHAR0_MPSIZ);
+inline void otg_fs_host_hcchar0_set_mpsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR0 = (p->HCCHAR0 & ~OTG_FS_HOST_HCCHAR0_MPSIZ) | ((val << 0) & OTG_FS_HOST_HCCHAR0_MPSIZ);
 }
-inline uint32_t otg_fs_host_fs_hcchar0_get_dad(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR0 & OTG_FS_HOST_FS_HCCHAR0_DAD) >> 22; }
-inline uint32_t otg_fs_host_fs_hcchar0_get_mcnt(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR0 & OTG_FS_HOST_FS_HCCHAR0_MCNT) >> 20; }
-inline uint32_t otg_fs_host_fs_hcchar0_get_eptyp(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCCHAR0 & OTG_FS_HOST_FS_HCCHAR0_EPTYP) >> 18;
-}
-inline uint32_t otg_fs_host_fs_hcchar0_get_epnum(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCCHAR0 & OTG_FS_HOST_FS_HCCHAR0_EPNUM) >> 11;
-}
-inline uint32_t otg_fs_host_fs_hcchar0_get_mpsiz(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR0 & OTG_FS_HOST_FS_HCCHAR0_MPSIZ) >> 0; }
+inline uint32_t otg_fs_host_hcchar0_get_dad(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR0 & OTG_FS_HOST_HCCHAR0_DAD) >> 22; }
+inline uint32_t otg_fs_host_hcchar0_get_mcnt(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR0 & OTG_FS_HOST_HCCHAR0_MCNT) >> 20; }
+inline uint32_t otg_fs_host_hcchar0_get_eptyp(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR0 & OTG_FS_HOST_HCCHAR0_EPTYP) >> 18; }
+inline uint32_t otg_fs_host_hcchar0_get_epnum(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR0 & OTG_FS_HOST_HCCHAR0_EPNUM) >> 11; }
+inline uint32_t otg_fs_host_hcchar0_get_mpsiz(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR0 & OTG_FS_HOST_HCCHAR0_MPSIZ) >> 0; }
 
-// OTG_FS_HOST->FS_HCINT0 OTG_FS host channel-0 interrupt register (OTG_FS_HCINT0)
+// OTG_FS_HOST->HCINT0 OTG_FS host channel-0 interrupt register (OTG_FS_HCINT0)
 enum {
-	OTG_FS_HOST_FS_HCINT0_DTERR = 1UL << 10, // Data toggle error
-	OTG_FS_HOST_FS_HCINT0_FRMOR = 1UL << 9,  // Frame overrun
-	OTG_FS_HOST_FS_HCINT0_BBERR = 1UL << 8,  // Babble error
-	OTG_FS_HOST_FS_HCINT0_TXERR = 1UL << 7,  // Transaction error
-	OTG_FS_HOST_FS_HCINT0_ACK   = 1UL << 5,  // ACK response received/transmitted interrupt
-	OTG_FS_HOST_FS_HCINT0_NAK   = 1UL << 4,  // NAK response received interrupt
-	OTG_FS_HOST_FS_HCINT0_STALL = 1UL << 3,  // STALL response received interrupt
-	OTG_FS_HOST_FS_HCINT0_CHH   = 1UL << 1,  // Channel halted
-	OTG_FS_HOST_FS_HCINT0_XFRC  = 1UL << 0,  // Transfer completed
+	OTG_FS_HOST_HCINT0_DTERR = 1UL << 10, // Data toggle error
+	OTG_FS_HOST_HCINT0_FRMOR = 1UL << 9,  // Frame overrun
+	OTG_FS_HOST_HCINT0_BBERR = 1UL << 8,  // Babble error
+	OTG_FS_HOST_HCINT0_TXERR = 1UL << 7,  // Transaction error
+	OTG_FS_HOST_HCINT0_ACK   = 1UL << 5,  // ACK response received/transmitted interrupt
+	OTG_FS_HOST_HCINT0_NAK   = 1UL << 4,  // NAK response received interrupt
+	OTG_FS_HOST_HCINT0_STALL = 1UL << 3,  // STALL response received interrupt
+	OTG_FS_HOST_HCINT0_CHH   = 1UL << 1,  // Channel halted
+	OTG_FS_HOST_HCINT0_XFRC  = 1UL << 0,  // Transfer completed
 };
 
-// OTG_FS_HOST->FS_HCINTMSK0 OTG_FS host channel-0 mask register (OTG_FS_HCINTMSK0)
+// OTG_FS_HOST->HCINTMSK0 OTG_FS host channel-0 mask register (OTG_FS_HCINTMSK0)
 enum {
-	OTG_FS_HOST_FS_HCINTMSK0_DTERRM = 1UL << 10, // Data toggle error mask
-	OTG_FS_HOST_FS_HCINTMSK0_FRMORM = 1UL << 9,  // Frame overrun mask
-	OTG_FS_HOST_FS_HCINTMSK0_BBERRM = 1UL << 8,  // Babble error mask
-	OTG_FS_HOST_FS_HCINTMSK0_TXERRM = 1UL << 7,  // Transaction error mask
-	OTG_FS_HOST_FS_HCINTMSK0_NYET   = 1UL << 6,  // response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK0_ACKM   = 1UL << 5,  // ACK response received/transmitted interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK0_NAKM   = 1UL << 4,  // NAK response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK0_STALLM = 1UL << 3,  // STALL response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK0_CHHM   = 1UL << 1,  // Channel halted mask
-	OTG_FS_HOST_FS_HCINTMSK0_XFRCM  = 1UL << 0,  // Transfer completed mask
+	OTG_FS_HOST_HCINTMSK0_DTERRM = 1UL << 10, // Data toggle error mask
+	OTG_FS_HOST_HCINTMSK0_FRMORM = 1UL << 9,  // Frame overrun mask
+	OTG_FS_HOST_HCINTMSK0_BBERRM = 1UL << 8,  // Babble error mask
+	OTG_FS_HOST_HCINTMSK0_TXERRM = 1UL << 7,  // Transaction error mask
+	OTG_FS_HOST_HCINTMSK0_NYET   = 1UL << 6,  // response received interrupt mask
+	OTG_FS_HOST_HCINTMSK0_ACKM   = 1UL << 5,  // ACK response received/transmitted interrupt mask
+	OTG_FS_HOST_HCINTMSK0_NAKM   = 1UL << 4,  // NAK response received interrupt mask
+	OTG_FS_HOST_HCINTMSK0_STALLM = 1UL << 3,  // STALL response received interrupt mask
+	OTG_FS_HOST_HCINTMSK0_CHHM   = 1UL << 1,  // Channel halted mask
+	OTG_FS_HOST_HCINTMSK0_XFRCM  = 1UL << 0,  // Transfer completed mask
 };
 
-// OTG_FS_HOST->FS_HCTSIZ0 OTG_FS host channel-0 transfer size register
+// OTG_FS_HOST->HCTSIZ0 OTG_FS host channel-0 transfer size register
 enum {
-	OTG_FS_HOST_FS_HCTSIZ0_DPID   = ((1UL << 2) - 1) << 29,  // Data PID
-	OTG_FS_HOST_FS_HCTSIZ0_PKTCNT = ((1UL << 10) - 1) << 19, // Packet count
-	OTG_FS_HOST_FS_HCTSIZ0_XFRSIZ = ((1UL << 19) - 1) << 0,  // Transfer size
+	OTG_FS_HOST_HCTSIZ0_DPID   = ((1UL << 2) - 1) << 29,  // Data PID
+	OTG_FS_HOST_HCTSIZ0_PKTCNT = ((1UL << 10) - 1) << 19, // Packet count
+	OTG_FS_HOST_HCTSIZ0_XFRSIZ = ((1UL << 19) - 1) << 0,  // Transfer size
 };
-inline void otg_fs_host_fs_hctsiz0_set_dpid(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ0 = (p->FS_HCTSIZ0 & ~OTG_FS_HOST_FS_HCTSIZ0_DPID) | ((val << 29) & OTG_FS_HOST_FS_HCTSIZ0_DPID);
+inline void otg_fs_host_hctsiz0_set_dpid(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ0 = (p->HCTSIZ0 & ~OTG_FS_HOST_HCTSIZ0_DPID) | ((val << 29) & OTG_FS_HOST_HCTSIZ0_DPID);
 }
-inline void otg_fs_host_fs_hctsiz0_set_pktcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ0 = (p->FS_HCTSIZ0 & ~OTG_FS_HOST_FS_HCTSIZ0_PKTCNT) | ((val << 19) & OTG_FS_HOST_FS_HCTSIZ0_PKTCNT);
+inline void otg_fs_host_hctsiz0_set_pktcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ0 = (p->HCTSIZ0 & ~OTG_FS_HOST_HCTSIZ0_PKTCNT) | ((val << 19) & OTG_FS_HOST_HCTSIZ0_PKTCNT);
 }
-inline void otg_fs_host_fs_hctsiz0_set_xfrsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ0 = (p->FS_HCTSIZ0 & ~OTG_FS_HOST_FS_HCTSIZ0_XFRSIZ) | ((val << 0) & OTG_FS_HOST_FS_HCTSIZ0_XFRSIZ);
+inline void otg_fs_host_hctsiz0_set_xfrsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ0 = (p->HCTSIZ0 & ~OTG_FS_HOST_HCTSIZ0_XFRSIZ) | ((val << 0) & OTG_FS_HOST_HCTSIZ0_XFRSIZ);
 }
-inline uint32_t otg_fs_host_fs_hctsiz0_get_dpid(struct OTG_FS_HOST_Type* p) { return (p->FS_HCTSIZ0 & OTG_FS_HOST_FS_HCTSIZ0_DPID) >> 29; }
-inline uint32_t otg_fs_host_fs_hctsiz0_get_pktcnt(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCTSIZ0 & OTG_FS_HOST_FS_HCTSIZ0_PKTCNT) >> 19;
-}
-inline uint32_t otg_fs_host_fs_hctsiz0_get_xfrsiz(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCTSIZ0 & OTG_FS_HOST_FS_HCTSIZ0_XFRSIZ) >> 0;
-}
+inline uint32_t otg_fs_host_hctsiz0_get_dpid(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ0 & OTG_FS_HOST_HCTSIZ0_DPID) >> 29; }
+inline uint32_t otg_fs_host_hctsiz0_get_pktcnt(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ0 & OTG_FS_HOST_HCTSIZ0_PKTCNT) >> 19; }
+inline uint32_t otg_fs_host_hctsiz0_get_xfrsiz(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ0 & OTG_FS_HOST_HCTSIZ0_XFRSIZ) >> 0; }
 
-// OTG_FS_HOST->FS_HCCHAR1 OTG_FS host channel-1 characteristics register (OTG_FS_HCCHAR1)
+// OTG_FS_HOST->HCCHAR1 OTG_FS host channel-1 characteristics register (OTG_FS_HCCHAR1)
 enum {
-	OTG_FS_HOST_FS_HCCHAR1_CHENA  = 1UL << 31,              // Channel enable
-	OTG_FS_HOST_FS_HCCHAR1_CHDIS  = 1UL << 30,              // Channel disable
-	OTG_FS_HOST_FS_HCCHAR1_ODDFRM = 1UL << 29,              // Odd frame
-	OTG_FS_HOST_FS_HCCHAR1_DAD    = ((1UL << 7) - 1) << 22, // Device address
-	OTG_FS_HOST_FS_HCCHAR1_MCNT   = ((1UL << 2) - 1) << 20, // Multicount
-	OTG_FS_HOST_FS_HCCHAR1_EPTYP  = ((1UL << 2) - 1) << 18, // Endpoint type
-	OTG_FS_HOST_FS_HCCHAR1_LSDEV  = 1UL << 17,              // Low-speed device
-	OTG_FS_HOST_FS_HCCHAR1_EPDIR  = 1UL << 15,              // Endpoint direction
-	OTG_FS_HOST_FS_HCCHAR1_EPNUM  = ((1UL << 4) - 1) << 11, // Endpoint number
-	OTG_FS_HOST_FS_HCCHAR1_MPSIZ  = ((1UL << 11) - 1) << 0, // Maximum packet size
+	OTG_FS_HOST_HCCHAR1_CHENA  = 1UL << 31,              // Channel enable
+	OTG_FS_HOST_HCCHAR1_CHDIS  = 1UL << 30,              // Channel disable
+	OTG_FS_HOST_HCCHAR1_ODDFRM = 1UL << 29,              // Odd frame
+	OTG_FS_HOST_HCCHAR1_DAD    = ((1UL << 7) - 1) << 22, // Device address
+	OTG_FS_HOST_HCCHAR1_MCNT   = ((1UL << 2) - 1) << 20, // Multicount
+	OTG_FS_HOST_HCCHAR1_EPTYP  = ((1UL << 2) - 1) << 18, // Endpoint type
+	OTG_FS_HOST_HCCHAR1_LSDEV  = 1UL << 17,              // Low-speed device
+	OTG_FS_HOST_HCCHAR1_EPDIR  = 1UL << 15,              // Endpoint direction
+	OTG_FS_HOST_HCCHAR1_EPNUM  = ((1UL << 4) - 1) << 11, // Endpoint number
+	OTG_FS_HOST_HCCHAR1_MPSIZ  = ((1UL << 11) - 1) << 0, // Maximum packet size
 };
-inline void otg_fs_host_fs_hcchar1_set_dad(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR1 = (p->FS_HCCHAR1 & ~OTG_FS_HOST_FS_HCCHAR1_DAD) | ((val << 22) & OTG_FS_HOST_FS_HCCHAR1_DAD);
+inline void otg_fs_host_hcchar1_set_dad(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR1 = (p->HCCHAR1 & ~OTG_FS_HOST_HCCHAR1_DAD) | ((val << 22) & OTG_FS_HOST_HCCHAR1_DAD);
 }
-inline void otg_fs_host_fs_hcchar1_set_mcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR1 = (p->FS_HCCHAR1 & ~OTG_FS_HOST_FS_HCCHAR1_MCNT) | ((val << 20) & OTG_FS_HOST_FS_HCCHAR1_MCNT);
+inline void otg_fs_host_hcchar1_set_mcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR1 = (p->HCCHAR1 & ~OTG_FS_HOST_HCCHAR1_MCNT) | ((val << 20) & OTG_FS_HOST_HCCHAR1_MCNT);
 }
-inline void otg_fs_host_fs_hcchar1_set_eptyp(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR1 = (p->FS_HCCHAR1 & ~OTG_FS_HOST_FS_HCCHAR1_EPTYP) | ((val << 18) & OTG_FS_HOST_FS_HCCHAR1_EPTYP);
+inline void otg_fs_host_hcchar1_set_eptyp(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR1 = (p->HCCHAR1 & ~OTG_FS_HOST_HCCHAR1_EPTYP) | ((val << 18) & OTG_FS_HOST_HCCHAR1_EPTYP);
 }
-inline void otg_fs_host_fs_hcchar1_set_epnum(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR1 = (p->FS_HCCHAR1 & ~OTG_FS_HOST_FS_HCCHAR1_EPNUM) | ((val << 11) & OTG_FS_HOST_FS_HCCHAR1_EPNUM);
+inline void otg_fs_host_hcchar1_set_epnum(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR1 = (p->HCCHAR1 & ~OTG_FS_HOST_HCCHAR1_EPNUM) | ((val << 11) & OTG_FS_HOST_HCCHAR1_EPNUM);
 }
-inline void otg_fs_host_fs_hcchar1_set_mpsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR1 = (p->FS_HCCHAR1 & ~OTG_FS_HOST_FS_HCCHAR1_MPSIZ) | ((val << 0) & OTG_FS_HOST_FS_HCCHAR1_MPSIZ);
+inline void otg_fs_host_hcchar1_set_mpsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR1 = (p->HCCHAR1 & ~OTG_FS_HOST_HCCHAR1_MPSIZ) | ((val << 0) & OTG_FS_HOST_HCCHAR1_MPSIZ);
 }
-inline uint32_t otg_fs_host_fs_hcchar1_get_dad(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR1 & OTG_FS_HOST_FS_HCCHAR1_DAD) >> 22; }
-inline uint32_t otg_fs_host_fs_hcchar1_get_mcnt(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR1 & OTG_FS_HOST_FS_HCCHAR1_MCNT) >> 20; }
-inline uint32_t otg_fs_host_fs_hcchar1_get_eptyp(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCCHAR1 & OTG_FS_HOST_FS_HCCHAR1_EPTYP) >> 18;
-}
-inline uint32_t otg_fs_host_fs_hcchar1_get_epnum(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCCHAR1 & OTG_FS_HOST_FS_HCCHAR1_EPNUM) >> 11;
-}
-inline uint32_t otg_fs_host_fs_hcchar1_get_mpsiz(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR1 & OTG_FS_HOST_FS_HCCHAR1_MPSIZ) >> 0; }
+inline uint32_t otg_fs_host_hcchar1_get_dad(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR1 & OTG_FS_HOST_HCCHAR1_DAD) >> 22; }
+inline uint32_t otg_fs_host_hcchar1_get_mcnt(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR1 & OTG_FS_HOST_HCCHAR1_MCNT) >> 20; }
+inline uint32_t otg_fs_host_hcchar1_get_eptyp(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR1 & OTG_FS_HOST_HCCHAR1_EPTYP) >> 18; }
+inline uint32_t otg_fs_host_hcchar1_get_epnum(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR1 & OTG_FS_HOST_HCCHAR1_EPNUM) >> 11; }
+inline uint32_t otg_fs_host_hcchar1_get_mpsiz(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR1 & OTG_FS_HOST_HCCHAR1_MPSIZ) >> 0; }
 
-// OTG_FS_HOST->FS_HCINT1 OTG_FS host channel-1 interrupt register (OTG_FS_HCINT1)
+// OTG_FS_HOST->HCINT1 OTG_FS host channel-1 interrupt register (OTG_FS_HCINT1)
 enum {
-	OTG_FS_HOST_FS_HCINT1_DTERR = 1UL << 10, // Data toggle error
-	OTG_FS_HOST_FS_HCINT1_FRMOR = 1UL << 9,  // Frame overrun
-	OTG_FS_HOST_FS_HCINT1_BBERR = 1UL << 8,  // Babble error
-	OTG_FS_HOST_FS_HCINT1_TXERR = 1UL << 7,  // Transaction error
-	OTG_FS_HOST_FS_HCINT1_ACK   = 1UL << 5,  // ACK response received/transmitted interrupt
-	OTG_FS_HOST_FS_HCINT1_NAK   = 1UL << 4,  // NAK response received interrupt
-	OTG_FS_HOST_FS_HCINT1_STALL = 1UL << 3,  // STALL response received interrupt
-	OTG_FS_HOST_FS_HCINT1_CHH   = 1UL << 1,  // Channel halted
-	OTG_FS_HOST_FS_HCINT1_XFRC  = 1UL << 0,  // Transfer completed
+	OTG_FS_HOST_HCINT1_DTERR = 1UL << 10, // Data toggle error
+	OTG_FS_HOST_HCINT1_FRMOR = 1UL << 9,  // Frame overrun
+	OTG_FS_HOST_HCINT1_BBERR = 1UL << 8,  // Babble error
+	OTG_FS_HOST_HCINT1_TXERR = 1UL << 7,  // Transaction error
+	OTG_FS_HOST_HCINT1_ACK   = 1UL << 5,  // ACK response received/transmitted interrupt
+	OTG_FS_HOST_HCINT1_NAK   = 1UL << 4,  // NAK response received interrupt
+	OTG_FS_HOST_HCINT1_STALL = 1UL << 3,  // STALL response received interrupt
+	OTG_FS_HOST_HCINT1_CHH   = 1UL << 1,  // Channel halted
+	OTG_FS_HOST_HCINT1_XFRC  = 1UL << 0,  // Transfer completed
 };
 
-// OTG_FS_HOST->FS_HCINTMSK1 OTG_FS host channel-1 mask register (OTG_FS_HCINTMSK1)
+// OTG_FS_HOST->HCINTMSK1 OTG_FS host channel-1 mask register (OTG_FS_HCINTMSK1)
 enum {
-	OTG_FS_HOST_FS_HCINTMSK1_DTERRM = 1UL << 10, // Data toggle error mask
-	OTG_FS_HOST_FS_HCINTMSK1_FRMORM = 1UL << 9,  // Frame overrun mask
-	OTG_FS_HOST_FS_HCINTMSK1_BBERRM = 1UL << 8,  // Babble error mask
-	OTG_FS_HOST_FS_HCINTMSK1_TXERRM = 1UL << 7,  // Transaction error mask
-	OTG_FS_HOST_FS_HCINTMSK1_NYET   = 1UL << 6,  // response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK1_ACKM   = 1UL << 5,  // ACK response received/transmitted interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK1_NAKM   = 1UL << 4,  // NAK response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK1_STALLM = 1UL << 3,  // STALL response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK1_CHHM   = 1UL << 1,  // Channel halted mask
-	OTG_FS_HOST_FS_HCINTMSK1_XFRCM  = 1UL << 0,  // Transfer completed mask
+	OTG_FS_HOST_HCINTMSK1_DTERRM = 1UL << 10, // Data toggle error mask
+	OTG_FS_HOST_HCINTMSK1_FRMORM = 1UL << 9,  // Frame overrun mask
+	OTG_FS_HOST_HCINTMSK1_BBERRM = 1UL << 8,  // Babble error mask
+	OTG_FS_HOST_HCINTMSK1_TXERRM = 1UL << 7,  // Transaction error mask
+	OTG_FS_HOST_HCINTMSK1_NYET   = 1UL << 6,  // response received interrupt mask
+	OTG_FS_HOST_HCINTMSK1_ACKM   = 1UL << 5,  // ACK response received/transmitted interrupt mask
+	OTG_FS_HOST_HCINTMSK1_NAKM   = 1UL << 4,  // NAK response received interrupt mask
+	OTG_FS_HOST_HCINTMSK1_STALLM = 1UL << 3,  // STALL response received interrupt mask
+	OTG_FS_HOST_HCINTMSK1_CHHM   = 1UL << 1,  // Channel halted mask
+	OTG_FS_HOST_HCINTMSK1_XFRCM  = 1UL << 0,  // Transfer completed mask
 };
 
-// OTG_FS_HOST->FS_HCTSIZ1 OTG_FS host channel-1 transfer size register
+// OTG_FS_HOST->HCTSIZ1 OTG_FS host channel-1 transfer size register
 enum {
-	OTG_FS_HOST_FS_HCTSIZ1_DPID   = ((1UL << 2) - 1) << 29,  // Data PID
-	OTG_FS_HOST_FS_HCTSIZ1_PKTCNT = ((1UL << 10) - 1) << 19, // Packet count
-	OTG_FS_HOST_FS_HCTSIZ1_XFRSIZ = ((1UL << 19) - 1) << 0,  // Transfer size
+	OTG_FS_HOST_HCTSIZ1_DPID   = ((1UL << 2) - 1) << 29,  // Data PID
+	OTG_FS_HOST_HCTSIZ1_PKTCNT = ((1UL << 10) - 1) << 19, // Packet count
+	OTG_FS_HOST_HCTSIZ1_XFRSIZ = ((1UL << 19) - 1) << 0,  // Transfer size
 };
-inline void otg_fs_host_fs_hctsiz1_set_dpid(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ1 = (p->FS_HCTSIZ1 & ~OTG_FS_HOST_FS_HCTSIZ1_DPID) | ((val << 29) & OTG_FS_HOST_FS_HCTSIZ1_DPID);
+inline void otg_fs_host_hctsiz1_set_dpid(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ1 = (p->HCTSIZ1 & ~OTG_FS_HOST_HCTSIZ1_DPID) | ((val << 29) & OTG_FS_HOST_HCTSIZ1_DPID);
 }
-inline void otg_fs_host_fs_hctsiz1_set_pktcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ1 = (p->FS_HCTSIZ1 & ~OTG_FS_HOST_FS_HCTSIZ1_PKTCNT) | ((val << 19) & OTG_FS_HOST_FS_HCTSIZ1_PKTCNT);
+inline void otg_fs_host_hctsiz1_set_pktcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ1 = (p->HCTSIZ1 & ~OTG_FS_HOST_HCTSIZ1_PKTCNT) | ((val << 19) & OTG_FS_HOST_HCTSIZ1_PKTCNT);
 }
-inline void otg_fs_host_fs_hctsiz1_set_xfrsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ1 = (p->FS_HCTSIZ1 & ~OTG_FS_HOST_FS_HCTSIZ1_XFRSIZ) | ((val << 0) & OTG_FS_HOST_FS_HCTSIZ1_XFRSIZ);
+inline void otg_fs_host_hctsiz1_set_xfrsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ1 = (p->HCTSIZ1 & ~OTG_FS_HOST_HCTSIZ1_XFRSIZ) | ((val << 0) & OTG_FS_HOST_HCTSIZ1_XFRSIZ);
 }
-inline uint32_t otg_fs_host_fs_hctsiz1_get_dpid(struct OTG_FS_HOST_Type* p) { return (p->FS_HCTSIZ1 & OTG_FS_HOST_FS_HCTSIZ1_DPID) >> 29; }
-inline uint32_t otg_fs_host_fs_hctsiz1_get_pktcnt(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCTSIZ1 & OTG_FS_HOST_FS_HCTSIZ1_PKTCNT) >> 19;
-}
-inline uint32_t otg_fs_host_fs_hctsiz1_get_xfrsiz(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCTSIZ1 & OTG_FS_HOST_FS_HCTSIZ1_XFRSIZ) >> 0;
-}
+inline uint32_t otg_fs_host_hctsiz1_get_dpid(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ1 & OTG_FS_HOST_HCTSIZ1_DPID) >> 29; }
+inline uint32_t otg_fs_host_hctsiz1_get_pktcnt(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ1 & OTG_FS_HOST_HCTSIZ1_PKTCNT) >> 19; }
+inline uint32_t otg_fs_host_hctsiz1_get_xfrsiz(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ1 & OTG_FS_HOST_HCTSIZ1_XFRSIZ) >> 0; }
 
-// OTG_FS_HOST->FS_HCCHAR2 OTG_FS host channel-2 characteristics register (OTG_FS_HCCHAR2)
+// OTG_FS_HOST->HCCHAR2 OTG_FS host channel-2 characteristics register (OTG_FS_HCCHAR2)
 enum {
-	OTG_FS_HOST_FS_HCCHAR2_CHENA  = 1UL << 31,              // Channel enable
-	OTG_FS_HOST_FS_HCCHAR2_CHDIS  = 1UL << 30,              // Channel disable
-	OTG_FS_HOST_FS_HCCHAR2_ODDFRM = 1UL << 29,              // Odd frame
-	OTG_FS_HOST_FS_HCCHAR2_DAD    = ((1UL << 7) - 1) << 22, // Device address
-	OTG_FS_HOST_FS_HCCHAR2_MCNT   = ((1UL << 2) - 1) << 20, // Multicount
-	OTG_FS_HOST_FS_HCCHAR2_EPTYP  = ((1UL << 2) - 1) << 18, // Endpoint type
-	OTG_FS_HOST_FS_HCCHAR2_LSDEV  = 1UL << 17,              // Low-speed device
-	OTG_FS_HOST_FS_HCCHAR2_EPDIR  = 1UL << 15,              // Endpoint direction
-	OTG_FS_HOST_FS_HCCHAR2_EPNUM  = ((1UL << 4) - 1) << 11, // Endpoint number
-	OTG_FS_HOST_FS_HCCHAR2_MPSIZ  = ((1UL << 11) - 1) << 0, // Maximum packet size
+	OTG_FS_HOST_HCCHAR2_CHENA  = 1UL << 31,              // Channel enable
+	OTG_FS_HOST_HCCHAR2_CHDIS  = 1UL << 30,              // Channel disable
+	OTG_FS_HOST_HCCHAR2_ODDFRM = 1UL << 29,              // Odd frame
+	OTG_FS_HOST_HCCHAR2_DAD    = ((1UL << 7) - 1) << 22, // Device address
+	OTG_FS_HOST_HCCHAR2_MCNT   = ((1UL << 2) - 1) << 20, // Multicount
+	OTG_FS_HOST_HCCHAR2_EPTYP  = ((1UL << 2) - 1) << 18, // Endpoint type
+	OTG_FS_HOST_HCCHAR2_LSDEV  = 1UL << 17,              // Low-speed device
+	OTG_FS_HOST_HCCHAR2_EPDIR  = 1UL << 15,              // Endpoint direction
+	OTG_FS_HOST_HCCHAR2_EPNUM  = ((1UL << 4) - 1) << 11, // Endpoint number
+	OTG_FS_HOST_HCCHAR2_MPSIZ  = ((1UL << 11) - 1) << 0, // Maximum packet size
 };
-inline void otg_fs_host_fs_hcchar2_set_dad(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR2 = (p->FS_HCCHAR2 & ~OTG_FS_HOST_FS_HCCHAR2_DAD) | ((val << 22) & OTG_FS_HOST_FS_HCCHAR2_DAD);
+inline void otg_fs_host_hcchar2_set_dad(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR2 = (p->HCCHAR2 & ~OTG_FS_HOST_HCCHAR2_DAD) | ((val << 22) & OTG_FS_HOST_HCCHAR2_DAD);
 }
-inline void otg_fs_host_fs_hcchar2_set_mcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR2 = (p->FS_HCCHAR2 & ~OTG_FS_HOST_FS_HCCHAR2_MCNT) | ((val << 20) & OTG_FS_HOST_FS_HCCHAR2_MCNT);
+inline void otg_fs_host_hcchar2_set_mcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR2 = (p->HCCHAR2 & ~OTG_FS_HOST_HCCHAR2_MCNT) | ((val << 20) & OTG_FS_HOST_HCCHAR2_MCNT);
 }
-inline void otg_fs_host_fs_hcchar2_set_eptyp(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR2 = (p->FS_HCCHAR2 & ~OTG_FS_HOST_FS_HCCHAR2_EPTYP) | ((val << 18) & OTG_FS_HOST_FS_HCCHAR2_EPTYP);
+inline void otg_fs_host_hcchar2_set_eptyp(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR2 = (p->HCCHAR2 & ~OTG_FS_HOST_HCCHAR2_EPTYP) | ((val << 18) & OTG_FS_HOST_HCCHAR2_EPTYP);
 }
-inline void otg_fs_host_fs_hcchar2_set_epnum(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR2 = (p->FS_HCCHAR2 & ~OTG_FS_HOST_FS_HCCHAR2_EPNUM) | ((val << 11) & OTG_FS_HOST_FS_HCCHAR2_EPNUM);
+inline void otg_fs_host_hcchar2_set_epnum(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR2 = (p->HCCHAR2 & ~OTG_FS_HOST_HCCHAR2_EPNUM) | ((val << 11) & OTG_FS_HOST_HCCHAR2_EPNUM);
 }
-inline void otg_fs_host_fs_hcchar2_set_mpsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR2 = (p->FS_HCCHAR2 & ~OTG_FS_HOST_FS_HCCHAR2_MPSIZ) | ((val << 0) & OTG_FS_HOST_FS_HCCHAR2_MPSIZ);
+inline void otg_fs_host_hcchar2_set_mpsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR2 = (p->HCCHAR2 & ~OTG_FS_HOST_HCCHAR2_MPSIZ) | ((val << 0) & OTG_FS_HOST_HCCHAR2_MPSIZ);
 }
-inline uint32_t otg_fs_host_fs_hcchar2_get_dad(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR2 & OTG_FS_HOST_FS_HCCHAR2_DAD) >> 22; }
-inline uint32_t otg_fs_host_fs_hcchar2_get_mcnt(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR2 & OTG_FS_HOST_FS_HCCHAR2_MCNT) >> 20; }
-inline uint32_t otg_fs_host_fs_hcchar2_get_eptyp(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCCHAR2 & OTG_FS_HOST_FS_HCCHAR2_EPTYP) >> 18;
-}
-inline uint32_t otg_fs_host_fs_hcchar2_get_epnum(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCCHAR2 & OTG_FS_HOST_FS_HCCHAR2_EPNUM) >> 11;
-}
-inline uint32_t otg_fs_host_fs_hcchar2_get_mpsiz(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR2 & OTG_FS_HOST_FS_HCCHAR2_MPSIZ) >> 0; }
+inline uint32_t otg_fs_host_hcchar2_get_dad(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR2 & OTG_FS_HOST_HCCHAR2_DAD) >> 22; }
+inline uint32_t otg_fs_host_hcchar2_get_mcnt(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR2 & OTG_FS_HOST_HCCHAR2_MCNT) >> 20; }
+inline uint32_t otg_fs_host_hcchar2_get_eptyp(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR2 & OTG_FS_HOST_HCCHAR2_EPTYP) >> 18; }
+inline uint32_t otg_fs_host_hcchar2_get_epnum(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR2 & OTG_FS_HOST_HCCHAR2_EPNUM) >> 11; }
+inline uint32_t otg_fs_host_hcchar2_get_mpsiz(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR2 & OTG_FS_HOST_HCCHAR2_MPSIZ) >> 0; }
 
-// OTG_FS_HOST->FS_HCINT2 OTG_FS host channel-2 interrupt register (OTG_FS_HCINT2)
+// OTG_FS_HOST->HCINT2 OTG_FS host channel-2 interrupt register (OTG_FS_HCINT2)
 enum {
-	OTG_FS_HOST_FS_HCINT2_DTERR = 1UL << 10, // Data toggle error
-	OTG_FS_HOST_FS_HCINT2_FRMOR = 1UL << 9,  // Frame overrun
-	OTG_FS_HOST_FS_HCINT2_BBERR = 1UL << 8,  // Babble error
-	OTG_FS_HOST_FS_HCINT2_TXERR = 1UL << 7,  // Transaction error
-	OTG_FS_HOST_FS_HCINT2_ACK   = 1UL << 5,  // ACK response received/transmitted interrupt
-	OTG_FS_HOST_FS_HCINT2_NAK   = 1UL << 4,  // NAK response received interrupt
-	OTG_FS_HOST_FS_HCINT2_STALL = 1UL << 3,  // STALL response received interrupt
-	OTG_FS_HOST_FS_HCINT2_CHH   = 1UL << 1,  // Channel halted
-	OTG_FS_HOST_FS_HCINT2_XFRC  = 1UL << 0,  // Transfer completed
+	OTG_FS_HOST_HCINT2_DTERR = 1UL << 10, // Data toggle error
+	OTG_FS_HOST_HCINT2_FRMOR = 1UL << 9,  // Frame overrun
+	OTG_FS_HOST_HCINT2_BBERR = 1UL << 8,  // Babble error
+	OTG_FS_HOST_HCINT2_TXERR = 1UL << 7,  // Transaction error
+	OTG_FS_HOST_HCINT2_ACK   = 1UL << 5,  // ACK response received/transmitted interrupt
+	OTG_FS_HOST_HCINT2_NAK   = 1UL << 4,  // NAK response received interrupt
+	OTG_FS_HOST_HCINT2_STALL = 1UL << 3,  // STALL response received interrupt
+	OTG_FS_HOST_HCINT2_CHH   = 1UL << 1,  // Channel halted
+	OTG_FS_HOST_HCINT2_XFRC  = 1UL << 0,  // Transfer completed
 };
 
-// OTG_FS_HOST->FS_HCINTMSK2 OTG_FS host channel-2 mask register (OTG_FS_HCINTMSK2)
+// OTG_FS_HOST->HCINTMSK2 OTG_FS host channel-2 mask register (OTG_FS_HCINTMSK2)
 enum {
-	OTG_FS_HOST_FS_HCINTMSK2_DTERRM = 1UL << 10, // Data toggle error mask
-	OTG_FS_HOST_FS_HCINTMSK2_FRMORM = 1UL << 9,  // Frame overrun mask
-	OTG_FS_HOST_FS_HCINTMSK2_BBERRM = 1UL << 8,  // Babble error mask
-	OTG_FS_HOST_FS_HCINTMSK2_TXERRM = 1UL << 7,  // Transaction error mask
-	OTG_FS_HOST_FS_HCINTMSK2_NYET   = 1UL << 6,  // response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK2_ACKM   = 1UL << 5,  // ACK response received/transmitted interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK2_NAKM   = 1UL << 4,  // NAK response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK2_STALLM = 1UL << 3,  // STALL response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK2_CHHM   = 1UL << 1,  // Channel halted mask
-	OTG_FS_HOST_FS_HCINTMSK2_XFRCM  = 1UL << 0,  // Transfer completed mask
+	OTG_FS_HOST_HCINTMSK2_DTERRM = 1UL << 10, // Data toggle error mask
+	OTG_FS_HOST_HCINTMSK2_FRMORM = 1UL << 9,  // Frame overrun mask
+	OTG_FS_HOST_HCINTMSK2_BBERRM = 1UL << 8,  // Babble error mask
+	OTG_FS_HOST_HCINTMSK2_TXERRM = 1UL << 7,  // Transaction error mask
+	OTG_FS_HOST_HCINTMSK2_NYET   = 1UL << 6,  // response received interrupt mask
+	OTG_FS_HOST_HCINTMSK2_ACKM   = 1UL << 5,  // ACK response received/transmitted interrupt mask
+	OTG_FS_HOST_HCINTMSK2_NAKM   = 1UL << 4,  // NAK response received interrupt mask
+	OTG_FS_HOST_HCINTMSK2_STALLM = 1UL << 3,  // STALL response received interrupt mask
+	OTG_FS_HOST_HCINTMSK2_CHHM   = 1UL << 1,  // Channel halted mask
+	OTG_FS_HOST_HCINTMSK2_XFRCM  = 1UL << 0,  // Transfer completed mask
 };
 
-// OTG_FS_HOST->FS_HCTSIZ2 OTG_FS host channel-2 transfer size register
+// OTG_FS_HOST->HCTSIZ2 OTG_FS host channel-2 transfer size register
 enum {
-	OTG_FS_HOST_FS_HCTSIZ2_DPID   = ((1UL << 2) - 1) << 29,  // Data PID
-	OTG_FS_HOST_FS_HCTSIZ2_PKTCNT = ((1UL << 10) - 1) << 19, // Packet count
-	OTG_FS_HOST_FS_HCTSIZ2_XFRSIZ = ((1UL << 19) - 1) << 0,  // Transfer size
+	OTG_FS_HOST_HCTSIZ2_DPID   = ((1UL << 2) - 1) << 29,  // Data PID
+	OTG_FS_HOST_HCTSIZ2_PKTCNT = ((1UL << 10) - 1) << 19, // Packet count
+	OTG_FS_HOST_HCTSIZ2_XFRSIZ = ((1UL << 19) - 1) << 0,  // Transfer size
 };
-inline void otg_fs_host_fs_hctsiz2_set_dpid(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ2 = (p->FS_HCTSIZ2 & ~OTG_FS_HOST_FS_HCTSIZ2_DPID) | ((val << 29) & OTG_FS_HOST_FS_HCTSIZ2_DPID);
+inline void otg_fs_host_hctsiz2_set_dpid(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ2 = (p->HCTSIZ2 & ~OTG_FS_HOST_HCTSIZ2_DPID) | ((val << 29) & OTG_FS_HOST_HCTSIZ2_DPID);
 }
-inline void otg_fs_host_fs_hctsiz2_set_pktcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ2 = (p->FS_HCTSIZ2 & ~OTG_FS_HOST_FS_HCTSIZ2_PKTCNT) | ((val << 19) & OTG_FS_HOST_FS_HCTSIZ2_PKTCNT);
+inline void otg_fs_host_hctsiz2_set_pktcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ2 = (p->HCTSIZ2 & ~OTG_FS_HOST_HCTSIZ2_PKTCNT) | ((val << 19) & OTG_FS_HOST_HCTSIZ2_PKTCNT);
 }
-inline void otg_fs_host_fs_hctsiz2_set_xfrsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ2 = (p->FS_HCTSIZ2 & ~OTG_FS_HOST_FS_HCTSIZ2_XFRSIZ) | ((val << 0) & OTG_FS_HOST_FS_HCTSIZ2_XFRSIZ);
+inline void otg_fs_host_hctsiz2_set_xfrsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ2 = (p->HCTSIZ2 & ~OTG_FS_HOST_HCTSIZ2_XFRSIZ) | ((val << 0) & OTG_FS_HOST_HCTSIZ2_XFRSIZ);
 }
-inline uint32_t otg_fs_host_fs_hctsiz2_get_dpid(struct OTG_FS_HOST_Type* p) { return (p->FS_HCTSIZ2 & OTG_FS_HOST_FS_HCTSIZ2_DPID) >> 29; }
-inline uint32_t otg_fs_host_fs_hctsiz2_get_pktcnt(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCTSIZ2 & OTG_FS_HOST_FS_HCTSIZ2_PKTCNT) >> 19;
-}
-inline uint32_t otg_fs_host_fs_hctsiz2_get_xfrsiz(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCTSIZ2 & OTG_FS_HOST_FS_HCTSIZ2_XFRSIZ) >> 0;
-}
+inline uint32_t otg_fs_host_hctsiz2_get_dpid(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ2 & OTG_FS_HOST_HCTSIZ2_DPID) >> 29; }
+inline uint32_t otg_fs_host_hctsiz2_get_pktcnt(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ2 & OTG_FS_HOST_HCTSIZ2_PKTCNT) >> 19; }
+inline uint32_t otg_fs_host_hctsiz2_get_xfrsiz(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ2 & OTG_FS_HOST_HCTSIZ2_XFRSIZ) >> 0; }
 
-// OTG_FS_HOST->FS_HCCHAR3 OTG_FS host channel-3 characteristics register (OTG_FS_HCCHAR3)
+// OTG_FS_HOST->HCCHAR3 OTG_FS host channel-3 characteristics register (OTG_FS_HCCHAR3)
 enum {
-	OTG_FS_HOST_FS_HCCHAR3_CHENA  = 1UL << 31,              // Channel enable
-	OTG_FS_HOST_FS_HCCHAR3_CHDIS  = 1UL << 30,              // Channel disable
-	OTG_FS_HOST_FS_HCCHAR3_ODDFRM = 1UL << 29,              // Odd frame
-	OTG_FS_HOST_FS_HCCHAR3_DAD    = ((1UL << 7) - 1) << 22, // Device address
-	OTG_FS_HOST_FS_HCCHAR3_MCNT   = ((1UL << 2) - 1) << 20, // Multicount
-	OTG_FS_HOST_FS_HCCHAR3_EPTYP  = ((1UL << 2) - 1) << 18, // Endpoint type
-	OTG_FS_HOST_FS_HCCHAR3_LSDEV  = 1UL << 17,              // Low-speed device
-	OTG_FS_HOST_FS_HCCHAR3_EPDIR  = 1UL << 15,              // Endpoint direction
-	OTG_FS_HOST_FS_HCCHAR3_EPNUM  = ((1UL << 4) - 1) << 11, // Endpoint number
-	OTG_FS_HOST_FS_HCCHAR3_MPSIZ  = ((1UL << 11) - 1) << 0, // Maximum packet size
+	OTG_FS_HOST_HCCHAR3_CHENA  = 1UL << 31,              // Channel enable
+	OTG_FS_HOST_HCCHAR3_CHDIS  = 1UL << 30,              // Channel disable
+	OTG_FS_HOST_HCCHAR3_ODDFRM = 1UL << 29,              // Odd frame
+	OTG_FS_HOST_HCCHAR3_DAD    = ((1UL << 7) - 1) << 22, // Device address
+	OTG_FS_HOST_HCCHAR3_MCNT   = ((1UL << 2) - 1) << 20, // Multicount
+	OTG_FS_HOST_HCCHAR3_EPTYP  = ((1UL << 2) - 1) << 18, // Endpoint type
+	OTG_FS_HOST_HCCHAR3_LSDEV  = 1UL << 17,              // Low-speed device
+	OTG_FS_HOST_HCCHAR3_EPDIR  = 1UL << 15,              // Endpoint direction
+	OTG_FS_HOST_HCCHAR3_EPNUM  = ((1UL << 4) - 1) << 11, // Endpoint number
+	OTG_FS_HOST_HCCHAR3_MPSIZ  = ((1UL << 11) - 1) << 0, // Maximum packet size
 };
-inline void otg_fs_host_fs_hcchar3_set_dad(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR3 = (p->FS_HCCHAR3 & ~OTG_FS_HOST_FS_HCCHAR3_DAD) | ((val << 22) & OTG_FS_HOST_FS_HCCHAR3_DAD);
+inline void otg_fs_host_hcchar3_set_dad(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR3 = (p->HCCHAR3 & ~OTG_FS_HOST_HCCHAR3_DAD) | ((val << 22) & OTG_FS_HOST_HCCHAR3_DAD);
 }
-inline void otg_fs_host_fs_hcchar3_set_mcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR3 = (p->FS_HCCHAR3 & ~OTG_FS_HOST_FS_HCCHAR3_MCNT) | ((val << 20) & OTG_FS_HOST_FS_HCCHAR3_MCNT);
+inline void otg_fs_host_hcchar3_set_mcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR3 = (p->HCCHAR3 & ~OTG_FS_HOST_HCCHAR3_MCNT) | ((val << 20) & OTG_FS_HOST_HCCHAR3_MCNT);
 }
-inline void otg_fs_host_fs_hcchar3_set_eptyp(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR3 = (p->FS_HCCHAR3 & ~OTG_FS_HOST_FS_HCCHAR3_EPTYP) | ((val << 18) & OTG_FS_HOST_FS_HCCHAR3_EPTYP);
+inline void otg_fs_host_hcchar3_set_eptyp(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR3 = (p->HCCHAR3 & ~OTG_FS_HOST_HCCHAR3_EPTYP) | ((val << 18) & OTG_FS_HOST_HCCHAR3_EPTYP);
 }
-inline void otg_fs_host_fs_hcchar3_set_epnum(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR3 = (p->FS_HCCHAR3 & ~OTG_FS_HOST_FS_HCCHAR3_EPNUM) | ((val << 11) & OTG_FS_HOST_FS_HCCHAR3_EPNUM);
+inline void otg_fs_host_hcchar3_set_epnum(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR3 = (p->HCCHAR3 & ~OTG_FS_HOST_HCCHAR3_EPNUM) | ((val << 11) & OTG_FS_HOST_HCCHAR3_EPNUM);
 }
-inline void otg_fs_host_fs_hcchar3_set_mpsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR3 = (p->FS_HCCHAR3 & ~OTG_FS_HOST_FS_HCCHAR3_MPSIZ) | ((val << 0) & OTG_FS_HOST_FS_HCCHAR3_MPSIZ);
+inline void otg_fs_host_hcchar3_set_mpsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR3 = (p->HCCHAR3 & ~OTG_FS_HOST_HCCHAR3_MPSIZ) | ((val << 0) & OTG_FS_HOST_HCCHAR3_MPSIZ);
 }
-inline uint32_t otg_fs_host_fs_hcchar3_get_dad(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR3 & OTG_FS_HOST_FS_HCCHAR3_DAD) >> 22; }
-inline uint32_t otg_fs_host_fs_hcchar3_get_mcnt(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR3 & OTG_FS_HOST_FS_HCCHAR3_MCNT) >> 20; }
-inline uint32_t otg_fs_host_fs_hcchar3_get_eptyp(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCCHAR3 & OTG_FS_HOST_FS_HCCHAR3_EPTYP) >> 18;
-}
-inline uint32_t otg_fs_host_fs_hcchar3_get_epnum(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCCHAR3 & OTG_FS_HOST_FS_HCCHAR3_EPNUM) >> 11;
-}
-inline uint32_t otg_fs_host_fs_hcchar3_get_mpsiz(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR3 & OTG_FS_HOST_FS_HCCHAR3_MPSIZ) >> 0; }
+inline uint32_t otg_fs_host_hcchar3_get_dad(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR3 & OTG_FS_HOST_HCCHAR3_DAD) >> 22; }
+inline uint32_t otg_fs_host_hcchar3_get_mcnt(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR3 & OTG_FS_HOST_HCCHAR3_MCNT) >> 20; }
+inline uint32_t otg_fs_host_hcchar3_get_eptyp(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR3 & OTG_FS_HOST_HCCHAR3_EPTYP) >> 18; }
+inline uint32_t otg_fs_host_hcchar3_get_epnum(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR3 & OTG_FS_HOST_HCCHAR3_EPNUM) >> 11; }
+inline uint32_t otg_fs_host_hcchar3_get_mpsiz(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR3 & OTG_FS_HOST_HCCHAR3_MPSIZ) >> 0; }
 
-// OTG_FS_HOST->FS_HCINT3 OTG_FS host channel-3 interrupt register (OTG_FS_HCINT3)
+// OTG_FS_HOST->HCINT3 OTG_FS host channel-3 interrupt register (OTG_FS_HCINT3)
 enum {
-	OTG_FS_HOST_FS_HCINT3_DTERR = 1UL << 10, // Data toggle error
-	OTG_FS_HOST_FS_HCINT3_FRMOR = 1UL << 9,  // Frame overrun
-	OTG_FS_HOST_FS_HCINT3_BBERR = 1UL << 8,  // Babble error
-	OTG_FS_HOST_FS_HCINT3_TXERR = 1UL << 7,  // Transaction error
-	OTG_FS_HOST_FS_HCINT3_ACK   = 1UL << 5,  // ACK response received/transmitted interrupt
-	OTG_FS_HOST_FS_HCINT3_NAK   = 1UL << 4,  // NAK response received interrupt
-	OTG_FS_HOST_FS_HCINT3_STALL = 1UL << 3,  // STALL response received interrupt
-	OTG_FS_HOST_FS_HCINT3_CHH   = 1UL << 1,  // Channel halted
-	OTG_FS_HOST_FS_HCINT3_XFRC  = 1UL << 0,  // Transfer completed
+	OTG_FS_HOST_HCINT3_DTERR = 1UL << 10, // Data toggle error
+	OTG_FS_HOST_HCINT3_FRMOR = 1UL << 9,  // Frame overrun
+	OTG_FS_HOST_HCINT3_BBERR = 1UL << 8,  // Babble error
+	OTG_FS_HOST_HCINT3_TXERR = 1UL << 7,  // Transaction error
+	OTG_FS_HOST_HCINT3_ACK   = 1UL << 5,  // ACK response received/transmitted interrupt
+	OTG_FS_HOST_HCINT3_NAK   = 1UL << 4,  // NAK response received interrupt
+	OTG_FS_HOST_HCINT3_STALL = 1UL << 3,  // STALL response received interrupt
+	OTG_FS_HOST_HCINT3_CHH   = 1UL << 1,  // Channel halted
+	OTG_FS_HOST_HCINT3_XFRC  = 1UL << 0,  // Transfer completed
 };
 
-// OTG_FS_HOST->FS_HCINTMSK3 OTG_FS host channel-3 mask register (OTG_FS_HCINTMSK3)
+// OTG_FS_HOST->HCINTMSK3 OTG_FS host channel-3 mask register (OTG_FS_HCINTMSK3)
 enum {
-	OTG_FS_HOST_FS_HCINTMSK3_DTERRM = 1UL << 10, // Data toggle error mask
-	OTG_FS_HOST_FS_HCINTMSK3_FRMORM = 1UL << 9,  // Frame overrun mask
-	OTG_FS_HOST_FS_HCINTMSK3_BBERRM = 1UL << 8,  // Babble error mask
-	OTG_FS_HOST_FS_HCINTMSK3_TXERRM = 1UL << 7,  // Transaction error mask
-	OTG_FS_HOST_FS_HCINTMSK3_NYET   = 1UL << 6,  // response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK3_ACKM   = 1UL << 5,  // ACK response received/transmitted interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK3_NAKM   = 1UL << 4,  // NAK response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK3_STALLM = 1UL << 3,  // STALL response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK3_CHHM   = 1UL << 1,  // Channel halted mask
-	OTG_FS_HOST_FS_HCINTMSK3_XFRCM  = 1UL << 0,  // Transfer completed mask
+	OTG_FS_HOST_HCINTMSK3_DTERRM = 1UL << 10, // Data toggle error mask
+	OTG_FS_HOST_HCINTMSK3_FRMORM = 1UL << 9,  // Frame overrun mask
+	OTG_FS_HOST_HCINTMSK3_BBERRM = 1UL << 8,  // Babble error mask
+	OTG_FS_HOST_HCINTMSK3_TXERRM = 1UL << 7,  // Transaction error mask
+	OTG_FS_HOST_HCINTMSK3_NYET   = 1UL << 6,  // response received interrupt mask
+	OTG_FS_HOST_HCINTMSK3_ACKM   = 1UL << 5,  // ACK response received/transmitted interrupt mask
+	OTG_FS_HOST_HCINTMSK3_NAKM   = 1UL << 4,  // NAK response received interrupt mask
+	OTG_FS_HOST_HCINTMSK3_STALLM = 1UL << 3,  // STALL response received interrupt mask
+	OTG_FS_HOST_HCINTMSK3_CHHM   = 1UL << 1,  // Channel halted mask
+	OTG_FS_HOST_HCINTMSK3_XFRCM  = 1UL << 0,  // Transfer completed mask
 };
 
-// OTG_FS_HOST->FS_HCTSIZ3 OTG_FS host channel-3 transfer size register
+// OTG_FS_HOST->HCTSIZ3 OTG_FS host channel-3 transfer size register
 enum {
-	OTG_FS_HOST_FS_HCTSIZ3_DPID   = ((1UL << 2) - 1) << 29,  // Data PID
-	OTG_FS_HOST_FS_HCTSIZ3_PKTCNT = ((1UL << 10) - 1) << 19, // Packet count
-	OTG_FS_HOST_FS_HCTSIZ3_XFRSIZ = ((1UL << 19) - 1) << 0,  // Transfer size
+	OTG_FS_HOST_HCTSIZ3_DPID   = ((1UL << 2) - 1) << 29,  // Data PID
+	OTG_FS_HOST_HCTSIZ3_PKTCNT = ((1UL << 10) - 1) << 19, // Packet count
+	OTG_FS_HOST_HCTSIZ3_XFRSIZ = ((1UL << 19) - 1) << 0,  // Transfer size
 };
-inline void otg_fs_host_fs_hctsiz3_set_dpid(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ3 = (p->FS_HCTSIZ3 & ~OTG_FS_HOST_FS_HCTSIZ3_DPID) | ((val << 29) & OTG_FS_HOST_FS_HCTSIZ3_DPID);
+inline void otg_fs_host_hctsiz3_set_dpid(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ3 = (p->HCTSIZ3 & ~OTG_FS_HOST_HCTSIZ3_DPID) | ((val << 29) & OTG_FS_HOST_HCTSIZ3_DPID);
 }
-inline void otg_fs_host_fs_hctsiz3_set_pktcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ3 = (p->FS_HCTSIZ3 & ~OTG_FS_HOST_FS_HCTSIZ3_PKTCNT) | ((val << 19) & OTG_FS_HOST_FS_HCTSIZ3_PKTCNT);
+inline void otg_fs_host_hctsiz3_set_pktcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ3 = (p->HCTSIZ3 & ~OTG_FS_HOST_HCTSIZ3_PKTCNT) | ((val << 19) & OTG_FS_HOST_HCTSIZ3_PKTCNT);
 }
-inline void otg_fs_host_fs_hctsiz3_set_xfrsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ3 = (p->FS_HCTSIZ3 & ~OTG_FS_HOST_FS_HCTSIZ3_XFRSIZ) | ((val << 0) & OTG_FS_HOST_FS_HCTSIZ3_XFRSIZ);
+inline void otg_fs_host_hctsiz3_set_xfrsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ3 = (p->HCTSIZ3 & ~OTG_FS_HOST_HCTSIZ3_XFRSIZ) | ((val << 0) & OTG_FS_HOST_HCTSIZ3_XFRSIZ);
 }
-inline uint32_t otg_fs_host_fs_hctsiz3_get_dpid(struct OTG_FS_HOST_Type* p) { return (p->FS_HCTSIZ3 & OTG_FS_HOST_FS_HCTSIZ3_DPID) >> 29; }
-inline uint32_t otg_fs_host_fs_hctsiz3_get_pktcnt(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCTSIZ3 & OTG_FS_HOST_FS_HCTSIZ3_PKTCNT) >> 19;
-}
-inline uint32_t otg_fs_host_fs_hctsiz3_get_xfrsiz(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCTSIZ3 & OTG_FS_HOST_FS_HCTSIZ3_XFRSIZ) >> 0;
-}
+inline uint32_t otg_fs_host_hctsiz3_get_dpid(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ3 & OTG_FS_HOST_HCTSIZ3_DPID) >> 29; }
+inline uint32_t otg_fs_host_hctsiz3_get_pktcnt(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ3 & OTG_FS_HOST_HCTSIZ3_PKTCNT) >> 19; }
+inline uint32_t otg_fs_host_hctsiz3_get_xfrsiz(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ3 & OTG_FS_HOST_HCTSIZ3_XFRSIZ) >> 0; }
 
-// OTG_FS_HOST->FS_HCCHAR4 OTG_FS host channel-4 characteristics register (OTG_FS_HCCHAR4)
+// OTG_FS_HOST->HCCHAR4 OTG_FS host channel-4 characteristics register (OTG_FS_HCCHAR4)
 enum {
-	OTG_FS_HOST_FS_HCCHAR4_CHENA  = 1UL << 31,              // Channel enable
-	OTG_FS_HOST_FS_HCCHAR4_CHDIS  = 1UL << 30,              // Channel disable
-	OTG_FS_HOST_FS_HCCHAR4_ODDFRM = 1UL << 29,              // Odd frame
-	OTG_FS_HOST_FS_HCCHAR4_DAD    = ((1UL << 7) - 1) << 22, // Device address
-	OTG_FS_HOST_FS_HCCHAR4_MCNT   = ((1UL << 2) - 1) << 20, // Multicount
-	OTG_FS_HOST_FS_HCCHAR4_EPTYP  = ((1UL << 2) - 1) << 18, // Endpoint type
-	OTG_FS_HOST_FS_HCCHAR4_LSDEV  = 1UL << 17,              // Low-speed device
-	OTG_FS_HOST_FS_HCCHAR4_EPDIR  = 1UL << 15,              // Endpoint direction
-	OTG_FS_HOST_FS_HCCHAR4_EPNUM  = ((1UL << 4) - 1) << 11, // Endpoint number
-	OTG_FS_HOST_FS_HCCHAR4_MPSIZ  = ((1UL << 11) - 1) << 0, // Maximum packet size
+	OTG_FS_HOST_HCCHAR4_CHENA  = 1UL << 31,              // Channel enable
+	OTG_FS_HOST_HCCHAR4_CHDIS  = 1UL << 30,              // Channel disable
+	OTG_FS_HOST_HCCHAR4_ODDFRM = 1UL << 29,              // Odd frame
+	OTG_FS_HOST_HCCHAR4_DAD    = ((1UL << 7) - 1) << 22, // Device address
+	OTG_FS_HOST_HCCHAR4_MCNT   = ((1UL << 2) - 1) << 20, // Multicount
+	OTG_FS_HOST_HCCHAR4_EPTYP  = ((1UL << 2) - 1) << 18, // Endpoint type
+	OTG_FS_HOST_HCCHAR4_LSDEV  = 1UL << 17,              // Low-speed device
+	OTG_FS_HOST_HCCHAR4_EPDIR  = 1UL << 15,              // Endpoint direction
+	OTG_FS_HOST_HCCHAR4_EPNUM  = ((1UL << 4) - 1) << 11, // Endpoint number
+	OTG_FS_HOST_HCCHAR4_MPSIZ  = ((1UL << 11) - 1) << 0, // Maximum packet size
 };
-inline void otg_fs_host_fs_hcchar4_set_dad(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR4 = (p->FS_HCCHAR4 & ~OTG_FS_HOST_FS_HCCHAR4_DAD) | ((val << 22) & OTG_FS_HOST_FS_HCCHAR4_DAD);
+inline void otg_fs_host_hcchar4_set_dad(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR4 = (p->HCCHAR4 & ~OTG_FS_HOST_HCCHAR4_DAD) | ((val << 22) & OTG_FS_HOST_HCCHAR4_DAD);
 }
-inline void otg_fs_host_fs_hcchar4_set_mcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR4 = (p->FS_HCCHAR4 & ~OTG_FS_HOST_FS_HCCHAR4_MCNT) | ((val << 20) & OTG_FS_HOST_FS_HCCHAR4_MCNT);
+inline void otg_fs_host_hcchar4_set_mcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR4 = (p->HCCHAR4 & ~OTG_FS_HOST_HCCHAR4_MCNT) | ((val << 20) & OTG_FS_HOST_HCCHAR4_MCNT);
 }
-inline void otg_fs_host_fs_hcchar4_set_eptyp(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR4 = (p->FS_HCCHAR4 & ~OTG_FS_HOST_FS_HCCHAR4_EPTYP) | ((val << 18) & OTG_FS_HOST_FS_HCCHAR4_EPTYP);
+inline void otg_fs_host_hcchar4_set_eptyp(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR4 = (p->HCCHAR4 & ~OTG_FS_HOST_HCCHAR4_EPTYP) | ((val << 18) & OTG_FS_HOST_HCCHAR4_EPTYP);
 }
-inline void otg_fs_host_fs_hcchar4_set_epnum(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR4 = (p->FS_HCCHAR4 & ~OTG_FS_HOST_FS_HCCHAR4_EPNUM) | ((val << 11) & OTG_FS_HOST_FS_HCCHAR4_EPNUM);
+inline void otg_fs_host_hcchar4_set_epnum(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR4 = (p->HCCHAR4 & ~OTG_FS_HOST_HCCHAR4_EPNUM) | ((val << 11) & OTG_FS_HOST_HCCHAR4_EPNUM);
 }
-inline void otg_fs_host_fs_hcchar4_set_mpsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR4 = (p->FS_HCCHAR4 & ~OTG_FS_HOST_FS_HCCHAR4_MPSIZ) | ((val << 0) & OTG_FS_HOST_FS_HCCHAR4_MPSIZ);
+inline void otg_fs_host_hcchar4_set_mpsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR4 = (p->HCCHAR4 & ~OTG_FS_HOST_HCCHAR4_MPSIZ) | ((val << 0) & OTG_FS_HOST_HCCHAR4_MPSIZ);
 }
-inline uint32_t otg_fs_host_fs_hcchar4_get_dad(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR4 & OTG_FS_HOST_FS_HCCHAR4_DAD) >> 22; }
-inline uint32_t otg_fs_host_fs_hcchar4_get_mcnt(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR4 & OTG_FS_HOST_FS_HCCHAR4_MCNT) >> 20; }
-inline uint32_t otg_fs_host_fs_hcchar4_get_eptyp(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCCHAR4 & OTG_FS_HOST_FS_HCCHAR4_EPTYP) >> 18;
-}
-inline uint32_t otg_fs_host_fs_hcchar4_get_epnum(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCCHAR4 & OTG_FS_HOST_FS_HCCHAR4_EPNUM) >> 11;
-}
-inline uint32_t otg_fs_host_fs_hcchar4_get_mpsiz(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR4 & OTG_FS_HOST_FS_HCCHAR4_MPSIZ) >> 0; }
+inline uint32_t otg_fs_host_hcchar4_get_dad(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR4 & OTG_FS_HOST_HCCHAR4_DAD) >> 22; }
+inline uint32_t otg_fs_host_hcchar4_get_mcnt(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR4 & OTG_FS_HOST_HCCHAR4_MCNT) >> 20; }
+inline uint32_t otg_fs_host_hcchar4_get_eptyp(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR4 & OTG_FS_HOST_HCCHAR4_EPTYP) >> 18; }
+inline uint32_t otg_fs_host_hcchar4_get_epnum(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR4 & OTG_FS_HOST_HCCHAR4_EPNUM) >> 11; }
+inline uint32_t otg_fs_host_hcchar4_get_mpsiz(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR4 & OTG_FS_HOST_HCCHAR4_MPSIZ) >> 0; }
 
-// OTG_FS_HOST->FS_HCINT4 OTG_FS host channel-4 interrupt register (OTG_FS_HCINT4)
+// OTG_FS_HOST->HCINT4 OTG_FS host channel-4 interrupt register (OTG_FS_HCINT4)
 enum {
-	OTG_FS_HOST_FS_HCINT4_DTERR = 1UL << 10, // Data toggle error
-	OTG_FS_HOST_FS_HCINT4_FRMOR = 1UL << 9,  // Frame overrun
-	OTG_FS_HOST_FS_HCINT4_BBERR = 1UL << 8,  // Babble error
-	OTG_FS_HOST_FS_HCINT4_TXERR = 1UL << 7,  // Transaction error
-	OTG_FS_HOST_FS_HCINT4_ACK   = 1UL << 5,  // ACK response received/transmitted interrupt
-	OTG_FS_HOST_FS_HCINT4_NAK   = 1UL << 4,  // NAK response received interrupt
-	OTG_FS_HOST_FS_HCINT4_STALL = 1UL << 3,  // STALL response received interrupt
-	OTG_FS_HOST_FS_HCINT4_CHH   = 1UL << 1,  // Channel halted
-	OTG_FS_HOST_FS_HCINT4_XFRC  = 1UL << 0,  // Transfer completed
+	OTG_FS_HOST_HCINT4_DTERR = 1UL << 10, // Data toggle error
+	OTG_FS_HOST_HCINT4_FRMOR = 1UL << 9,  // Frame overrun
+	OTG_FS_HOST_HCINT4_BBERR = 1UL << 8,  // Babble error
+	OTG_FS_HOST_HCINT4_TXERR = 1UL << 7,  // Transaction error
+	OTG_FS_HOST_HCINT4_ACK   = 1UL << 5,  // ACK response received/transmitted interrupt
+	OTG_FS_HOST_HCINT4_NAK   = 1UL << 4,  // NAK response received interrupt
+	OTG_FS_HOST_HCINT4_STALL = 1UL << 3,  // STALL response received interrupt
+	OTG_FS_HOST_HCINT4_CHH   = 1UL << 1,  // Channel halted
+	OTG_FS_HOST_HCINT4_XFRC  = 1UL << 0,  // Transfer completed
 };
 
-// OTG_FS_HOST->FS_HCINTMSK4 OTG_FS host channel-4 mask register (OTG_FS_HCINTMSK4)
+// OTG_FS_HOST->HCINTMSK4 OTG_FS host channel-4 mask register (OTG_FS_HCINTMSK4)
 enum {
-	OTG_FS_HOST_FS_HCINTMSK4_DTERRM = 1UL << 10, // Data toggle error mask
-	OTG_FS_HOST_FS_HCINTMSK4_FRMORM = 1UL << 9,  // Frame overrun mask
-	OTG_FS_HOST_FS_HCINTMSK4_BBERRM = 1UL << 8,  // Babble error mask
-	OTG_FS_HOST_FS_HCINTMSK4_TXERRM = 1UL << 7,  // Transaction error mask
-	OTG_FS_HOST_FS_HCINTMSK4_NYET   = 1UL << 6,  // response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK4_ACKM   = 1UL << 5,  // ACK response received/transmitted interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK4_NAKM   = 1UL << 4,  // NAK response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK4_STALLM = 1UL << 3,  // STALL response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK4_CHHM   = 1UL << 1,  // Channel halted mask
-	OTG_FS_HOST_FS_HCINTMSK4_XFRCM  = 1UL << 0,  // Transfer completed mask
+	OTG_FS_HOST_HCINTMSK4_DTERRM = 1UL << 10, // Data toggle error mask
+	OTG_FS_HOST_HCINTMSK4_FRMORM = 1UL << 9,  // Frame overrun mask
+	OTG_FS_HOST_HCINTMSK4_BBERRM = 1UL << 8,  // Babble error mask
+	OTG_FS_HOST_HCINTMSK4_TXERRM = 1UL << 7,  // Transaction error mask
+	OTG_FS_HOST_HCINTMSK4_NYET   = 1UL << 6,  // response received interrupt mask
+	OTG_FS_HOST_HCINTMSK4_ACKM   = 1UL << 5,  // ACK response received/transmitted interrupt mask
+	OTG_FS_HOST_HCINTMSK4_NAKM   = 1UL << 4,  // NAK response received interrupt mask
+	OTG_FS_HOST_HCINTMSK4_STALLM = 1UL << 3,  // STALL response received interrupt mask
+	OTG_FS_HOST_HCINTMSK4_CHHM   = 1UL << 1,  // Channel halted mask
+	OTG_FS_HOST_HCINTMSK4_XFRCM  = 1UL << 0,  // Transfer completed mask
 };
 
-// OTG_FS_HOST->FS_HCTSIZ4 OTG_FS host channel-x transfer size register
+// OTG_FS_HOST->HCTSIZ4 OTG_FS host channel-x transfer size register
 enum {
-	OTG_FS_HOST_FS_HCTSIZ4_DPID   = ((1UL << 2) - 1) << 29,  // Data PID
-	OTG_FS_HOST_FS_HCTSIZ4_PKTCNT = ((1UL << 10) - 1) << 19, // Packet count
-	OTG_FS_HOST_FS_HCTSIZ4_XFRSIZ = ((1UL << 19) - 1) << 0,  // Transfer size
+	OTG_FS_HOST_HCTSIZ4_DPID   = ((1UL << 2) - 1) << 29,  // Data PID
+	OTG_FS_HOST_HCTSIZ4_PKTCNT = ((1UL << 10) - 1) << 19, // Packet count
+	OTG_FS_HOST_HCTSIZ4_XFRSIZ = ((1UL << 19) - 1) << 0,  // Transfer size
 };
-inline void otg_fs_host_fs_hctsiz4_set_dpid(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ4 = (p->FS_HCTSIZ4 & ~OTG_FS_HOST_FS_HCTSIZ4_DPID) | ((val << 29) & OTG_FS_HOST_FS_HCTSIZ4_DPID);
+inline void otg_fs_host_hctsiz4_set_dpid(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ4 = (p->HCTSIZ4 & ~OTG_FS_HOST_HCTSIZ4_DPID) | ((val << 29) & OTG_FS_HOST_HCTSIZ4_DPID);
 }
-inline void otg_fs_host_fs_hctsiz4_set_pktcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ4 = (p->FS_HCTSIZ4 & ~OTG_FS_HOST_FS_HCTSIZ4_PKTCNT) | ((val << 19) & OTG_FS_HOST_FS_HCTSIZ4_PKTCNT);
+inline void otg_fs_host_hctsiz4_set_pktcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ4 = (p->HCTSIZ4 & ~OTG_FS_HOST_HCTSIZ4_PKTCNT) | ((val << 19) & OTG_FS_HOST_HCTSIZ4_PKTCNT);
 }
-inline void otg_fs_host_fs_hctsiz4_set_xfrsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ4 = (p->FS_HCTSIZ4 & ~OTG_FS_HOST_FS_HCTSIZ4_XFRSIZ) | ((val << 0) & OTG_FS_HOST_FS_HCTSIZ4_XFRSIZ);
+inline void otg_fs_host_hctsiz4_set_xfrsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ4 = (p->HCTSIZ4 & ~OTG_FS_HOST_HCTSIZ4_XFRSIZ) | ((val << 0) & OTG_FS_HOST_HCTSIZ4_XFRSIZ);
 }
-inline uint32_t otg_fs_host_fs_hctsiz4_get_dpid(struct OTG_FS_HOST_Type* p) { return (p->FS_HCTSIZ4 & OTG_FS_HOST_FS_HCTSIZ4_DPID) >> 29; }
-inline uint32_t otg_fs_host_fs_hctsiz4_get_pktcnt(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCTSIZ4 & OTG_FS_HOST_FS_HCTSIZ4_PKTCNT) >> 19;
-}
-inline uint32_t otg_fs_host_fs_hctsiz4_get_xfrsiz(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCTSIZ4 & OTG_FS_HOST_FS_HCTSIZ4_XFRSIZ) >> 0;
-}
+inline uint32_t otg_fs_host_hctsiz4_get_dpid(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ4 & OTG_FS_HOST_HCTSIZ4_DPID) >> 29; }
+inline uint32_t otg_fs_host_hctsiz4_get_pktcnt(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ4 & OTG_FS_HOST_HCTSIZ4_PKTCNT) >> 19; }
+inline uint32_t otg_fs_host_hctsiz4_get_xfrsiz(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ4 & OTG_FS_HOST_HCTSIZ4_XFRSIZ) >> 0; }
 
-// OTG_FS_HOST->FS_HCCHAR5 OTG_FS host channel-5 characteristics register (OTG_FS_HCCHAR5)
+// OTG_FS_HOST->HCCHAR5 OTG_FS host channel-5 characteristics register (OTG_FS_HCCHAR5)
 enum {
-	OTG_FS_HOST_FS_HCCHAR5_CHENA  = 1UL << 31,              // Channel enable
-	OTG_FS_HOST_FS_HCCHAR5_CHDIS  = 1UL << 30,              // Channel disable
-	OTG_FS_HOST_FS_HCCHAR5_ODDFRM = 1UL << 29,              // Odd frame
-	OTG_FS_HOST_FS_HCCHAR5_DAD    = ((1UL << 7) - 1) << 22, // Device address
-	OTG_FS_HOST_FS_HCCHAR5_MCNT   = ((1UL << 2) - 1) << 20, // Multicount
-	OTG_FS_HOST_FS_HCCHAR5_EPTYP  = ((1UL << 2) - 1) << 18, // Endpoint type
-	OTG_FS_HOST_FS_HCCHAR5_LSDEV  = 1UL << 17,              // Low-speed device
-	OTG_FS_HOST_FS_HCCHAR5_EPDIR  = 1UL << 15,              // Endpoint direction
-	OTG_FS_HOST_FS_HCCHAR5_EPNUM  = ((1UL << 4) - 1) << 11, // Endpoint number
-	OTG_FS_HOST_FS_HCCHAR5_MPSIZ  = ((1UL << 11) - 1) << 0, // Maximum packet size
+	OTG_FS_HOST_HCCHAR5_CHENA  = 1UL << 31,              // Channel enable
+	OTG_FS_HOST_HCCHAR5_CHDIS  = 1UL << 30,              // Channel disable
+	OTG_FS_HOST_HCCHAR5_ODDFRM = 1UL << 29,              // Odd frame
+	OTG_FS_HOST_HCCHAR5_DAD    = ((1UL << 7) - 1) << 22, // Device address
+	OTG_FS_HOST_HCCHAR5_MCNT   = ((1UL << 2) - 1) << 20, // Multicount
+	OTG_FS_HOST_HCCHAR5_EPTYP  = ((1UL << 2) - 1) << 18, // Endpoint type
+	OTG_FS_HOST_HCCHAR5_LSDEV  = 1UL << 17,              // Low-speed device
+	OTG_FS_HOST_HCCHAR5_EPDIR  = 1UL << 15,              // Endpoint direction
+	OTG_FS_HOST_HCCHAR5_EPNUM  = ((1UL << 4) - 1) << 11, // Endpoint number
+	OTG_FS_HOST_HCCHAR5_MPSIZ  = ((1UL << 11) - 1) << 0, // Maximum packet size
 };
-inline void otg_fs_host_fs_hcchar5_set_dad(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR5 = (p->FS_HCCHAR5 & ~OTG_FS_HOST_FS_HCCHAR5_DAD) | ((val << 22) & OTG_FS_HOST_FS_HCCHAR5_DAD);
+inline void otg_fs_host_hcchar5_set_dad(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR5 = (p->HCCHAR5 & ~OTG_FS_HOST_HCCHAR5_DAD) | ((val << 22) & OTG_FS_HOST_HCCHAR5_DAD);
 }
-inline void otg_fs_host_fs_hcchar5_set_mcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR5 = (p->FS_HCCHAR5 & ~OTG_FS_HOST_FS_HCCHAR5_MCNT) | ((val << 20) & OTG_FS_HOST_FS_HCCHAR5_MCNT);
+inline void otg_fs_host_hcchar5_set_mcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR5 = (p->HCCHAR5 & ~OTG_FS_HOST_HCCHAR5_MCNT) | ((val << 20) & OTG_FS_HOST_HCCHAR5_MCNT);
 }
-inline void otg_fs_host_fs_hcchar5_set_eptyp(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR5 = (p->FS_HCCHAR5 & ~OTG_FS_HOST_FS_HCCHAR5_EPTYP) | ((val << 18) & OTG_FS_HOST_FS_HCCHAR5_EPTYP);
+inline void otg_fs_host_hcchar5_set_eptyp(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR5 = (p->HCCHAR5 & ~OTG_FS_HOST_HCCHAR5_EPTYP) | ((val << 18) & OTG_FS_HOST_HCCHAR5_EPTYP);
 }
-inline void otg_fs_host_fs_hcchar5_set_epnum(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR5 = (p->FS_HCCHAR5 & ~OTG_FS_HOST_FS_HCCHAR5_EPNUM) | ((val << 11) & OTG_FS_HOST_FS_HCCHAR5_EPNUM);
+inline void otg_fs_host_hcchar5_set_epnum(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR5 = (p->HCCHAR5 & ~OTG_FS_HOST_HCCHAR5_EPNUM) | ((val << 11) & OTG_FS_HOST_HCCHAR5_EPNUM);
 }
-inline void otg_fs_host_fs_hcchar5_set_mpsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR5 = (p->FS_HCCHAR5 & ~OTG_FS_HOST_FS_HCCHAR5_MPSIZ) | ((val << 0) & OTG_FS_HOST_FS_HCCHAR5_MPSIZ);
+inline void otg_fs_host_hcchar5_set_mpsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR5 = (p->HCCHAR5 & ~OTG_FS_HOST_HCCHAR5_MPSIZ) | ((val << 0) & OTG_FS_HOST_HCCHAR5_MPSIZ);
 }
-inline uint32_t otg_fs_host_fs_hcchar5_get_dad(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR5 & OTG_FS_HOST_FS_HCCHAR5_DAD) >> 22; }
-inline uint32_t otg_fs_host_fs_hcchar5_get_mcnt(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR5 & OTG_FS_HOST_FS_HCCHAR5_MCNT) >> 20; }
-inline uint32_t otg_fs_host_fs_hcchar5_get_eptyp(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCCHAR5 & OTG_FS_HOST_FS_HCCHAR5_EPTYP) >> 18;
-}
-inline uint32_t otg_fs_host_fs_hcchar5_get_epnum(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCCHAR5 & OTG_FS_HOST_FS_HCCHAR5_EPNUM) >> 11;
-}
-inline uint32_t otg_fs_host_fs_hcchar5_get_mpsiz(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR5 & OTG_FS_HOST_FS_HCCHAR5_MPSIZ) >> 0; }
+inline uint32_t otg_fs_host_hcchar5_get_dad(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR5 & OTG_FS_HOST_HCCHAR5_DAD) >> 22; }
+inline uint32_t otg_fs_host_hcchar5_get_mcnt(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR5 & OTG_FS_HOST_HCCHAR5_MCNT) >> 20; }
+inline uint32_t otg_fs_host_hcchar5_get_eptyp(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR5 & OTG_FS_HOST_HCCHAR5_EPTYP) >> 18; }
+inline uint32_t otg_fs_host_hcchar5_get_epnum(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR5 & OTG_FS_HOST_HCCHAR5_EPNUM) >> 11; }
+inline uint32_t otg_fs_host_hcchar5_get_mpsiz(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR5 & OTG_FS_HOST_HCCHAR5_MPSIZ) >> 0; }
 
-// OTG_FS_HOST->FS_HCINT5 OTG_FS host channel-5 interrupt register (OTG_FS_HCINT5)
+// OTG_FS_HOST->HCINT5 OTG_FS host channel-5 interrupt register (OTG_FS_HCINT5)
 enum {
-	OTG_FS_HOST_FS_HCINT5_DTERR = 1UL << 10, // Data toggle error
-	OTG_FS_HOST_FS_HCINT5_FRMOR = 1UL << 9,  // Frame overrun
-	OTG_FS_HOST_FS_HCINT5_BBERR = 1UL << 8,  // Babble error
-	OTG_FS_HOST_FS_HCINT5_TXERR = 1UL << 7,  // Transaction error
-	OTG_FS_HOST_FS_HCINT5_ACK   = 1UL << 5,  // ACK response received/transmitted interrupt
-	OTG_FS_HOST_FS_HCINT5_NAK   = 1UL << 4,  // NAK response received interrupt
-	OTG_FS_HOST_FS_HCINT5_STALL = 1UL << 3,  // STALL response received interrupt
-	OTG_FS_HOST_FS_HCINT5_CHH   = 1UL << 1,  // Channel halted
-	OTG_FS_HOST_FS_HCINT5_XFRC  = 1UL << 0,  // Transfer completed
+	OTG_FS_HOST_HCINT5_DTERR = 1UL << 10, // Data toggle error
+	OTG_FS_HOST_HCINT5_FRMOR = 1UL << 9,  // Frame overrun
+	OTG_FS_HOST_HCINT5_BBERR = 1UL << 8,  // Babble error
+	OTG_FS_HOST_HCINT5_TXERR = 1UL << 7,  // Transaction error
+	OTG_FS_HOST_HCINT5_ACK   = 1UL << 5,  // ACK response received/transmitted interrupt
+	OTG_FS_HOST_HCINT5_NAK   = 1UL << 4,  // NAK response received interrupt
+	OTG_FS_HOST_HCINT5_STALL = 1UL << 3,  // STALL response received interrupt
+	OTG_FS_HOST_HCINT5_CHH   = 1UL << 1,  // Channel halted
+	OTG_FS_HOST_HCINT5_XFRC  = 1UL << 0,  // Transfer completed
 };
 
-// OTG_FS_HOST->FS_HCINTMSK5 OTG_FS host channel-5 mask register (OTG_FS_HCINTMSK5)
+// OTG_FS_HOST->HCINTMSK5 OTG_FS host channel-5 mask register (OTG_FS_HCINTMSK5)
 enum {
-	OTG_FS_HOST_FS_HCINTMSK5_DTERRM = 1UL << 10, // Data toggle error mask
-	OTG_FS_HOST_FS_HCINTMSK5_FRMORM = 1UL << 9,  // Frame overrun mask
-	OTG_FS_HOST_FS_HCINTMSK5_BBERRM = 1UL << 8,  // Babble error mask
-	OTG_FS_HOST_FS_HCINTMSK5_TXERRM = 1UL << 7,  // Transaction error mask
-	OTG_FS_HOST_FS_HCINTMSK5_NYET   = 1UL << 6,  // response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK5_ACKM   = 1UL << 5,  // ACK response received/transmitted interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK5_NAKM   = 1UL << 4,  // NAK response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK5_STALLM = 1UL << 3,  // STALL response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK5_CHHM   = 1UL << 1,  // Channel halted mask
-	OTG_FS_HOST_FS_HCINTMSK5_XFRCM  = 1UL << 0,  // Transfer completed mask
+	OTG_FS_HOST_HCINTMSK5_DTERRM = 1UL << 10, // Data toggle error mask
+	OTG_FS_HOST_HCINTMSK5_FRMORM = 1UL << 9,  // Frame overrun mask
+	OTG_FS_HOST_HCINTMSK5_BBERRM = 1UL << 8,  // Babble error mask
+	OTG_FS_HOST_HCINTMSK5_TXERRM = 1UL << 7,  // Transaction error mask
+	OTG_FS_HOST_HCINTMSK5_NYET   = 1UL << 6,  // response received interrupt mask
+	OTG_FS_HOST_HCINTMSK5_ACKM   = 1UL << 5,  // ACK response received/transmitted interrupt mask
+	OTG_FS_HOST_HCINTMSK5_NAKM   = 1UL << 4,  // NAK response received interrupt mask
+	OTG_FS_HOST_HCINTMSK5_STALLM = 1UL << 3,  // STALL response received interrupt mask
+	OTG_FS_HOST_HCINTMSK5_CHHM   = 1UL << 1,  // Channel halted mask
+	OTG_FS_HOST_HCINTMSK5_XFRCM  = 1UL << 0,  // Transfer completed mask
 };
 
-// OTG_FS_HOST->FS_HCTSIZ5 OTG_FS host channel-5 transfer size register
+// OTG_FS_HOST->HCTSIZ5 OTG_FS host channel-5 transfer size register
 enum {
-	OTG_FS_HOST_FS_HCTSIZ5_DPID   = ((1UL << 2) - 1) << 29,  // Data PID
-	OTG_FS_HOST_FS_HCTSIZ5_PKTCNT = ((1UL << 10) - 1) << 19, // Packet count
-	OTG_FS_HOST_FS_HCTSIZ5_XFRSIZ = ((1UL << 19) - 1) << 0,  // Transfer size
+	OTG_FS_HOST_HCTSIZ5_DPID   = ((1UL << 2) - 1) << 29,  // Data PID
+	OTG_FS_HOST_HCTSIZ5_PKTCNT = ((1UL << 10) - 1) << 19, // Packet count
+	OTG_FS_HOST_HCTSIZ5_XFRSIZ = ((1UL << 19) - 1) << 0,  // Transfer size
 };
-inline void otg_fs_host_fs_hctsiz5_set_dpid(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ5 = (p->FS_HCTSIZ5 & ~OTG_FS_HOST_FS_HCTSIZ5_DPID) | ((val << 29) & OTG_FS_HOST_FS_HCTSIZ5_DPID);
+inline void otg_fs_host_hctsiz5_set_dpid(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ5 = (p->HCTSIZ5 & ~OTG_FS_HOST_HCTSIZ5_DPID) | ((val << 29) & OTG_FS_HOST_HCTSIZ5_DPID);
 }
-inline void otg_fs_host_fs_hctsiz5_set_pktcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ5 = (p->FS_HCTSIZ5 & ~OTG_FS_HOST_FS_HCTSIZ5_PKTCNT) | ((val << 19) & OTG_FS_HOST_FS_HCTSIZ5_PKTCNT);
+inline void otg_fs_host_hctsiz5_set_pktcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ5 = (p->HCTSIZ5 & ~OTG_FS_HOST_HCTSIZ5_PKTCNT) | ((val << 19) & OTG_FS_HOST_HCTSIZ5_PKTCNT);
 }
-inline void otg_fs_host_fs_hctsiz5_set_xfrsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ5 = (p->FS_HCTSIZ5 & ~OTG_FS_HOST_FS_HCTSIZ5_XFRSIZ) | ((val << 0) & OTG_FS_HOST_FS_HCTSIZ5_XFRSIZ);
+inline void otg_fs_host_hctsiz5_set_xfrsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ5 = (p->HCTSIZ5 & ~OTG_FS_HOST_HCTSIZ5_XFRSIZ) | ((val << 0) & OTG_FS_HOST_HCTSIZ5_XFRSIZ);
 }
-inline uint32_t otg_fs_host_fs_hctsiz5_get_dpid(struct OTG_FS_HOST_Type* p) { return (p->FS_HCTSIZ5 & OTG_FS_HOST_FS_HCTSIZ5_DPID) >> 29; }
-inline uint32_t otg_fs_host_fs_hctsiz5_get_pktcnt(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCTSIZ5 & OTG_FS_HOST_FS_HCTSIZ5_PKTCNT) >> 19;
-}
-inline uint32_t otg_fs_host_fs_hctsiz5_get_xfrsiz(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCTSIZ5 & OTG_FS_HOST_FS_HCTSIZ5_XFRSIZ) >> 0;
-}
+inline uint32_t otg_fs_host_hctsiz5_get_dpid(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ5 & OTG_FS_HOST_HCTSIZ5_DPID) >> 29; }
+inline uint32_t otg_fs_host_hctsiz5_get_pktcnt(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ5 & OTG_FS_HOST_HCTSIZ5_PKTCNT) >> 19; }
+inline uint32_t otg_fs_host_hctsiz5_get_xfrsiz(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ5 & OTG_FS_HOST_HCTSIZ5_XFRSIZ) >> 0; }
 
-// OTG_FS_HOST->FS_HCCHAR6 OTG_FS host channel-6 characteristics register (OTG_FS_HCCHAR6)
+// OTG_FS_HOST->HCCHAR6 OTG_FS host channel-6 characteristics register (OTG_FS_HCCHAR6)
 enum {
-	OTG_FS_HOST_FS_HCCHAR6_CHENA  = 1UL << 31,              // Channel enable
-	OTG_FS_HOST_FS_HCCHAR6_CHDIS  = 1UL << 30,              // Channel disable
-	OTG_FS_HOST_FS_HCCHAR6_ODDFRM = 1UL << 29,              // Odd frame
-	OTG_FS_HOST_FS_HCCHAR6_DAD    = ((1UL << 7) - 1) << 22, // Device address
-	OTG_FS_HOST_FS_HCCHAR6_MCNT   = ((1UL << 2) - 1) << 20, // Multicount
-	OTG_FS_HOST_FS_HCCHAR6_EPTYP  = ((1UL << 2) - 1) << 18, // Endpoint type
-	OTG_FS_HOST_FS_HCCHAR6_LSDEV  = 1UL << 17,              // Low-speed device
-	OTG_FS_HOST_FS_HCCHAR6_EPDIR  = 1UL << 15,              // Endpoint direction
-	OTG_FS_HOST_FS_HCCHAR6_EPNUM  = ((1UL << 4) - 1) << 11, // Endpoint number
-	OTG_FS_HOST_FS_HCCHAR6_MPSIZ  = ((1UL << 11) - 1) << 0, // Maximum packet size
+	OTG_FS_HOST_HCCHAR6_CHENA  = 1UL << 31,              // Channel enable
+	OTG_FS_HOST_HCCHAR6_CHDIS  = 1UL << 30,              // Channel disable
+	OTG_FS_HOST_HCCHAR6_ODDFRM = 1UL << 29,              // Odd frame
+	OTG_FS_HOST_HCCHAR6_DAD    = ((1UL << 7) - 1) << 22, // Device address
+	OTG_FS_HOST_HCCHAR6_MCNT   = ((1UL << 2) - 1) << 20, // Multicount
+	OTG_FS_HOST_HCCHAR6_EPTYP  = ((1UL << 2) - 1) << 18, // Endpoint type
+	OTG_FS_HOST_HCCHAR6_LSDEV  = 1UL << 17,              // Low-speed device
+	OTG_FS_HOST_HCCHAR6_EPDIR  = 1UL << 15,              // Endpoint direction
+	OTG_FS_HOST_HCCHAR6_EPNUM  = ((1UL << 4) - 1) << 11, // Endpoint number
+	OTG_FS_HOST_HCCHAR6_MPSIZ  = ((1UL << 11) - 1) << 0, // Maximum packet size
 };
-inline void otg_fs_host_fs_hcchar6_set_dad(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR6 = (p->FS_HCCHAR6 & ~OTG_FS_HOST_FS_HCCHAR6_DAD) | ((val << 22) & OTG_FS_HOST_FS_HCCHAR6_DAD);
+inline void otg_fs_host_hcchar6_set_dad(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR6 = (p->HCCHAR6 & ~OTG_FS_HOST_HCCHAR6_DAD) | ((val << 22) & OTG_FS_HOST_HCCHAR6_DAD);
 }
-inline void otg_fs_host_fs_hcchar6_set_mcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR6 = (p->FS_HCCHAR6 & ~OTG_FS_HOST_FS_HCCHAR6_MCNT) | ((val << 20) & OTG_FS_HOST_FS_HCCHAR6_MCNT);
+inline void otg_fs_host_hcchar6_set_mcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR6 = (p->HCCHAR6 & ~OTG_FS_HOST_HCCHAR6_MCNT) | ((val << 20) & OTG_FS_HOST_HCCHAR6_MCNT);
 }
-inline void otg_fs_host_fs_hcchar6_set_eptyp(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR6 = (p->FS_HCCHAR6 & ~OTG_FS_HOST_FS_HCCHAR6_EPTYP) | ((val << 18) & OTG_FS_HOST_FS_HCCHAR6_EPTYP);
+inline void otg_fs_host_hcchar6_set_eptyp(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR6 = (p->HCCHAR6 & ~OTG_FS_HOST_HCCHAR6_EPTYP) | ((val << 18) & OTG_FS_HOST_HCCHAR6_EPTYP);
 }
-inline void otg_fs_host_fs_hcchar6_set_epnum(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR6 = (p->FS_HCCHAR6 & ~OTG_FS_HOST_FS_HCCHAR6_EPNUM) | ((val << 11) & OTG_FS_HOST_FS_HCCHAR6_EPNUM);
+inline void otg_fs_host_hcchar6_set_epnum(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR6 = (p->HCCHAR6 & ~OTG_FS_HOST_HCCHAR6_EPNUM) | ((val << 11) & OTG_FS_HOST_HCCHAR6_EPNUM);
 }
-inline void otg_fs_host_fs_hcchar6_set_mpsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR6 = (p->FS_HCCHAR6 & ~OTG_FS_HOST_FS_HCCHAR6_MPSIZ) | ((val << 0) & OTG_FS_HOST_FS_HCCHAR6_MPSIZ);
+inline void otg_fs_host_hcchar6_set_mpsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR6 = (p->HCCHAR6 & ~OTG_FS_HOST_HCCHAR6_MPSIZ) | ((val << 0) & OTG_FS_HOST_HCCHAR6_MPSIZ);
 }
-inline uint32_t otg_fs_host_fs_hcchar6_get_dad(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR6 & OTG_FS_HOST_FS_HCCHAR6_DAD) >> 22; }
-inline uint32_t otg_fs_host_fs_hcchar6_get_mcnt(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR6 & OTG_FS_HOST_FS_HCCHAR6_MCNT) >> 20; }
-inline uint32_t otg_fs_host_fs_hcchar6_get_eptyp(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCCHAR6 & OTG_FS_HOST_FS_HCCHAR6_EPTYP) >> 18;
-}
-inline uint32_t otg_fs_host_fs_hcchar6_get_epnum(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCCHAR6 & OTG_FS_HOST_FS_HCCHAR6_EPNUM) >> 11;
-}
-inline uint32_t otg_fs_host_fs_hcchar6_get_mpsiz(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR6 & OTG_FS_HOST_FS_HCCHAR6_MPSIZ) >> 0; }
+inline uint32_t otg_fs_host_hcchar6_get_dad(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR6 & OTG_FS_HOST_HCCHAR6_DAD) >> 22; }
+inline uint32_t otg_fs_host_hcchar6_get_mcnt(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR6 & OTG_FS_HOST_HCCHAR6_MCNT) >> 20; }
+inline uint32_t otg_fs_host_hcchar6_get_eptyp(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR6 & OTG_FS_HOST_HCCHAR6_EPTYP) >> 18; }
+inline uint32_t otg_fs_host_hcchar6_get_epnum(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR6 & OTG_FS_HOST_HCCHAR6_EPNUM) >> 11; }
+inline uint32_t otg_fs_host_hcchar6_get_mpsiz(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR6 & OTG_FS_HOST_HCCHAR6_MPSIZ) >> 0; }
 
-// OTG_FS_HOST->FS_HCINT6 OTG_FS host channel-6 interrupt register (OTG_FS_HCINT6)
+// OTG_FS_HOST->HCINT6 OTG_FS host channel-6 interrupt register (OTG_FS_HCINT6)
 enum {
-	OTG_FS_HOST_FS_HCINT6_DTERR = 1UL << 10, // Data toggle error
-	OTG_FS_HOST_FS_HCINT6_FRMOR = 1UL << 9,  // Frame overrun
-	OTG_FS_HOST_FS_HCINT6_BBERR = 1UL << 8,  // Babble error
-	OTG_FS_HOST_FS_HCINT6_TXERR = 1UL << 7,  // Transaction error
-	OTG_FS_HOST_FS_HCINT6_ACK   = 1UL << 5,  // ACK response received/transmitted interrupt
-	OTG_FS_HOST_FS_HCINT6_NAK   = 1UL << 4,  // NAK response received interrupt
-	OTG_FS_HOST_FS_HCINT6_STALL = 1UL << 3,  // STALL response received interrupt
-	OTG_FS_HOST_FS_HCINT6_CHH   = 1UL << 1,  // Channel halted
-	OTG_FS_HOST_FS_HCINT6_XFRC  = 1UL << 0,  // Transfer completed
+	OTG_FS_HOST_HCINT6_DTERR = 1UL << 10, // Data toggle error
+	OTG_FS_HOST_HCINT6_FRMOR = 1UL << 9,  // Frame overrun
+	OTG_FS_HOST_HCINT6_BBERR = 1UL << 8,  // Babble error
+	OTG_FS_HOST_HCINT6_TXERR = 1UL << 7,  // Transaction error
+	OTG_FS_HOST_HCINT6_ACK   = 1UL << 5,  // ACK response received/transmitted interrupt
+	OTG_FS_HOST_HCINT6_NAK   = 1UL << 4,  // NAK response received interrupt
+	OTG_FS_HOST_HCINT6_STALL = 1UL << 3,  // STALL response received interrupt
+	OTG_FS_HOST_HCINT6_CHH   = 1UL << 1,  // Channel halted
+	OTG_FS_HOST_HCINT6_XFRC  = 1UL << 0,  // Transfer completed
 };
 
-// OTG_FS_HOST->FS_HCINTMSK6 OTG_FS host channel-6 mask register (OTG_FS_HCINTMSK6)
+// OTG_FS_HOST->HCINTMSK6 OTG_FS host channel-6 mask register (OTG_FS_HCINTMSK6)
 enum {
-	OTG_FS_HOST_FS_HCINTMSK6_DTERRM = 1UL << 10, // Data toggle error mask
-	OTG_FS_HOST_FS_HCINTMSK6_FRMORM = 1UL << 9,  // Frame overrun mask
-	OTG_FS_HOST_FS_HCINTMSK6_BBERRM = 1UL << 8,  // Babble error mask
-	OTG_FS_HOST_FS_HCINTMSK6_TXERRM = 1UL << 7,  // Transaction error mask
-	OTG_FS_HOST_FS_HCINTMSK6_NYET   = 1UL << 6,  // response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK6_ACKM   = 1UL << 5,  // ACK response received/transmitted interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK6_NAKM   = 1UL << 4,  // NAK response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK6_STALLM = 1UL << 3,  // STALL response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK6_CHHM   = 1UL << 1,  // Channel halted mask
-	OTG_FS_HOST_FS_HCINTMSK6_XFRCM  = 1UL << 0,  // Transfer completed mask
+	OTG_FS_HOST_HCINTMSK6_DTERRM = 1UL << 10, // Data toggle error mask
+	OTG_FS_HOST_HCINTMSK6_FRMORM = 1UL << 9,  // Frame overrun mask
+	OTG_FS_HOST_HCINTMSK6_BBERRM = 1UL << 8,  // Babble error mask
+	OTG_FS_HOST_HCINTMSK6_TXERRM = 1UL << 7,  // Transaction error mask
+	OTG_FS_HOST_HCINTMSK6_NYET   = 1UL << 6,  // response received interrupt mask
+	OTG_FS_HOST_HCINTMSK6_ACKM   = 1UL << 5,  // ACK response received/transmitted interrupt mask
+	OTG_FS_HOST_HCINTMSK6_NAKM   = 1UL << 4,  // NAK response received interrupt mask
+	OTG_FS_HOST_HCINTMSK6_STALLM = 1UL << 3,  // STALL response received interrupt mask
+	OTG_FS_HOST_HCINTMSK6_CHHM   = 1UL << 1,  // Channel halted mask
+	OTG_FS_HOST_HCINTMSK6_XFRCM  = 1UL << 0,  // Transfer completed mask
 };
 
-// OTG_FS_HOST->FS_HCTSIZ6 OTG_FS host channel-6 transfer size register
+// OTG_FS_HOST->HCTSIZ6 OTG_FS host channel-6 transfer size register
 enum {
-	OTG_FS_HOST_FS_HCTSIZ6_DPID   = ((1UL << 2) - 1) << 29,  // Data PID
-	OTG_FS_HOST_FS_HCTSIZ6_PKTCNT = ((1UL << 10) - 1) << 19, // Packet count
-	OTG_FS_HOST_FS_HCTSIZ6_XFRSIZ = ((1UL << 19) - 1) << 0,  // Transfer size
+	OTG_FS_HOST_HCTSIZ6_DPID   = ((1UL << 2) - 1) << 29,  // Data PID
+	OTG_FS_HOST_HCTSIZ6_PKTCNT = ((1UL << 10) - 1) << 19, // Packet count
+	OTG_FS_HOST_HCTSIZ6_XFRSIZ = ((1UL << 19) - 1) << 0,  // Transfer size
 };
-inline void otg_fs_host_fs_hctsiz6_set_dpid(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ6 = (p->FS_HCTSIZ6 & ~OTG_FS_HOST_FS_HCTSIZ6_DPID) | ((val << 29) & OTG_FS_HOST_FS_HCTSIZ6_DPID);
+inline void otg_fs_host_hctsiz6_set_dpid(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ6 = (p->HCTSIZ6 & ~OTG_FS_HOST_HCTSIZ6_DPID) | ((val << 29) & OTG_FS_HOST_HCTSIZ6_DPID);
 }
-inline void otg_fs_host_fs_hctsiz6_set_pktcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ6 = (p->FS_HCTSIZ6 & ~OTG_FS_HOST_FS_HCTSIZ6_PKTCNT) | ((val << 19) & OTG_FS_HOST_FS_HCTSIZ6_PKTCNT);
+inline void otg_fs_host_hctsiz6_set_pktcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ6 = (p->HCTSIZ6 & ~OTG_FS_HOST_HCTSIZ6_PKTCNT) | ((val << 19) & OTG_FS_HOST_HCTSIZ6_PKTCNT);
 }
-inline void otg_fs_host_fs_hctsiz6_set_xfrsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ6 = (p->FS_HCTSIZ6 & ~OTG_FS_HOST_FS_HCTSIZ6_XFRSIZ) | ((val << 0) & OTG_FS_HOST_FS_HCTSIZ6_XFRSIZ);
+inline void otg_fs_host_hctsiz6_set_xfrsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ6 = (p->HCTSIZ6 & ~OTG_FS_HOST_HCTSIZ6_XFRSIZ) | ((val << 0) & OTG_FS_HOST_HCTSIZ6_XFRSIZ);
 }
-inline uint32_t otg_fs_host_fs_hctsiz6_get_dpid(struct OTG_FS_HOST_Type* p) { return (p->FS_HCTSIZ6 & OTG_FS_HOST_FS_HCTSIZ6_DPID) >> 29; }
-inline uint32_t otg_fs_host_fs_hctsiz6_get_pktcnt(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCTSIZ6 & OTG_FS_HOST_FS_HCTSIZ6_PKTCNT) >> 19;
-}
-inline uint32_t otg_fs_host_fs_hctsiz6_get_xfrsiz(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCTSIZ6 & OTG_FS_HOST_FS_HCTSIZ6_XFRSIZ) >> 0;
-}
+inline uint32_t otg_fs_host_hctsiz6_get_dpid(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ6 & OTG_FS_HOST_HCTSIZ6_DPID) >> 29; }
+inline uint32_t otg_fs_host_hctsiz6_get_pktcnt(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ6 & OTG_FS_HOST_HCTSIZ6_PKTCNT) >> 19; }
+inline uint32_t otg_fs_host_hctsiz6_get_xfrsiz(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ6 & OTG_FS_HOST_HCTSIZ6_XFRSIZ) >> 0; }
 
-// OTG_FS_HOST->FS_HCCHAR7 OTG_FS host channel-7 characteristics register (OTG_FS_HCCHAR7)
+// OTG_FS_HOST->HCCHAR7 OTG_FS host channel-7 characteristics register (OTG_FS_HCCHAR7)
 enum {
-	OTG_FS_HOST_FS_HCCHAR7_CHENA  = 1UL << 31,              // Channel enable
-	OTG_FS_HOST_FS_HCCHAR7_CHDIS  = 1UL << 30,              // Channel disable
-	OTG_FS_HOST_FS_HCCHAR7_ODDFRM = 1UL << 29,              // Odd frame
-	OTG_FS_HOST_FS_HCCHAR7_DAD    = ((1UL << 7) - 1) << 22, // Device address
-	OTG_FS_HOST_FS_HCCHAR7_MCNT   = ((1UL << 2) - 1) << 20, // Multicount
-	OTG_FS_HOST_FS_HCCHAR7_EPTYP  = ((1UL << 2) - 1) << 18, // Endpoint type
-	OTG_FS_HOST_FS_HCCHAR7_LSDEV  = 1UL << 17,              // Low-speed device
-	OTG_FS_HOST_FS_HCCHAR7_EPDIR  = 1UL << 15,              // Endpoint direction
-	OTG_FS_HOST_FS_HCCHAR7_EPNUM  = ((1UL << 4) - 1) << 11, // Endpoint number
-	OTG_FS_HOST_FS_HCCHAR7_MPSIZ  = ((1UL << 11) - 1) << 0, // Maximum packet size
+	OTG_FS_HOST_HCCHAR7_CHENA  = 1UL << 31,              // Channel enable
+	OTG_FS_HOST_HCCHAR7_CHDIS  = 1UL << 30,              // Channel disable
+	OTG_FS_HOST_HCCHAR7_ODDFRM = 1UL << 29,              // Odd frame
+	OTG_FS_HOST_HCCHAR7_DAD    = ((1UL << 7) - 1) << 22, // Device address
+	OTG_FS_HOST_HCCHAR7_MCNT   = ((1UL << 2) - 1) << 20, // Multicount
+	OTG_FS_HOST_HCCHAR7_EPTYP  = ((1UL << 2) - 1) << 18, // Endpoint type
+	OTG_FS_HOST_HCCHAR7_LSDEV  = 1UL << 17,              // Low-speed device
+	OTG_FS_HOST_HCCHAR7_EPDIR  = 1UL << 15,              // Endpoint direction
+	OTG_FS_HOST_HCCHAR7_EPNUM  = ((1UL << 4) - 1) << 11, // Endpoint number
+	OTG_FS_HOST_HCCHAR7_MPSIZ  = ((1UL << 11) - 1) << 0, // Maximum packet size
 };
-inline void otg_fs_host_fs_hcchar7_set_dad(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR7 = (p->FS_HCCHAR7 & ~OTG_FS_HOST_FS_HCCHAR7_DAD) | ((val << 22) & OTG_FS_HOST_FS_HCCHAR7_DAD);
+inline void otg_fs_host_hcchar7_set_dad(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR7 = (p->HCCHAR7 & ~OTG_FS_HOST_HCCHAR7_DAD) | ((val << 22) & OTG_FS_HOST_HCCHAR7_DAD);
 }
-inline void otg_fs_host_fs_hcchar7_set_mcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR7 = (p->FS_HCCHAR7 & ~OTG_FS_HOST_FS_HCCHAR7_MCNT) | ((val << 20) & OTG_FS_HOST_FS_HCCHAR7_MCNT);
+inline void otg_fs_host_hcchar7_set_mcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR7 = (p->HCCHAR7 & ~OTG_FS_HOST_HCCHAR7_MCNT) | ((val << 20) & OTG_FS_HOST_HCCHAR7_MCNT);
 }
-inline void otg_fs_host_fs_hcchar7_set_eptyp(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR7 = (p->FS_HCCHAR7 & ~OTG_FS_HOST_FS_HCCHAR7_EPTYP) | ((val << 18) & OTG_FS_HOST_FS_HCCHAR7_EPTYP);
+inline void otg_fs_host_hcchar7_set_eptyp(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR7 = (p->HCCHAR7 & ~OTG_FS_HOST_HCCHAR7_EPTYP) | ((val << 18) & OTG_FS_HOST_HCCHAR7_EPTYP);
 }
-inline void otg_fs_host_fs_hcchar7_set_epnum(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR7 = (p->FS_HCCHAR7 & ~OTG_FS_HOST_FS_HCCHAR7_EPNUM) | ((val << 11) & OTG_FS_HOST_FS_HCCHAR7_EPNUM);
+inline void otg_fs_host_hcchar7_set_epnum(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR7 = (p->HCCHAR7 & ~OTG_FS_HOST_HCCHAR7_EPNUM) | ((val << 11) & OTG_FS_HOST_HCCHAR7_EPNUM);
 }
-inline void otg_fs_host_fs_hcchar7_set_mpsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCCHAR7 = (p->FS_HCCHAR7 & ~OTG_FS_HOST_FS_HCCHAR7_MPSIZ) | ((val << 0) & OTG_FS_HOST_FS_HCCHAR7_MPSIZ);
+inline void otg_fs_host_hcchar7_set_mpsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCCHAR7 = (p->HCCHAR7 & ~OTG_FS_HOST_HCCHAR7_MPSIZ) | ((val << 0) & OTG_FS_HOST_HCCHAR7_MPSIZ);
 }
-inline uint32_t otg_fs_host_fs_hcchar7_get_dad(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR7 & OTG_FS_HOST_FS_HCCHAR7_DAD) >> 22; }
-inline uint32_t otg_fs_host_fs_hcchar7_get_mcnt(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR7 & OTG_FS_HOST_FS_HCCHAR7_MCNT) >> 20; }
-inline uint32_t otg_fs_host_fs_hcchar7_get_eptyp(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCCHAR7 & OTG_FS_HOST_FS_HCCHAR7_EPTYP) >> 18;
-}
-inline uint32_t otg_fs_host_fs_hcchar7_get_epnum(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCCHAR7 & OTG_FS_HOST_FS_HCCHAR7_EPNUM) >> 11;
-}
-inline uint32_t otg_fs_host_fs_hcchar7_get_mpsiz(struct OTG_FS_HOST_Type* p) { return (p->FS_HCCHAR7 & OTG_FS_HOST_FS_HCCHAR7_MPSIZ) >> 0; }
+inline uint32_t otg_fs_host_hcchar7_get_dad(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR7 & OTG_FS_HOST_HCCHAR7_DAD) >> 22; }
+inline uint32_t otg_fs_host_hcchar7_get_mcnt(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR7 & OTG_FS_HOST_HCCHAR7_MCNT) >> 20; }
+inline uint32_t otg_fs_host_hcchar7_get_eptyp(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR7 & OTG_FS_HOST_HCCHAR7_EPTYP) >> 18; }
+inline uint32_t otg_fs_host_hcchar7_get_epnum(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR7 & OTG_FS_HOST_HCCHAR7_EPNUM) >> 11; }
+inline uint32_t otg_fs_host_hcchar7_get_mpsiz(struct OTG_FS_HOST_Type* p) { return (p->HCCHAR7 & OTG_FS_HOST_HCCHAR7_MPSIZ) >> 0; }
 
-// OTG_FS_HOST->FS_HCINT7 OTG_FS host channel-7 interrupt register (OTG_FS_HCINT7)
+// OTG_FS_HOST->HCINT7 OTG_FS host channel-7 interrupt register (OTG_FS_HCINT7)
 enum {
-	OTG_FS_HOST_FS_HCINT7_DTERR = 1UL << 10, // Data toggle error
-	OTG_FS_HOST_FS_HCINT7_FRMOR = 1UL << 9,  // Frame overrun
-	OTG_FS_HOST_FS_HCINT7_BBERR = 1UL << 8,  // Babble error
-	OTG_FS_HOST_FS_HCINT7_TXERR = 1UL << 7,  // Transaction error
-	OTG_FS_HOST_FS_HCINT7_ACK   = 1UL << 5,  // ACK response received/transmitted interrupt
-	OTG_FS_HOST_FS_HCINT7_NAK   = 1UL << 4,  // NAK response received interrupt
-	OTG_FS_HOST_FS_HCINT7_STALL = 1UL << 3,  // STALL response received interrupt
-	OTG_FS_HOST_FS_HCINT7_CHH   = 1UL << 1,  // Channel halted
-	OTG_FS_HOST_FS_HCINT7_XFRC  = 1UL << 0,  // Transfer completed
+	OTG_FS_HOST_HCINT7_DTERR = 1UL << 10, // Data toggle error
+	OTG_FS_HOST_HCINT7_FRMOR = 1UL << 9,  // Frame overrun
+	OTG_FS_HOST_HCINT7_BBERR = 1UL << 8,  // Babble error
+	OTG_FS_HOST_HCINT7_TXERR = 1UL << 7,  // Transaction error
+	OTG_FS_HOST_HCINT7_ACK   = 1UL << 5,  // ACK response received/transmitted interrupt
+	OTG_FS_HOST_HCINT7_NAK   = 1UL << 4,  // NAK response received interrupt
+	OTG_FS_HOST_HCINT7_STALL = 1UL << 3,  // STALL response received interrupt
+	OTG_FS_HOST_HCINT7_CHH   = 1UL << 1,  // Channel halted
+	OTG_FS_HOST_HCINT7_XFRC  = 1UL << 0,  // Transfer completed
 };
 
-// OTG_FS_HOST->FS_HCINTMSK7 OTG_FS host channel-7 mask register (OTG_FS_HCINTMSK7)
+// OTG_FS_HOST->HCINTMSK7 OTG_FS host channel-7 mask register (OTG_FS_HCINTMSK7)
 enum {
-	OTG_FS_HOST_FS_HCINTMSK7_DTERRM = 1UL << 10, // Data toggle error mask
-	OTG_FS_HOST_FS_HCINTMSK7_FRMORM = 1UL << 9,  // Frame overrun mask
-	OTG_FS_HOST_FS_HCINTMSK7_BBERRM = 1UL << 8,  // Babble error mask
-	OTG_FS_HOST_FS_HCINTMSK7_TXERRM = 1UL << 7,  // Transaction error mask
-	OTG_FS_HOST_FS_HCINTMSK7_NYET   = 1UL << 6,  // response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK7_ACKM   = 1UL << 5,  // ACK response received/transmitted interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK7_NAKM   = 1UL << 4,  // NAK response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK7_STALLM = 1UL << 3,  // STALL response received interrupt mask
-	OTG_FS_HOST_FS_HCINTMSK7_CHHM   = 1UL << 1,  // Channel halted mask
-	OTG_FS_HOST_FS_HCINTMSK7_XFRCM  = 1UL << 0,  // Transfer completed mask
+	OTG_FS_HOST_HCINTMSK7_DTERRM = 1UL << 10, // Data toggle error mask
+	OTG_FS_HOST_HCINTMSK7_FRMORM = 1UL << 9,  // Frame overrun mask
+	OTG_FS_HOST_HCINTMSK7_BBERRM = 1UL << 8,  // Babble error mask
+	OTG_FS_HOST_HCINTMSK7_TXERRM = 1UL << 7,  // Transaction error mask
+	OTG_FS_HOST_HCINTMSK7_NYET   = 1UL << 6,  // response received interrupt mask
+	OTG_FS_HOST_HCINTMSK7_ACKM   = 1UL << 5,  // ACK response received/transmitted interrupt mask
+	OTG_FS_HOST_HCINTMSK7_NAKM   = 1UL << 4,  // NAK response received interrupt mask
+	OTG_FS_HOST_HCINTMSK7_STALLM = 1UL << 3,  // STALL response received interrupt mask
+	OTG_FS_HOST_HCINTMSK7_CHHM   = 1UL << 1,  // Channel halted mask
+	OTG_FS_HOST_HCINTMSK7_XFRCM  = 1UL << 0,  // Transfer completed mask
 };
 
-// OTG_FS_HOST->FS_HCTSIZ7 OTG_FS host channel-7 transfer size register
+// OTG_FS_HOST->HCTSIZ7 OTG_FS host channel-7 transfer size register
 enum {
-	OTG_FS_HOST_FS_HCTSIZ7_DPID   = ((1UL << 2) - 1) << 29,  // Data PID
-	OTG_FS_HOST_FS_HCTSIZ7_PKTCNT = ((1UL << 10) - 1) << 19, // Packet count
-	OTG_FS_HOST_FS_HCTSIZ7_XFRSIZ = ((1UL << 19) - 1) << 0,  // Transfer size
+	OTG_FS_HOST_HCTSIZ7_DPID   = ((1UL << 2) - 1) << 29,  // Data PID
+	OTG_FS_HOST_HCTSIZ7_PKTCNT = ((1UL << 10) - 1) << 19, // Packet count
+	OTG_FS_HOST_HCTSIZ7_XFRSIZ = ((1UL << 19) - 1) << 0,  // Transfer size
 };
-inline void otg_fs_host_fs_hctsiz7_set_dpid(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ7 = (p->FS_HCTSIZ7 & ~OTG_FS_HOST_FS_HCTSIZ7_DPID) | ((val << 29) & OTG_FS_HOST_FS_HCTSIZ7_DPID);
+inline void otg_fs_host_hctsiz7_set_dpid(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ7 = (p->HCTSIZ7 & ~OTG_FS_HOST_HCTSIZ7_DPID) | ((val << 29) & OTG_FS_HOST_HCTSIZ7_DPID);
 }
-inline void otg_fs_host_fs_hctsiz7_set_pktcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ7 = (p->FS_HCTSIZ7 & ~OTG_FS_HOST_FS_HCTSIZ7_PKTCNT) | ((val << 19) & OTG_FS_HOST_FS_HCTSIZ7_PKTCNT);
+inline void otg_fs_host_hctsiz7_set_pktcnt(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ7 = (p->HCTSIZ7 & ~OTG_FS_HOST_HCTSIZ7_PKTCNT) | ((val << 19) & OTG_FS_HOST_HCTSIZ7_PKTCNT);
 }
-inline void otg_fs_host_fs_hctsiz7_set_xfrsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
-	p->FS_HCTSIZ7 = (p->FS_HCTSIZ7 & ~OTG_FS_HOST_FS_HCTSIZ7_XFRSIZ) | ((val << 0) & OTG_FS_HOST_FS_HCTSIZ7_XFRSIZ);
+inline void otg_fs_host_hctsiz7_set_xfrsiz(struct OTG_FS_HOST_Type* p, uint32_t val) {
+	p->HCTSIZ7 = (p->HCTSIZ7 & ~OTG_FS_HOST_HCTSIZ7_XFRSIZ) | ((val << 0) & OTG_FS_HOST_HCTSIZ7_XFRSIZ);
 }
-inline uint32_t otg_fs_host_fs_hctsiz7_get_dpid(struct OTG_FS_HOST_Type* p) { return (p->FS_HCTSIZ7 & OTG_FS_HOST_FS_HCTSIZ7_DPID) >> 29; }
-inline uint32_t otg_fs_host_fs_hctsiz7_get_pktcnt(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCTSIZ7 & OTG_FS_HOST_FS_HCTSIZ7_PKTCNT) >> 19;
-}
-inline uint32_t otg_fs_host_fs_hctsiz7_get_xfrsiz(struct OTG_FS_HOST_Type* p) {
-	return (p->FS_HCTSIZ7 & OTG_FS_HOST_FS_HCTSIZ7_XFRSIZ) >> 0;
-}
+inline uint32_t otg_fs_host_hctsiz7_get_dpid(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ7 & OTG_FS_HOST_HCTSIZ7_DPID) >> 29; }
+inline uint32_t otg_fs_host_hctsiz7_get_pktcnt(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ7 & OTG_FS_HOST_HCTSIZ7_PKTCNT) >> 19; }
+inline uint32_t otg_fs_host_hctsiz7_get_xfrsiz(struct OTG_FS_HOST_Type* p) { return (p->HCTSIZ7 & OTG_FS_HOST_HCTSIZ7_XFRSIZ) >> 0; }
 
 /* USB on the go full speed */
 struct OTG_FS_PWRCLK_Type {
-	__IO uint8_t FS_PCGCCTL; // @0 OTG_FS power and clock gating control register
+	__IO uint8_t PCGCCTL; // @0 OTG_FS power and clock gating control register
 };
 
-// OTG_FS_PWRCLK->FS_PCGCCTL OTG_FS power and clock gating control register
+// OTG_FS_PWRCLK->PCGCCTL OTG_FS power and clock gating control register
 enum {
-	OTG_FS_PWRCLK_FS_PCGCCTL_PHYSUSP  = 1UL << 4, // PHY Suspended
-	OTG_FS_PWRCLK_FS_PCGCCTL_GATEHCLK = 1UL << 1, // Gate HCLK
-	OTG_FS_PWRCLK_FS_PCGCCTL_STPPCLK  = 1UL << 0, // Stop PHY clock
+	OTG_FS_PWRCLK_PCGCCTL_PHYSUSP  = 1UL << 4, // PHY Suspended
+	OTG_FS_PWRCLK_PCGCCTL_GATEHCLK = 1UL << 1, // Gate HCLK
+	OTG_FS_PWRCLK_PCGCCTL_STPPCLK  = 1UL << 0, // Stop PHY clock
 };
 
 /* Power control */
@@ -4404,33 +4344,33 @@ enum {
 
 /* Reset and clock control */
 struct RCC_Type {
-	__IO uint32_t CR;           // @0 clock control register
-	__IO uint32_t PLLCFGR;      // @4 PLL configuration register
-	__IO uint32_t CFGR;         // @8 clock configuration register
-	__IO uint32_t CIR;          // @12 clock interrupt register
-	__IO uint32_t AHB1RSTR;     // @16 AHB1 peripheral reset register
-	__IO uint8_t AHB2RSTR;      // @20 AHB2 peripheral reset register
-	uint8_t      RESERVED0[11]; // @21
-	__IO uint32_t APB1RSTR;     // @32 APB1 peripheral reset register
-	__IO uint32_t APB2RSTR;     // @36 APB2 peripheral reset register
-	uint8_t       RESERVED1[8]; // @40
-	__IO uint32_t AHB1ENR;      // @48 AHB1 peripheral clock register
-	__IO uint8_t AHB2ENR;       // @52 AHB2 peripheral clock enable register
-	uint8_t      RESERVED2[11]; // @53
-	__IO uint32_t APB1ENR;      // @64 APB1 peripheral clock enable register
-	__IO uint32_t APB2ENR;      // @68 APB2 peripheral clock enable register
-	uint8_t       RESERVED3[8]; // @72
-	__IO uint32_t AHB1LPENR;    // @80 AHB1 peripheral clock enable in low power mode register
-	__IO uint8_t AHB2LPENR;     // @84 AHB2 peripheral clock enable in low power mode register
-	uint8_t      RESERVED4[11]; // @85
-	__IO uint32_t APB1LPENR;    // @96 APB1 peripheral clock enable in low power mode register
-	__IO uint32_t APB2LPENR;    // @100 APB2 peripheral clock enabled in low power mode register
-	uint8_t       RESERVED5[8]; // @104
-	__IO uint32_t BDCR;         // @112 Backup domain control register
-	__IO uint32_t CSR;          // @116 clock control & status register
-	uint8_t       RESERVED6[8]; // @120
-	__IO uint32_t SSCGR;        // @128 spread spectrum clock generation register
-	__IO uint32_t PLLI2SCFGR;   // @132 PLLI2S configuration register
+	__IO uint32_t CR;            // @0 clock control register
+	__IO uint32_t PLLCFGR;       // @4 PLL configuration register
+	__IO uint32_t CFGR;          // @8 clock configuration register
+	__IO uint32_t CIR;           // @12 clock interrupt register
+	__IO uint32_t AHB1RSTR;      // @16 AHB1 peripheral reset register
+	__IO uint8_t  AHB2RSTR;      // @20 AHB2 peripheral reset register
+	uint8_t       RESERVED0[11]; // @21
+	__IO uint32_t APB1RSTR;      // @32 APB1 peripheral reset register
+	__IO uint32_t APB2RSTR;      // @36 APB2 peripheral reset register
+	uint8_t       RESERVED1[8];  // @40
+	__IO uint32_t AHB1ENR;       // @48 AHB1 peripheral clock register
+	__IO uint8_t  AHB2ENR;       // @52 AHB2 peripheral clock enable register
+	uint8_t       RESERVED2[11]; // @53
+	__IO uint32_t APB1ENR;       // @64 APB1 peripheral clock enable register
+	__IO uint32_t APB2ENR;       // @68 APB2 peripheral clock enable register
+	uint8_t       RESERVED3[8];  // @72
+	__IO uint32_t AHB1LPENR;     // @80 AHB1 peripheral clock enable in low power mode register
+	__IO uint8_t  AHB2LPENR;     // @84 AHB2 peripheral clock enable in low power mode register
+	uint8_t       RESERVED4[11]; // @85
+	__IO uint32_t APB1LPENR;     // @96 APB1 peripheral clock enable in low power mode register
+	__IO uint32_t APB2LPENR;     // @100 APB2 peripheral clock enabled in low power mode register
+	uint8_t       RESERVED5[8];  // @104
+	__IO uint32_t BDCR;          // @112 Backup domain control register
+	__IO uint32_t CSR;           // @116 clock control & status register
+	uint8_t       RESERVED6[8];  // @120
+	__IO uint32_t SSCGR;         // @128 spread spectrum clock generation register
+	__IO uint32_t PLLI2SCFGR;    // @132 PLLI2S configuration register
 };
 
 // RCC->CR clock control register
@@ -4755,20 +4695,20 @@ struct RTC_Type {
 	__IO uint32_t PRER;         // @16 prescaler register
 	__IO uint16_t WUTR;         // @20 wakeup timer register
 	uint8_t       RESERVED0[2]; // @22
-	__IO uint8_t CALIBR;        // @24 calibration register
-	uint8_t      RESERVED1[3];  // @25
+	__IO uint8_t  CALIBR;       // @24 calibration register
+	uint8_t       RESERVED1[3]; // @25
 	__IO uint32_t ALRMAR;       // @28 alarm A register
 	__IO uint32_t ALRMBR;       // @32 alarm B register
-	__O uint8_t WPR;            // @36 write protection register
-	uint8_t     RESERVED2[3];   // @37
-	__I uint16_t SSR;           // @40 sub second register
-	uint8_t      RESERVED3[2];  // @42
-	__O uint32_t SHIFTR;        // @44 shift control register
-	__I uint32_t TSTR;          // @48 time stamp time register
-	__I uint16_t TSDR;          // @52 time stamp date register
-	uint8_t      RESERVED4[2];  // @54
-	__I uint16_t TSSSR;         // @56 timestamp sub second register
-	uint8_t      RESERVED5[2];  // @58
+	__O uint8_t   WPR;          // @36 write protection register
+	uint8_t       RESERVED2[3]; // @37
+	__I uint16_t  SSR;          // @40 sub second register
+	uint8_t       RESERVED3[2]; // @42
+	__O uint32_t  SHIFTR;       // @44 shift control register
+	__I uint32_t  TSTR;         // @48 time stamp time register
+	__I uint16_t  TSDR;         // @52 time stamp date register
+	uint8_t       RESERVED4[2]; // @54
+	__I uint16_t  TSSSR;        // @56 timestamp sub second register
+	uint8_t       RESERVED5[2]; // @58
 	__IO uint16_t CALR;         // @60 calibration register
 	uint8_t       RESERVED6[2]; // @62
 	__IO uint32_t TAFCR;        // @64 tamper and alternate function configuration register
@@ -5115,12 +5055,12 @@ inline uint32_t rtc_alrmbssr_get_ss(struct RTC_Type* p) { return (p->ALRMBSSR & 
 
 /* System control block */
 struct SCB_Type {
-	__I uint32_t CPUID;                 // @0 CPUID base register
+	__I uint32_t  CPUID;                // @0 CPUID base register
 	__IO uint32_t ICSR;                 // @4 Interrupt control and state register
 	__IO uint32_t VTOR;                 // @8 Vector table offset register
 	__IO uint32_t AIRCR;                // @12 Application interrupt and reset control register
-	__IO uint8_t SCR;                   // @16 System control register
-	uint8_t      RESERVED0[3];          // @17
+	__IO uint8_t  SCR;                  // @16 System control register
+	uint8_t       RESERVED0[3];         // @17
 	__IO uint16_t CCR;                  // @20 Configuration and control register
 	uint8_t       RESERVED1[2];         // @22
 	__IO uint32_t SHPR1;                // @24 System handler priority registers
@@ -5319,31 +5259,31 @@ enum {
 
 /* Secure digital input/output interface */
 struct SDIO_Type {
-	__IO uint8_t POWER;         // @0 power control register
-	uint8_t      RESERVED0[3];  // @1
-	__IO uint16_t CLKCR;        // @4 SDI clock control register
-	uint8_t       RESERVED1[2]; // @6
-	__IO uint32_t ARG;          // @8 argument register
-	__IO uint16_t CMD;          // @12 command register
-	uint8_t       RESERVED2[2]; // @14
-	__I uint8_t RESPCMD;        // @16 command response register
-	uint8_t     RESERVED3[3];   // @17
-	__I uint32_t RESP1;         // @20 response 1..4 register
-	__I uint32_t RESP2;         // @24 response 1..4 register
-	__I uint32_t RESP3;         // @28 response 1..4 register
-	__I uint32_t RESP4;         // @32 response 1..4 register
-	__IO uint32_t DTIMER;       // @36 data timer register
-	__IO uint32_t DLEN;         // @40 data length register
-	__IO uint16_t DCTRL;        // @44 data control register
-	uint8_t       RESERVED4[2]; // @46
-	__I uint32_t DCOUNT;        // @48 data counter register
-	__I uint32_t STA;           // @52 status register
-	__IO uint32_t ICR;          // @56 interrupt clear register
-	__IO uint32_t MASK;         // @60 mask register
-	uint8_t       RESERVED5[8]; // @64
-	__I uint32_t FIFOCNT;       // @72 FIFO counter register
-	uint8_t      RESERVED6[52]; // @76
-	__IO uint32_t FIFO;         // @128 data FIFO register
+	__IO uint8_t  POWER;         // @0 power control register
+	uint8_t       RESERVED0[3];  // @1
+	__IO uint16_t CLKCR;         // @4 SDI clock control register
+	uint8_t       RESERVED1[2];  // @6
+	__IO uint32_t ARG;           // @8 argument register
+	__IO uint16_t CMD;           // @12 command register
+	uint8_t       RESERVED2[2];  // @14
+	__I uint8_t   RESPCMD;       // @16 command response register
+	uint8_t       RESERVED3[3];  // @17
+	__I uint32_t  RESP1;         // @20 response 1..4 register
+	__I uint32_t  RESP2;         // @24 response 1..4 register
+	__I uint32_t  RESP3;         // @28 response 1..4 register
+	__I uint32_t  RESP4;         // @32 response 1..4 register
+	__IO uint32_t DTIMER;        // @36 data timer register
+	__IO uint32_t DLEN;          // @40 data length register
+	__IO uint16_t DCTRL;         // @44 data control register
+	uint8_t       RESERVED4[2];  // @46
+	__I uint32_t  DCOUNT;        // @48 data counter register
+	__I uint32_t  STA;           // @52 status register
+	__IO uint32_t ICR;           // @56 interrupt clear register
+	__IO uint32_t MASK;          // @60 mask register
+	uint8_t       RESERVED5[8];  // @64
+	__I uint32_t  FIFOCNT;       // @72 FIFO counter register
+	uint8_t       RESERVED6[52]; // @76
+	__IO uint32_t FIFO;          // @128 data FIFO register
 };
 
 // SDIO->POWER power control register
@@ -5557,8 +5497,8 @@ inline uint32_t stk_calib_get_tenms(struct STK_Type* p) { return (p->CALIB & STK
 
 /* System configuration controller */
 struct SYSCFG_Type {
-	__IO uint8_t MEMRM;          // @0 memory remap register
-	uint8_t      RESERVED0[3];   // @1
+	__IO uint8_t  MEMRM;         // @0 memory remap register
+	uint8_t       RESERVED0[3];  // @1
 	__IO uint32_t PMC;           // @4 peripheral mode configuration register
 	__IO uint16_t EXTICR1;       // @8 external interrupt configuration register 1
 	uint8_t       RESERVED1[2];  // @10
@@ -5568,7 +5508,7 @@ struct SYSCFG_Type {
 	uint8_t       RESERVED3[2];  // @18
 	__IO uint16_t EXTICR4;       // @20 external interrupt configuration register 4
 	uint8_t       RESERVED4[10]; // @22
-	__I uint16_t CMPCR;          // @32 Compensation cell control register
+	__I uint16_t  CMPCR;         // @32 Compensation cell control register
 };
 
 // SYSCFG->MEMRM memory remap register
@@ -5699,8 +5639,8 @@ struct TIM1_Type {
 	uint8_t       RESERVED3[2];     // @14
 	__IO uint16_t SR;               // @16 status register
 	uint8_t       RESERVED4[2];     // @18
-	__O uint8_t EGR;                // @20 event generation register
-	uint8_t     RESERVED5[3];       // @21
+	__O uint8_t   EGR;              // @20 event generation register
+	uint8_t       RESERVED5[3];     // @21
 	union {                         // @24
 		__IO uint16_t CCMR1_Output; // capture/compare mode register 1 (output mode)
 		__IO uint16_t CCMR1_Input;  // capture/compare mode register 1 (input mode)
@@ -5710,7 +5650,7 @@ struct TIM1_Type {
 		__IO uint16_t CCMR2_Output; // capture/compare mode register 2 (output mode)
 		__IO uint16_t CCMR2_Input;  // capture/compare mode register 2 (input mode)
 	};
-	uint8_t RESERVED7[2];        // @30
+	uint8_t       RESERVED7[2];  // @30
 	__IO uint16_t CCER;          // @32 capture/compare enable register
 	uint8_t       RESERVED8[2];  // @34
 	__IO uint16_t CNT;           // @36 counter
@@ -5719,8 +5659,8 @@ struct TIM1_Type {
 	uint8_t       RESERVED10[2]; // @42
 	__IO uint16_t ARR;           // @44 auto-reload register
 	uint8_t       RESERVED11[2]; // @46
-	__IO uint8_t RCR;            // @48 repetition counter register
-	uint8_t      RESERVED12[3];  // @49
+	__IO uint8_t  RCR;           // @48 repetition counter register
+	uint8_t       RESERVED12[3]; // @49
 	__IO uint16_t CCR1;          // @52 capture/compare register 1
 	uint8_t       RESERVED13[2]; // @54
 	__IO uint16_t CCR2;          // @56 capture/compare register 2
@@ -5952,19 +5892,19 @@ inline struct BasicTimer_Type* TIM1_as_BasicTimer_Type(struct TIM1_Type* p) { re
 struct TIM10_Type {
 	__IO uint16_t CR1;             // @0 control register 1
 	uint8_t       RESERVED0[10];   // @2
-	__IO uint8_t DIER;             // @12 DMA/Interrupt enable register
-	uint8_t      RESERVED1[3];     // @13
+	__IO uint8_t  DIER;            // @12 DMA/Interrupt enable register
+	uint8_t       RESERVED1[3];    // @13
 	__IO uint16_t SR;              // @16 status register
 	uint8_t       RESERVED2[2];    // @18
-	__O uint8_t EGR;               // @20 event generation register
-	uint8_t     RESERVED3[3];      // @21
+	__O uint8_t   EGR;             // @20 event generation register
+	uint8_t       RESERVED3[3];    // @21
 	union {                        // @24
 		__IO uint8_t CCMR1_Output; // capture/compare mode register 1 (output mode)
 		__IO uint8_t CCMR1_Input;  // capture/compare mode register 1 (input mode)
 	};
-	uint8_t RESERVED4[7];       // @25
-	__IO uint8_t CCER;          // @32 capture/compare enable register
-	uint8_t      RESERVED5[3];  // @33
+	uint8_t       RESERVED4[7]; // @25
+	__IO uint8_t  CCER;         // @32 capture/compare enable register
+	uint8_t       RESERVED5[3]; // @33
 	__IO uint16_t CNT;          // @36 counter
 	uint8_t       RESERVED6[2]; // @38
 	__IO uint16_t PSC;          // @40 prescaler
@@ -6035,19 +5975,19 @@ inline struct BasicTimer_Type* TIM10_as_BasicTimer_Type(struct TIM10_Type* p) { 
 struct TIM11_Type {
 	__IO uint16_t CR1;             // @0 control register 1
 	uint8_t       RESERVED0[10];   // @2
-	__IO uint8_t DIER;             // @12 DMA/Interrupt enable register
-	uint8_t      RESERVED1[3];     // @13
+	__IO uint8_t  DIER;            // @12 DMA/Interrupt enable register
+	uint8_t       RESERVED1[3];    // @13
 	__IO uint16_t SR;              // @16 status register
 	uint8_t       RESERVED2[2];    // @18
-	__O uint8_t EGR;               // @20 event generation register
-	uint8_t     RESERVED3[3];      // @21
+	__O uint8_t   EGR;             // @20 event generation register
+	uint8_t       RESERVED3[3];    // @21
 	union {                        // @24
 		__IO uint8_t CCMR1_Output; // capture/compare mode register 1 (output mode)
 		__IO uint8_t CCMR1_Input;  // capture/compare mode register 1 (input mode)
 	};
-	uint8_t RESERVED4[7];        // @25
-	__IO uint8_t CCER;           // @32 capture/compare enable register
-	uint8_t      RESERVED5[3];   // @33
+	uint8_t       RESERVED4[7];  // @25
+	__IO uint8_t  CCER;          // @32 capture/compare enable register
+	uint8_t       RESERVED5[3];  // @33
 	__IO uint16_t CNT;           // @36 counter
 	uint8_t       RESERVED6[2];  // @38
 	__IO uint16_t PSC;           // @40 prescaler
@@ -6056,7 +5996,7 @@ struct TIM11_Type {
 	uint8_t       RESERVED8[6];  // @46
 	__IO uint16_t CCR1;          // @52 capture/compare register 1
 	uint8_t       RESERVED9[26]; // @54
-	__IO uint8_t OR;             // @80 option register
+	__IO uint8_t  OR;            // @80 option register
 };
 
 // TIM11->CR1 control register 1
@@ -6129,16 +6069,16 @@ inline struct BasicTimer_Type* TIM11_as_BasicTimer_Type(struct TIM11_Type* p) { 
 struct TIM2_Type {
 	__IO uint16_t CR1;              // @0 control register 1
 	uint8_t       RESERVED0[2];     // @2
-	__IO uint8_t CR2;               // @4 control register 2
-	uint8_t      RESERVED1[3];      // @5
+	__IO uint8_t  CR2;              // @4 control register 2
+	uint8_t       RESERVED1[3];     // @5
 	__IO uint16_t SMCR;             // @8 slave mode control register
 	uint8_t       RESERVED2[2];     // @10
 	__IO uint16_t DIER;             // @12 DMA/Interrupt enable register
 	uint8_t       RESERVED3[2];     // @14
 	__IO uint16_t SR;               // @16 status register
 	uint8_t       RESERVED4[2];     // @18
-	__O uint8_t EGR;                // @20 event generation register
-	uint8_t     RESERVED5[3];       // @21
+	__O uint8_t   EGR;              // @20 event generation register
+	uint8_t       RESERVED5[3];     // @21
 	union {                         // @24
 		__IO uint16_t CCMR1_Output; // capture/compare mode register 1 (output mode)
 		__IO uint16_t CCMR1_Input;  // capture/compare mode register 1 (input mode)
@@ -6148,7 +6088,7 @@ struct TIM2_Type {
 		__IO uint16_t CCMR2_Output; // capture/compare mode register 2 (output mode)
 		__IO uint16_t CCMR2_Input;  // capture/compare mode register 2 (input mode)
 	};
-	uint8_t RESERVED7[2];        // @30
+	uint8_t       RESERVED7[2];  // @30
 	__IO uint16_t CCER;          // @32 capture/compare enable register
 	uint8_t       RESERVED8[2];  // @34
 	__IO uint32_t CNT;           // @36 counter
@@ -6435,16 +6375,16 @@ inline struct BasicTimer_Type* TIM2_as_BasicTimer_Type(struct TIM2_Type* p) { re
 struct TIM3_Type {
 	__IO uint16_t CR1;              // @0 control register 1
 	uint8_t       RESERVED0[2];     // @2
-	__IO uint8_t CR2;               // @4 control register 2
-	uint8_t      RESERVED1[3];      // @5
+	__IO uint8_t  CR2;              // @4 control register 2
+	uint8_t       RESERVED1[3];     // @5
 	__IO uint16_t SMCR;             // @8 slave mode control register
 	uint8_t       RESERVED2[2];     // @10
 	__IO uint16_t DIER;             // @12 DMA/Interrupt enable register
 	uint8_t       RESERVED3[2];     // @14
 	__IO uint16_t SR;               // @16 status register
 	uint8_t       RESERVED4[2];     // @18
-	__O uint8_t EGR;                // @20 event generation register
-	uint8_t     RESERVED5[3];       // @21
+	__O uint8_t   EGR;              // @20 event generation register
+	uint8_t       RESERVED5[3];     // @21
 	union {                         // @24
 		__IO uint16_t CCMR1_Output; // capture/compare mode register 1 (output mode)
 		__IO uint16_t CCMR1_Input;  // capture/compare mode register 1 (input mode)
@@ -6454,7 +6394,7 @@ struct TIM3_Type {
 		__IO uint16_t CCMR2_Output; // capture/compare mode register 2 (output mode)
 		__IO uint16_t CCMR2_Input;  // capture/compare mode register 2 (input mode)
 	};
-	uint8_t RESERVED7[2];        // @30
+	uint8_t       RESERVED7[2];  // @30
 	__IO uint16_t CCER;          // @32 capture/compare enable register
 	uint8_t       RESERVED8[2];  // @34
 	__IO uint32_t CNT;           // @36 counter
@@ -6728,16 +6668,16 @@ inline struct BasicTimer_Type* TIM3_as_BasicTimer_Type(struct TIM3_Type* p) { re
 struct TIM5_Type {
 	__IO uint16_t CR1;              // @0 control register 1
 	uint8_t       RESERVED0[2];     // @2
-	__IO uint8_t CR2;               // @4 control register 2
-	uint8_t      RESERVED1[3];      // @5
+	__IO uint8_t  CR2;              // @4 control register 2
+	uint8_t       RESERVED1[3];     // @5
 	__IO uint16_t SMCR;             // @8 slave mode control register
 	uint8_t       RESERVED2[2];     // @10
 	__IO uint16_t DIER;             // @12 DMA/Interrupt enable register
 	uint8_t       RESERVED3[2];     // @14
 	__IO uint16_t SR;               // @16 status register
 	uint8_t       RESERVED4[2];     // @18
-	__O uint8_t EGR;                // @20 event generation register
-	uint8_t     RESERVED5[3];       // @21
+	__O uint8_t   EGR;              // @20 event generation register
+	uint8_t       RESERVED5[3];     // @21
 	union {                         // @24
 		__IO uint16_t CCMR1_Output; // capture/compare mode register 1 (output mode)
 		__IO uint16_t CCMR1_Input;  // capture/compare mode register 1 (input mode)
@@ -6747,7 +6687,7 @@ struct TIM5_Type {
 		__IO uint16_t CCMR2_Output; // capture/compare mode register 2 (output mode)
 		__IO uint16_t CCMR2_Input;  // capture/compare mode register 2 (input mode)
 	};
-	uint8_t RESERVED7[2];        // @30
+	uint8_t       RESERVED7[2];  // @30
 	__IO uint16_t CCER;          // @32 capture/compare enable register
 	uint8_t       RESERVED8[2];  // @34
 	__IO uint32_t CNT;           // @36 counter
@@ -6764,7 +6704,7 @@ struct TIM5_Type {
 	uint8_t       RESERVED12[2]; // @74
 	__IO uint16_t DMAR;          // @76 DMA address for full transfer
 	uint8_t       RESERVED13[2]; // @78
-	__IO uint8_t OR;             // @80 TIM5 option register
+	__IO uint8_t  OR;            // @80 TIM5 option register
 };
 
 // TIM5->CR1 control register 1
@@ -7032,23 +6972,23 @@ inline struct BasicTimer_Type* TIM5_as_BasicTimer_Type(struct TIM5_Type* p) { re
 struct TIM9_Type {
 	__IO uint16_t CR1;              // @0 control register 1
 	uint8_t       RESERVED0[2];     // @2
-	__IO uint8_t CR2;               // @4 control register 2
-	uint8_t      RESERVED1[3];      // @5
-	__IO uint8_t SMCR;              // @8 slave mode control register
-	uint8_t      RESERVED2[3];      // @9
-	__IO uint8_t DIER;              // @12 DMA/Interrupt enable register
-	uint8_t      RESERVED3[3];      // @13
+	__IO uint8_t  CR2;              // @4 control register 2
+	uint8_t       RESERVED1[3];     // @5
+	__IO uint8_t  SMCR;             // @8 slave mode control register
+	uint8_t       RESERVED2[3];     // @9
+	__IO uint8_t  DIER;             // @12 DMA/Interrupt enable register
+	uint8_t       RESERVED3[3];     // @13
 	__IO uint16_t SR;               // @16 status register
 	uint8_t       RESERVED4[2];     // @18
-	__O uint8_t EGR;                // @20 event generation register
-	uint8_t     RESERVED5[3];       // @21
+	__O uint8_t   EGR;              // @20 event generation register
+	uint8_t       RESERVED5[3];     // @21
 	union {                         // @24
 		__IO uint16_t CCMR1_Output; // capture/compare mode register 1 (output mode)
 		__IO uint16_t CCMR1_Input;  // capture/compare mode register 1 (input mode)
 	};
-	uint8_t RESERVED6[6];        // @26
-	__IO uint8_t CCER;           // @32 capture/compare enable register
-	uint8_t      RESERVED7[3];   // @33
+	uint8_t       RESERVED6[6];  // @26
+	__IO uint8_t  CCER;          // @32 capture/compare enable register
+	uint8_t       RESERVED7[3];  // @33
 	__IO uint16_t CNT;           // @36 counter
 	uint8_t       RESERVED8[2];  // @38
 	__IO uint16_t PSC;           // @40 prescaler
@@ -7280,11 +7220,11 @@ inline uint32_t usart1_gtpr_get_psc(struct USART1_Type* p) { return (p->GTPR & U
 
 /* Window watchdog */
 struct WWDG_Type {
-	__IO uint8_t CR;            // @0 Control register
-	uint8_t      RESERVED0[3];  // @1
+	__IO uint8_t  CR;           // @0 Control register
+	uint8_t       RESERVED0[3]; // @1
 	__IO uint16_t CFR;          // @4 Configuration register
 	uint8_t       RESERVED1[2]; // @6
-	__IO uint8_t SR;            // @8 Status register
+	__IO uint8_t  SR;           // @8 Status register
 };
 
 // WWDG->CR Control register
@@ -7314,20 +7254,20 @@ enum {
 struct BasicTimer_Type {
 	__IO uint16_t CR1;             // @0 control register 1
 	uint8_t       RESERVED0[10];   // @2
-	__IO uint8_t DIER;             // @12 DMA/Interrupt enable register
-	uint8_t      RESERVED1[3];     // @13
+	__IO uint8_t  DIER;            // @12 DMA/Interrupt enable register
+	uint8_t       RESERVED1[3];    // @13
 	__IO uint16_t SR;              // @16 status register
 	uint8_t       RESERVED2[2];    // @18
-	__IO uint8_t EGR;              // @20 event generation register
-	uint8_t      RESERVED3[3];     // @21
+	__IO uint8_t  EGR;             // @20 event generation register
+	uint8_t       RESERVED3[3];    // @21
 	union {                        // @24
 		__IO uint8_t CCMR1_Output; // capture/compare mode register 1 (output mode)
 		__IO uint8_t CCMR1_Input;  // capture/compare mode register 1 (input mode)
 	};
-	uint8_t RESERVED4[7];      // @25
-	__IO uint8_t CCER;         // @32 capture/compare enable register
-	uint8_t      RESERVED5[7]; // @33
-	__IO uint16_t PSC;         // @40 prescaler
+	uint8_t       RESERVED4[7]; // @25
+	__IO uint8_t  CCER;         // @32 capture/compare enable register
+	uint8_t       RESERVED5[7]; // @33
+	__IO uint16_t PSC;          // @40 prescaler
 };
 
 // BasicTimer->CR1 control register 1

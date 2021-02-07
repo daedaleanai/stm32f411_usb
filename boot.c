@@ -43,7 +43,7 @@ static int setSysClockTo96MHz(void) {
     RCC.PLLCFGR = RCC_PLLCFGR_PLLSRC; 	 // select HSE as source (25MHz)
 	rcc_pllcfgr_set_pllm(&RCC, 25);      // 2..63       : vco_in = HSE / m   1..2MHz                25/25 = 1MHz
 	rcc_pllcfgr_set_plln(&RCC, 384);     // 50...432    : vco_out = vco_in * n = 100...432MHz      (25/25) * (8*48) = 384MHz
-	rcc_pllcfgr_set_pllp(&RCC, (4/2)-1); // 0,1,2,3 -> p=2,4,6,8  : sysclk = vco_out / p <= 100MHz (25/25) * (8*24) / 4 = 96MHz
+	rcc_pllcfgr_set_pllp(&RCC, (4/2)-1); // 0,1,2,3 -> p=2,4,6,8  : sysclk = vco_out / p <= 100MHz (25/25) * (8*48) / 4 = 96MHz
 	rcc_pllcfgr_set_pllq(&RCC, 8);       // 2..15                 : usbclk = vco_out / q = 48Mhz  (vco_out = 8*48 = 384)
 
     RCC.CR |= RCC_CR_PLLON;

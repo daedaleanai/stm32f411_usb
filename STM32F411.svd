@@ -2529,7 +2529,7 @@
       </addressBlock>
       <registers>
         <register>
-          <name>FS_DCFG</name>
+          <name>DCFG</name>
           <displayName>FS_DCFG</displayName>
           <description>OTG_FS device configuration register
           (OTG_FS_DCFG)</description>
@@ -2566,7 +2566,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_DCTL</name>
+          <name>DCTL</name>
           <displayName>FS_DCTL</displayName>
           <description>OTG_FS device control register
           (OTG_FS_DCTL)</description>
@@ -2647,7 +2647,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_DSTS</name>
+          <name>DSTS</name>
           <displayName>FS_DSTS</displayName>
           <description>OTG_FS device status register
           (OTG_FS_DSTS)</description>
@@ -2684,7 +2684,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_DIEPMSK</name>
+          <name>DIEPMSK</name>
           <displayName>FS_DIEPMSK</displayName>
           <description>OTG_FS device IN endpoint common interrupt
           mask register (OTG_FS_DIEPMSK)</description>
@@ -2738,7 +2738,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_DOEPMSK</name>
+          <name>DOEPMSK</name>
           <displayName>FS_DOEPMSK</displayName>
           <description>OTG_FS device OUT endpoint common interrupt
           mask register (OTG_FS_DOEPMSK)</description>
@@ -2777,7 +2777,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_DAINT</name>
+          <name>DAINT</name>
           <displayName>FS_DAINT</displayName>
           <description>OTG_FS device all endpoints interrupt
           register (OTG_FS_DAINT)</description>
@@ -2802,7 +2802,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_DAINTMSK</name>
+          <name>DAINTMSK</name>
           <displayName>FS_DAINTMSK</displayName>
           <description>OTG_FS all endpoints interrupt mask register
           (OTG_FS_DAINTMSK)</description>
@@ -2882,7 +2882,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_DIEPCTL0</name>
+          <name>DIEPCTL0</name>
           <displayName>FS_DIEPCTL0</displayName>
           <description>OTG_FS device control IN endpoint 0 control
           register (OTG_FS_DIEPCTL0)</description>
@@ -4362,7 +4362,7 @@
       </addressBlock>
       <registers>
         <register>
-          <name>FS_GOTGCTL</name>
+          <name>GOTGCTL</name>
           <displayName>FS_GOTGCTL</displayName>
           <description>OTG_FS control and status register
           (OTG_FS_GOTGCTL)</description>
@@ -4443,7 +4443,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_GOTGINT</name>
+          <name>GOTGINT</name>
           <displayName>FS_GOTGINT</displayName>
           <description>OTG_FS interrupt register
           (OTG_FS_GOTGINT)</description>
@@ -4493,7 +4493,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_GAHBCFG</name>
+          <name>GAHBCFG</name>
           <displayName>FS_GAHBCFG</displayName>
           <description>OTG_FS AHB configuration register
           (OTG_FS_GAHBCFG)</description>
@@ -4524,7 +4524,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_GUSBCFG</name>
+          <name>GUSBCFG</name>
           <displayName>FS_GUSBCFG</displayName>
           <description>OTG_FS USB configuration register
           (OTG_FS_GUSBCFG)</description>
@@ -4592,7 +4592,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_GRSTCTL</name>
+          <name>GRSTCTL</name>
           <displayName>FS_GRSTCTL</displayName>
           <description>OTG_FS reset register
           (OTG_FS_GRSTCTL)</description>
@@ -4652,7 +4652,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_GINTSTS</name>
+          <name>GINTSTS</name>
           <displayName>FS_GINTSTS</displayName>
           <description>OTG_FS core interrupt register
           (OTG_FS_GINTSTS)</description>
@@ -4847,7 +4847,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_GINTMSK</name>
+          <name>GINTMSK</name>
           <displayName>FS_GINTMSK</displayName>
           <description>OTG_FS interrupt mask register
           (OTG_FS_GINTMSK)</description>
@@ -5051,7 +5051,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_GRXSTSR_Device</name>
+          <name>GRXSTSR_Device</name>
           <displayName>FS_GRXSTSR_Device</displayName>
           <description>OTG_FS Receive status debug read(Device
           mode)</description>
@@ -5093,7 +5093,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_GRXSTSR_Host</name>
+          <name>GRXSTSR_Host</name>
           <displayName>FS_GRXSTSR_Host</displayName>
           <description>OTG_FS Receive status debug read(Host
           mode)</description>
@@ -5135,8 +5135,97 @@
             </field>
           </fields>
         </register>
+
         <register>
-          <name>FS_GRXFSIZ</name>
+          <name>GRXSTSP_Device</name>
+          <displayName>FS_GRXSTSP_Device</displayName>
+          <description>OTG_FS Receive status pop(Device
+          mode)</description>
+          <addressOffset>0x20</addressOffset>
+          <size>0x20</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>EPNUM</name>
+              <description>Endpoint number</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>BCNT</name>
+              <description>Byte count</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>11</bitWidth>
+            </field>
+            <field>
+              <name>DPID</name>
+              <description>Data PID</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>PKTSTS</name>
+              <description>Packet status</description>
+              <bitOffset>17</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>FRMNUM</name>
+              <description>Frame number</description>
+              <bitOffset>21</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GRXSTSP_Host</name>
+          <displayName>FS_GRXSTSP_Host</displayName>
+          <description>OTG_FS Receive status pop (Host
+          mode)</description>
+          <alternateRegister>FS_GRXSTSR_Device</alternateRegister>
+          <addressOffset>0x20</addressOffset>
+          <size>0x20</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>EPNUM</name>
+              <description>Endpoint number</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>BCNT</name>
+              <description>Byte count</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>11</bitWidth>
+            </field>
+            <field>
+              <name>DPID</name>
+              <description>Data PID</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>PKTSTS</name>
+              <description>Packet status</description>
+              <bitOffset>17</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>FRMNUM</name>
+              <description>Frame number</description>
+              <bitOffset>21</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+          </fields>
+        </register>
+
+
+
+        <register>
+          <name>GRXFSIZ</name>
           <displayName>FS_GRXFSIZ</displayName>
           <description>OTG_FS Receive FIFO size register
           (OTG_FS_GRXFSIZ)</description>
@@ -5154,7 +5243,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_GNPTXFSIZ_Device</name>
+          <name>GNPTXFSIZ_Device</name>
           <displayName>FS_GNPTXFSIZ_Device</displayName>
           <description>OTG_FS non-periodic transmit FIFO size
           register (Device mode)</description>
@@ -5179,7 +5268,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_GNPTXFSIZ_Host</name>
+          <name>GNPTXFSIZ_Host</name>
           <displayName>FS_GNPTXFSIZ_Host</displayName>
           <description>OTG_FS non-periodic transmit FIFO size
           register (Host mode)</description>
@@ -5205,7 +5294,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_GNPTXSTS</name>
+          <name>GNPTXSTS</name>
           <displayName>FS_GNPTXSTS</displayName>
           <description>OTG_FS non-periodic transmit FIFO/queue
           status register (OTG_FS_GNPTXSTS)</description>
@@ -5238,7 +5327,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_GCCFG</name>
+          <name>GCCFG</name>
           <displayName>FS_GCCFG</displayName>
           <description>OTG_FS general core configuration register
           (OTG_FS_GCCFG)</description>
@@ -5249,21 +5338,19 @@
           <fields>
             <field>
               <name>PWRDWN</name>
-              <description>Power down</description>
+              <description>Power down (up really)</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>VBUSASEN</name>
-              <description>Enable the VBUS sensing
-              device</description>
+              <description>Enable the VBUS sensing A device</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>VBUSBSEN</name>
-              <description>Enable the VBUS sensing
-              device</description>
+              <description>Enable the VBUS sensing B device</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -5273,10 +5360,16 @@
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
+            <field>
+              <name>NOVBUSSENS</name>
+              <description>VBUS sending disable</description>
+              <bitOffset>21</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
           </fields>
         </register>
         <register>
-          <name>FS_CID</name>
+          <name>CID</name>
           <displayName>FS_CID</displayName>
           <description>core ID register</description>
           <addressOffset>0x3C</addressOffset>
@@ -5293,7 +5386,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HPTXFSIZ</name>
+          <name>HPTXFSIZ</name>
           <displayName>FS_HPTXFSIZ</displayName>
           <description>OTG_FS Host periodic transmit FIFO size
           register (OTG_FS_HPTXFSIZ)</description>
@@ -5318,7 +5411,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_DIEPTXF1</name>
+          <name>DIEPTXF1</name>
           <displayName>FS_DIEPTXF1</displayName>
           <description>OTG_FS device IN endpoint transmit FIFO size
           register (OTG_FS_DIEPTXF2)</description>
@@ -5343,7 +5436,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_DIEPTXF2</name>
+          <name>DIEPTXF2</name>
           <displayName>FS_DIEPTXF2</displayName>
           <description>OTG_FS device IN endpoint transmit FIFO size
           register (OTG_FS_DIEPTXF3)</description>
@@ -5368,7 +5461,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_DIEPTXF3</name>
+          <name>DIEPTXF3</name>
           <displayName>FS_DIEPTXF3</displayName>
           <description>OTG_FS device IN endpoint transmit FIFO size
           register (OTG_FS_DIEPTXF4)</description>
@@ -5406,7 +5499,7 @@
       </addressBlock>
       <registers>
         <register>
-          <name>FS_HCFG</name>
+          <name>HCFG</name>
           <displayName>FS_HCFG</displayName>
           <description>OTG_FS host configuration register
           (OTG_FS_HCFG)</description>
@@ -5449,7 +5542,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HFNUM</name>
+          <name>HFNUM</name>
           <displayName>FS_HFNUM</displayName>
           <description>OTG_FS host frame number/frame time
           remaining register (OTG_FS_HFNUM)</description>
@@ -5473,7 +5566,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HPTXSTS</name>
+          <name>HPTXSTS</name>
           <displayName>FS_HPTXSTS</displayName>
           <description>OTG_FS_Host periodic transmit FIFO/queue
           status register (OTG_FS_HPTXSTS)</description>
@@ -5544,7 +5637,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HPRT</name>
+          <name>HPRT</name>
           <displayName>FS_HPRT</displayName>
           <description>OTG_FS host port control and status register
           (OTG_FS_HPRT)</description>
@@ -5646,7 +5739,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCCHAR0</name>
+          <name>HCCHAR0</name>
           <displayName>FS_HCCHAR0</displayName>
           <description>OTG_FS host channel-0 characteristics
           register (OTG_FS_HCCHAR0)</description>
@@ -5718,7 +5811,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCCHAR1</name>
+          <name>HCCHAR1</name>
           <displayName>FS_HCCHAR1</displayName>
           <description>OTG_FS host channel-1 characteristics
           register (OTG_FS_HCCHAR1)</description>
@@ -5790,7 +5883,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCCHAR2</name>
+          <name>HCCHAR2</name>
           <displayName>FS_HCCHAR2</displayName>
           <description>OTG_FS host channel-2 characteristics
           register (OTG_FS_HCCHAR2)</description>
@@ -5862,7 +5955,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCCHAR3</name>
+          <name>HCCHAR3</name>
           <displayName>FS_HCCHAR3</displayName>
           <description>OTG_FS host channel-3 characteristics
           register (OTG_FS_HCCHAR3)</description>
@@ -5934,7 +6027,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCCHAR4</name>
+          <name>HCCHAR4</name>
           <displayName>FS_HCCHAR4</displayName>
           <description>OTG_FS host channel-4 characteristics
           register (OTG_FS_HCCHAR4)</description>
@@ -6006,7 +6099,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCCHAR5</name>
+          <name>HCCHAR5</name>
           <displayName>FS_HCCHAR5</displayName>
           <description>OTG_FS host channel-5 characteristics
           register (OTG_FS_HCCHAR5)</description>
@@ -6078,7 +6171,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCCHAR6</name>
+          <name>HCCHAR6</name>
           <displayName>FS_HCCHAR6</displayName>
           <description>OTG_FS host channel-6 characteristics
           register (OTG_FS_HCCHAR6)</description>
@@ -6150,7 +6243,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCCHAR7</name>
+          <name>HCCHAR7</name>
           <displayName>FS_HCCHAR7</displayName>
           <description>OTG_FS host channel-7 characteristics
           register (OTG_FS_HCCHAR7)</description>
@@ -6222,7 +6315,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCINT0</name>
+          <name>HCINT0</name>
           <displayName>FS_HCINT0</displayName>
           <description>OTG_FS host channel-0 interrupt register
           (OTG_FS_HCINT0)</description>
@@ -6291,7 +6384,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCINT1</name>
+          <name>HCINT1</name>
           <displayName>FS_HCINT1</displayName>
           <description>OTG_FS host channel-1 interrupt register
           (OTG_FS_HCINT1)</description>
@@ -6360,7 +6453,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCINT2</name>
+          <name>HCINT2</name>
           <displayName>FS_HCINT2</displayName>
           <description>OTG_FS host channel-2 interrupt register
           (OTG_FS_HCINT2)</description>
@@ -6429,7 +6522,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCINT3</name>
+          <name>HCINT3</name>
           <displayName>FS_HCINT3</displayName>
           <description>OTG_FS host channel-3 interrupt register
           (OTG_FS_HCINT3)</description>
@@ -6498,7 +6591,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCINT4</name>
+          <name>HCINT4</name>
           <displayName>FS_HCINT4</displayName>
           <description>OTG_FS host channel-4 interrupt register
           (OTG_FS_HCINT4)</description>
@@ -6567,7 +6660,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCINT5</name>
+          <name>HCINT5</name>
           <displayName>FS_HCINT5</displayName>
           <description>OTG_FS host channel-5 interrupt register
           (OTG_FS_HCINT5)</description>
@@ -6636,7 +6729,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCINT6</name>
+          <name>HCINT6</name>
           <displayName>FS_HCINT6</displayName>
           <description>OTG_FS host channel-6 interrupt register
           (OTG_FS_HCINT6)</description>
@@ -6705,7 +6798,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCINT7</name>
+          <name>HCINT7</name>
           <displayName>FS_HCINT7</displayName>
           <description>OTG_FS host channel-7 interrupt register
           (OTG_FS_HCINT7)</description>
@@ -6774,7 +6867,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCINTMSK0</name>
+          <name>HCINTMSK0</name>
           <displayName>FS_HCINTMSK0</displayName>
           <description>OTG_FS host channel-0 mask register
           (OTG_FS_HCINTMSK0)</description>
@@ -6850,7 +6943,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCINTMSK1</name>
+          <name>HCINTMSK1</name>
           <displayName>FS_HCINTMSK1</displayName>
           <description>OTG_FS host channel-1 mask register
           (OTG_FS_HCINTMSK1)</description>
@@ -6926,7 +7019,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCINTMSK2</name>
+          <name>HCINTMSK2</name>
           <displayName>FS_HCINTMSK2</displayName>
           <description>OTG_FS host channel-2 mask register
           (OTG_FS_HCINTMSK2)</description>
@@ -7002,7 +7095,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCINTMSK3</name>
+          <name>HCINTMSK3</name>
           <displayName>FS_HCINTMSK3</displayName>
           <description>OTG_FS host channel-3 mask register
           (OTG_FS_HCINTMSK3)</description>
@@ -7078,7 +7171,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCINTMSK4</name>
+          <name>HCINTMSK4</name>
           <displayName>FS_HCINTMSK4</displayName>
           <description>OTG_FS host channel-4 mask register
           (OTG_FS_HCINTMSK4)</description>
@@ -7154,7 +7247,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCINTMSK5</name>
+          <name>HCINTMSK5</name>
           <displayName>FS_HCINTMSK5</displayName>
           <description>OTG_FS host channel-5 mask register
           (OTG_FS_HCINTMSK5)</description>
@@ -7230,7 +7323,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCINTMSK6</name>
+          <name>HCINTMSK6</name>
           <displayName>FS_HCINTMSK6</displayName>
           <description>OTG_FS host channel-6 mask register
           (OTG_FS_HCINTMSK6)</description>
@@ -7306,7 +7399,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCINTMSK7</name>
+          <name>HCINTMSK7</name>
           <displayName>FS_HCINTMSK7</displayName>
           <description>OTG_FS host channel-7 mask register
           (OTG_FS_HCINTMSK7)</description>
@@ -7382,7 +7475,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCTSIZ0</name>
+          <name>HCTSIZ0</name>
           <displayName>FS_HCTSIZ0</displayName>
           <description>OTG_FS host channel-0 transfer size
           register</description>
@@ -7412,7 +7505,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCTSIZ1</name>
+          <name>HCTSIZ1</name>
           <displayName>FS_HCTSIZ1</displayName>
           <description>OTG_FS host channel-1 transfer size
           register</description>
@@ -7442,7 +7535,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCTSIZ2</name>
+          <name>HCTSIZ2</name>
           <displayName>FS_HCTSIZ2</displayName>
           <description>OTG_FS host channel-2 transfer size
           register</description>
@@ -7472,7 +7565,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCTSIZ3</name>
+          <name>HCTSIZ3</name>
           <displayName>FS_HCTSIZ3</displayName>
           <description>OTG_FS host channel-3 transfer size
           register</description>
@@ -7502,7 +7595,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCTSIZ4</name>
+          <name>HCTSIZ4</name>
           <displayName>FS_HCTSIZ4</displayName>
           <description>OTG_FS host channel-x transfer size
           register</description>
@@ -7532,7 +7625,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCTSIZ5</name>
+          <name>HCTSIZ5</name>
           <displayName>FS_HCTSIZ5</displayName>
           <description>OTG_FS host channel-5 transfer size
           register</description>
@@ -7562,7 +7655,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCTSIZ6</name>
+          <name>HCTSIZ6</name>
           <displayName>FS_HCTSIZ6</displayName>
           <description>OTG_FS host channel-6 transfer size
           register</description>
@@ -7592,7 +7685,7 @@
           </fields>
         </register>
         <register>
-          <name>FS_HCTSIZ7</name>
+          <name>HCTSIZ7</name>
           <displayName>FS_HCTSIZ7</displayName>
           <description>OTG_FS host channel-7 transfer size
           register</description>
@@ -7635,7 +7728,7 @@
       </addressBlock>
       <registers>
         <register>
-          <name>FS_PCGCCTL</name>
+          <name>PCGCCTL</name>
           <displayName>FS_PCGCCTL</displayName>
           <description>OTG_FS power and clock gating control
           register</description>

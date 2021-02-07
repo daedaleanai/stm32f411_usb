@@ -4,12 +4,20 @@
 #include "gpio2.h"
 #include "serial.h"
 
+extern uint32_t UNIQUE_DEVICE_ID[3]; // Section 34.1
+
 enum {
 	LED0_PIN = PC13,
-	USART1_TX_PIN = PA9, 
-	//USART1_RX_PIN = PA10,
+	// USART1_TX_PIN = PA9, 
+	// USART1_RX_PIN = PA10,
 	// USART1_TX_PIN = PB6,
 	// USART1_RX_PIN = PB7,
+	USART2_TX_PIN = PA2,
+	USART2_RX_PIN = PA3,
+
+    USB_DM_PIN   = PA11, // USB D-
+    USB_DP_PIN   = PA12, // USB D+
+
 };
 
 static struct gpio_config_t {
@@ -17,7 +25,9 @@ static struct gpio_config_t {
 	enum GPIO_Conf mode;
 }  pin_cfgs[] = {
     {LED0_PIN, GPIO_ODO},
-    {USART1_TX_PIN, GPIO_AF7_USART12|GPIO_HIGH},    
+    {USART2_TX_PIN, GPIO_AF7_USART12|GPIO_HIGH},    
+     {USB_DM_PIN|USB_DP_PIN, GPIO_AFA_OTGFS},
+//  {USART1_TX_PIN, GPIO_AF7_USART12|GPIO_HIGH},    
 //	{USART1_RX_PIN, Mode_IPU},
     {0, 0}, // sentinel
 };
@@ -35,12 +45,13 @@ void delay(uint32_t usec) {
         __NOP(); // wait
 }
 
-static uint8_t tx1buf[256];
+static uint8_t tx2buf[256];
 
+extern void init_usb(void);
 
 void main(void) {
 
-	//uint8_t rf = RCC.CSR >> 24;
+	uint8_t rf = RCC.CSR >> 24;
 
     RCC.CSR |= RCC_CSR_RMVF; // Set RMVF bit to clear the reset flags
 
@@ -60,14 +71,29 @@ void main(void) {
 		gpioConfig(p->pins, p->mode);
 	}
 
-	RCC.APB2ENR |= RCC_APB2ENR_USART1EN;
-	serial_init(&USART1, 115200, tx1buf, sizeof(tx1buf));
+ digitalHi(PC13);
 
-	for (int i = 0; ; i++) {
-		digitalToggle(LED0_PIN);
+	RCC.APB1ENR |= RCC_APB1ENR_USART2EN;
+	serial_init(&USART2, 8*115200, tx2buf, sizeof tx2buf);
 
-		delay(200*1000);
-		serial_printf(&USART1, "%i\n", i);
-	}
+	serial_printf(&USART2, "SWREV:%s\n", __REVISION__);
+    serial_printf(&USART2, "CPUID:%08lx\n", SCB.CPUID);
+    serial_printf(&USART2, "DEVID:%08lx:%08lx:%08lx\n", UNIQUE_DEVICE_ID[2], UNIQUE_DEVICE_ID[1], UNIQUE_DEVICE_ID[0]);
+    serial_printf(&USART2, "RESET:%02x%s%s%s%s%s%s\n", rf, rf & 0x80 ? " LPWR" : "", rf & 0x40 ? " WWDG" : "", rf & 0x20 ? " IWDG" : "",
+                      rf & 0x10 ? " SFT" : "", rf & 0x08 ? " POR" : "", rf & 0x04 ? " PIN" : "");
+    serial_wait(&USART2);
+
+	RCC.AHB2ENR |= RCC_AHB2ENR_OTGFSEN;
+	delay(10);
+	init_usb();
+
+	serial_printf(&USART2, "otg_fs mode: %s\n", OTG_FS_GLOBAL.GINTSTS & OTG_FS_GLOBAL_GINTSTS_CMOD ? "HOST" : "DEVICE");
+
+
+	for (;;) {
+		__WFI();
+		delay(250 * 1000);
+
+	} 
 	
 }
