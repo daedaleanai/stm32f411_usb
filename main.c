@@ -1,17 +1,14 @@
 #include "STM32F411.h"
-
 #include "stm32f411_irqn.h"
 #include "gpio2.h"
-#include "serial.h"
+#include "usart.h"
+#include "printf.h"
+#include "usb.h"
 
 extern uint32_t UNIQUE_DEVICE_ID[3]; // Section 34.1
 
 enum {
 	LED0_PIN = PC13,
-	// USART1_TX_PIN = PA9, 
-	// USART1_RX_PIN = PA10,
-	// USART1_TX_PIN = PB6,
-	// USART1_RX_PIN = PB7,
 	USART2_TX_PIN = PA2,
 	USART2_RX_PIN = PA3,
 
@@ -20,34 +17,75 @@ enum {
 
 };
 
+/* clang-format off */
 static struct gpio_config_t {
 	enum GPIO_Pin pins;
 	enum GPIO_Conf mode;
 }  pin_cfgs[] = {
     {LED0_PIN, GPIO_ODO},
     {USART2_TX_PIN, GPIO_AF7_USART12|GPIO_HIGH},    
-     {USB_DM_PIN|USB_DP_PIN, GPIO_AFA_OTGFS},
-//  {USART1_TX_PIN, GPIO_AF7_USART12|GPIO_HIGH},    
-//	{USART1_RX_PIN, Mode_IPU},
+    {USB_DM_PIN|USB_DP_PIN, GPIO_AFA_OTGFS},
     {0, 0}, // sentinel
 };
 
+enum { IRQ_PRIORITY_GROUPING = 5 }; // prio[7:6] : 4 groups,  prio[5:4] : 4 subgroups
+struct {
+    enum IRQn_Type irq;
+    uint8_t        group, sub;
+} irqprios[] = {
+    {IRQ_SysTick, 0, 0},
+    {IRQ_OTG_FS,  1, 0},
+    {IRQ_USART2,  2, 0},
+    {IRQ_TIM3,    3, 0},
+    {IRQ_None, 0xff, 0xff},
+};
+/* clang-format on */
+
+
+static inline void led0_on(void) { digitalLo(LED0_PIN); }
+static inline void led0_off(void) { digitalHi(LED0_PIN); }
+static inline void led0_toggle(void) { digitalToggle(LED0_PIN); }
 
 static volatile uint64_t clockticks = STK_LOAD_RELOAD + 1; // rolls over after 2^64/96MHz = 6089.1097 years
 void SysTick_Handler(void) { clockticks += STK_LOAD_RELOAD + 1; }
 static inline uint64_t cycleCount(void) { return clockticks - (uint32_t)(STK.VAL & STK_LOAD_RELOAD); }
 
-void delay(uint32_t usec) {
+// static void delay(uint32_t usec) {
+//     uint64_t now = cycleCount();
+//     // then = now + usec * clockspeed_hz / (usec/sec)
+//     uint64_t then = now + 96 * usec;
+//     while (cycleCount() < then)
+//         __NOP(); // wait
+// }
+
+static struct Ringbuffer usart2tx;
+
+void          USART2_Handler(void) { usart_irq_handler(&USART2, &usart2tx); }
+static size_t u2puts(const char* buf, size_t len) { return usart_puts(&USART2, &usart2tx, buf, len); }
+static size_t usb_puts(const char* buf, size_t len) { return usb_send(buf, len); }
+
+
+void OTG_FS_Handler(void) {
     uint64_t now = cycleCount();
-    // then = now + usec * clockspeed_hz / (usec/sec)
-    uint64_t then = now + 96 * usec;
-    while (cycleCount() < then)
-        __NOP(); // wait
+    led0_toggle();
+    static int i = 0;
+    cbprintf(u2puts, "%lld IRQ %i: %s\n", now / 96, i++, usb_state_str(usb_state()));
+    uint8_t buf[64];
+    size_t  len = usb_recv(buf, sizeof buf);
+    if (len > 0) {
+        cbprintf(u2puts, "received %i: %*s\n", len, len, buf);
+    }
 }
 
-static uint8_t tx2buf[256];
+void TIM3_Handler(void) {
+    if ((TIM3.SR & TIM3_SR_UIF) == 0)
+        return;
+    TIM3.SR &= ~TIM3_SR_UIF;
+    static int i = 0;
+    cbprintf(u2puts, "USB %i: %s\n", i, usb_state_str(usb_state()));
+    cbprintf(usb_puts, "bingo %i\n", i++);
+}
 
-extern void init_usb(void);
 
 void main(void) {
 
@@ -71,29 +109,31 @@ void main(void) {
 		gpioConfig(p->pins, p->mode);
 	}
 
- digitalHi(PC13);
+	led0_on();
 
 	RCC.APB1ENR |= RCC_APB1ENR_USART2EN;
-	serial_init(&USART2, 8*115200, tx2buf, sizeof tx2buf);
+	usart_init(&USART2, 921600);
+	IRQ_Enable(IRQ_USART2);
 
-	serial_printf(&USART2, "SWREV:%s\n", __REVISION__);
-    serial_printf(&USART2, "CPUID:%08lx\n", SCB.CPUID);
-    serial_printf(&USART2, "DEVID:%08lx:%08lx:%08lx\n", UNIQUE_DEVICE_ID[2], UNIQUE_DEVICE_ID[1], UNIQUE_DEVICE_ID[0]);
-    serial_printf(&USART2, "RESET:%02x%s%s%s%s%s%s\n", rf, rf & 0x80 ? " LPWR" : "", rf & 0x40 ? " WWDG" : "", rf & 0x20 ? " IWDG" : "",
+	cbprintf(u2puts, "SWREV:%s\n", __REVISION__);
+    cbprintf(u2puts, "CPUID:%08lx\n", SCB.CPUID);
+    cbprintf(u2puts, "DEVID:%08lx:%08lx:%08lx\n", UNIQUE_DEVICE_ID[2], UNIQUE_DEVICE_ID[1], UNIQUE_DEVICE_ID[0]);
+    cbprintf(u2puts, "RESET:%02x%s%s%s%s%s%s\n", rf, rf & 0x80 ? " LPWR" : "", rf & 0x40 ? " WWDG" : "", rf & 0x20 ? " IWDG" : "",
                       rf & 0x10 ? " SFT" : "", rf & 0x08 ? " POR" : "", rf & 0x04 ? " PIN" : "");
-    serial_wait(&USART2);
+    usart_wait(&USART2);
+
+	// enable 1Hz TIM3
+    TIM3.DIER |= TIM3_DIER_UIE;
+    TIM3.PSC = 7200 - 1;  // 72MHz/7200   = 10KHz
+    TIM3.ARR = 10000 - 1; // 10KHz/10000  = 1Hz
+    TIM3.CR1 |= TIM3_CR1_CEN;
+	IRQ_Enable(IRQ_TIM3);
 
 	RCC.AHB2ENR |= RCC_AHB2ENR_OTGFSEN;
-	delay(10);
-	init_usb();
+	usb_init();
+	IRQ_Enable(IRQ_OTG_FS);
 
-	serial_printf(&USART2, "otg_fs mode: %s\n", OTG_FS_GLOBAL.GINTSTS & OTG_FS_GLOBAL_GINTSTS_CMOD ? "HOST" : "DEVICE");
-
-
-	for (;;) {
+	for (;;)
 		__WFI();
-		delay(250 * 1000);
 
-	} 
-	
 }

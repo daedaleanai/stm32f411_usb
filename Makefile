@@ -4,7 +4,7 @@ CC          := $(PREFIX)gcc
 OBJCOPY     := $(PREFIX)objcopy
 SIZE        := $(PREFIX)size
 
-REVISION := $(shell git log -1 --format="%h")
+REVISION := $(shell git log -1 --format="%h" || echo "(NOREV)")
 
 ARCH_FLAGS	 = -mthumb -mcpu=cortex-m4
 LTO_FLAGS	 = -O2 -flto -fuse-linker-plugin -ffunction-sections -fdata-sections -fverbose-asm -ffat-lto-objects
@@ -29,11 +29,7 @@ OBJS = \
 	boot.o \
 	gpio2.o \
 	serial.o \
-    usb/usb_f107.o \
-    usb/usb.o \
-    usb/usb_control.o \
-    usb/usb_standard.o \
-	cdcacm.o \
+	usb.o \
 	main.o \
 
 $(OBJS): Makefile $(LD_SCRIPT) stm32f411_devs.ld
@@ -67,7 +63,10 @@ depend:
 # DO NOT DELETE
 
 boot.o: STM32F411.h cortex_m4.h stm32f411_irqn.h
+cdcacm.o: STM32F411.h cortex_m4.h stm32f411_irqn.h gpio2.h
 gpio2.o: gpio2.h STM32F411.h cortex_m4.h
-main.o: STM32F411.h cortex_m4.h stm32f411_irqn.h gpio2.h serial.h
-serial.o: serial.h STM32F411.h cortex_m4.h stm32f411_irqn.h stb_sprintf.h
+main.o: STM32F411.h cortex_m4.h stm32f411_irqn.h gpio2.h usart.h printf.h usb.h
+printf.o: printf.h stb_sprintf.h
+usart.o: usart.h printf.h
+usb.o: usb.h stm32f411.h cortex_m4.h
 vectors.o: STM32F411.h cortex_m4.h
