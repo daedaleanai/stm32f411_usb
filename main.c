@@ -11,10 +11,8 @@ enum {
 	LED0_PIN = PC13,
 	USART2_TX_PIN = PA2,
 	USART2_RX_PIN = PA3,
-
     USB_DM_PIN   = PA11, // USB D-
     USB_DP_PIN   = PA12, // USB D+
-
 };
 
 /* clang-format off */
@@ -28,17 +26,18 @@ static struct gpio_config_t {
     {0, 0}, // sentinel
 };
 
-enum { IRQ_PRIORITY_GROUPING = 5 }; // prio[7:6] : 4 groups,  prio[5:4] : 4 subgroups
-struct {
-    enum IRQn_Type irq;
-    uint8_t        group, sub;
-} irqprios[] = {
-    {IRQ_SysTick, 0, 0},
-    {IRQ_OTG_FS,  1, 0},
-    {IRQ_USART2,  2, 0},
-    {IRQ_TIM3,    3, 0},
-    {IRQ_None, 0xff, 0xff},
-};
+// // grouping 5: prio[7:6] : 4 groups,  prio[5:4] : 4 subgroups
+// enum { IRQ_PRIORITY_GROUPING = 5 };
+// static struct {
+//     enum IRQn_Type irq;
+//     uint8_t        group, sub;
+// } irqprios[] = {
+//     {IRQ_SysTick, 0, 0},
+//     {IRQ_OTG_FS,  1, 0},
+//     {IRQ_USART2,  2, 0},
+//     {IRQ_TIM3,    3, 0},
+//     {IRQ_None, 0xff, 0xff},
+// };
 /* clang-format on */
 
 
@@ -102,12 +101,14 @@ void main(void) {
     //         NVIC_SetPriority(irqprios[i].irq, NVIC_EncodePriority(IRQ_PRIORITY_GROUPING, irqprios[i].group, irqprios[i].sub));
     // }
 
-
-	RCC.AHB1ENR |= RCC_AHB1ENR_GPIOAEN|RCC_AHB1ENR_GPIOBEN|RCC_AHB1ENR_GPIOCEN;
+	RCC.AHB1ENR |= RCC_AHB1ENR_GPIOAEN|RCC_AHB1ENR_GPIOCEN;
 
 	for (const struct gpio_config_t* p = pin_cfgs; p->pins; ++p) {
 		gpioConfig(p->pins, p->mode);
 	}
+
+    gpioLock(PAAll);
+    gpioLock(PCAll);
 
 	led0_on();
 
