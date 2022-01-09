@@ -1,4 +1,4 @@
-#include "STM32F411.h"
+#include "stm32f411.h"
 
 extern void _estack(void); // fake definition, will be filled in by linker script.
 

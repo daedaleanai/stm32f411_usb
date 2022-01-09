@@ -63,10 +63,9 @@ depend:
 # DO NOT DELETE
 
 boot.o: STM32F411.h cortex_m4.h stm32f411_irqn.h
-cdcacm.o: STM32F411.h cortex_m4.h stm32f411_irqn.h gpio2.h
 gpio2.o: gpio2.h STM32F411.h cortex_m4.h
-main.o: STM32F411.h cortex_m4.h stm32f411_irqn.h gpio2.h usart.h printf.h usb.h
+main.o: STM32F411.h cortex_m4.h stm32f411_irqn.h gpio2.h usart.h stm32f411.h printf.h usb.h
 printf.o: printf.h stb_sprintf.h
-usart.o: usart.h printf.h
+usart.o: usart.h stm32f411.h cortex_m4.h printf.h
 usb.o: usb.h stm32f411.h cortex_m4.h
 vectors.o: STM32F411.h cortex_m4.h
