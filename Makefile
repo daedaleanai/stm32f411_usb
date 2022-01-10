@@ -28,8 +28,9 @@ OBJS = \
 	vectors.o \
 	boot.o \
 	gpio2.o \
-	serial.o \
-	usb.o \
+	usart.o \
+	printf.o \
+	otg.o \
 	main.o \
 
 $(OBJS): Makefile $(LD_SCRIPT) stm32f411_devs.ld
@@ -62,10 +63,10 @@ depend:
 
 # DO NOT DELETE
 
-boot.o: STM32F411.h cortex_m4.h stm32f411_irqn.h
-gpio2.o: gpio2.h STM32F411.h cortex_m4.h
-main.o: STM32F411.h cortex_m4.h stm32f411_irqn.h gpio2.h usart.h stm32f411.h printf.h usb.h
+boot.o: stm32f411.h cortex_m4.h stm32f411_irqn.h
+gpio2.o: gpio2.h stm32f411.h cortex_m4.h
+main.o: stm32f411.h cortex_m4.h stm32f411_irqn.h gpio2.h usart.h printf.h usb.h
+otg.o: usb.h stm32f411.h cortex_m4.h
 printf.o: printf.h stb_sprintf.h
 usart.o: usart.h stm32f411.h cortex_m4.h printf.h
-usb.o: usb.h stm32f411.h cortex_m4.h
-vectors.o: STM32F411.h cortex_m4.h
+vectors.o: stm32f411.h cortex_m4.h

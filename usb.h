@@ -1,24 +1,19 @@
 #pragma once
 /*
-	Small USB driver for STM32F405, providing 1 device with 1 configuration
+	Small USB driver for STM32F4xx, providing 1 device with 1 configuration
 	with 1 interface with 1 setting, providing endpoint 0 for control and
 	endpoint 0x1/0x81 with bidirectional bulk transfers, with a buffer
 	size of 64 bytes in both directions. 
 
-	By sending a slightly bigger descriptor, this shows up as a CDC/ACM device
-	aka a serial port, under MacOS and (hopefully) Linux without the need for extra drivers,
-	but you have to set
+	Linux clients can use 
 
-	echo 0x0483 0x5740 >/sys/bus/usb-serial/drivers/generic/new_id
+		echo 0x0483 0x5722 >/sys/bus/usb-serial/drivers/generic/new_id
 
-or
+	or
 
-	sudo modprobe usbserial vendor=0x0483 product=0x5740
+		sudo modprobe usbserial vendor=0x0483 product=0x5722
 
-	No form of line control, baud rate, parity etc setting is implemented, you just get
-	the full USB bandwith to/from your microcontroller with the abi defined in usb.h
-
-	The device has VID 0483 (STMicroelectronics) and PID 5740 (Virtual Com Port).
+	The device has VID 0483 (STMicroelectronics) and PID 5722 (Bulk demo).
 */
 #include <stddef.h>  // for size_t
 #include <stdint.h>  // for uintX_t
@@ -57,6 +52,6 @@ size_t usb_recv(uint8_t* buf, size_t sz);
 
 // usb_send tries to copy buf[:min(len,64)] to a free USB transmit buffer and
 // schedules it for transmission. If no buffer is available usb_send returns
-// zero, otherwise it returns the number of bytes that could be copied. 
+// zero, otherwise it returns the number of bytes that were be copied. 
 size_t usb_send(const uint8_t* buf, size_t len);
 
