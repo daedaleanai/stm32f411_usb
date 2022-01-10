@@ -526,8 +526,8 @@ static int handle_set_request(void) {
             switch (_ctrl_req.val) {
             case 0:
                 // unconfigure our endpoints 0x01/0x81
-                DIEP(1)->CTL |= OTG_FS_DEVICE_DIEPCTL1_EPDIS;
-                DOEP(1)->CTL |= OTG_FS_DEVICE_DOEPCTL1_EPDIS;
+                DIEP(0x81)->CTL |= OTG_FS_DEVICE_DIEPCTL1_EPDIS;
+                DOEP(0x1)->CTL  |= OTG_FS_DEVICE_DOEPCTL1_EPDIS;
 
                 _usb_state = USB_ADDRESS;
                 // fallthrough
@@ -588,20 +588,18 @@ static int handle_get_request(void) {
             len = sizeof _deviceDescriptor;
             if (len > _ctrl_req.len)
                 len = _ctrl_req.len;
-            if(!write_packet(0, _deviceDescriptor, len))
-                return 0;
+            if(write_packet(0, _deviceDescriptor, len))
+                return 1;
             break;
         case 0x0200:
             len = sizeof _configDescriptor;
             if (len > _ctrl_req.len)
                 len = _ctrl_req.len;
-            if(!write_packet(0, _configDescriptor, len))
-                return 0;
+            if(write_packet(0, _configDescriptor, len))
+                return 1;
             break;
-        default:
-            return 0;
         }
-        return 1;
+        return 0;
 
     case REQ_GET_STATUS:
         if ((_usb_state == USB_DEFAULT) || (_ctrl_req.val != 0) || (_ctrl_req.idx != 0) || (_ctrl_req.len != 2))
