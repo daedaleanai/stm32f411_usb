@@ -102,6 +102,7 @@ void main(void) {
     // }
 
 	RCC.AHB1ENR |= RCC_AHB1ENR_GPIOAEN|RCC_AHB1ENR_GPIOCEN;
+    RCC.APB1ENR |= RCC_APB1ENR_TIM3EN;
 
 	for (const struct gpio_config_t* p = pin_cfgs; p->pins; ++p) {
 		gpioConfig(p->pins, p->mode);
