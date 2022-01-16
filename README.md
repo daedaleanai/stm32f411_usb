@@ -15,4 +15,4 @@ Features:
 
 To re-use: just cut, copy and paste. Premature Generalisation is The Root Of Much Complexity. 
 
-See stm32f103_usb for a simple userland client.  On Linux you can use the generic ttyUSBx driver.
+See [stm32f103_usb](https://github.com/daedaleanai/stm32f103_usb) for a simple userland client.  On Linux you can use the generic ttyUSBx driver.
