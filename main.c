@@ -7,13 +7,11 @@
 
 extern uint32_t UNIQUE_DEVICE_ID[3]; // Section 34.1
 
-enum {
-	LED0_PIN      = PC13,
-	USART2_TX_PIN = PA2,
-	USART2_RX_PIN = PA3,
-	USB_DM_PIN    = PA11, // USB D-
-	USB_DP_PIN    = PA12, // USB D+
-};
+#define	LED0_PIN       PC13
+#define	USART2_TX_PIN  PA2
+#define	USART2_RX_PIN  PA3
+#define	USB_DM_PIN     PA11 // USB D-
+#define	USB_DP_PIN     PA12 // USB D+
 
 /* clang-format off */
 static struct gpio_config_t {
