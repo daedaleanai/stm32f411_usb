@@ -61,6 +61,10 @@ clean:
 depend:
 	makedepend -Y. -w150 *.c
 
+flash: main.elf
+	openocd -f interface/ftdi/ft4232-module-swd-1.cfg -f target/stm32f4x.cfg -c "program main.elf verify exit reset"
+
+
 # DO NOT DELETE
 
 boot.o: stm32f411.h cortex_m4.h stm32f411_irqn.h
